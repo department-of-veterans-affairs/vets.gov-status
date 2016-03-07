@@ -121,7 +121,7 @@ def readEachFile(repo, directory):
     #TODO write first line of detailed dashboard
     executiveDashboardArray = []
     for docName in directory:
-        if docName.lower() != "readme.md" and docName.lower() != "project status template.md" and docName.lower() != "link to launch guide.md" and docName.lower() != "facility locator status.md":
+        if docName.lower() != "readme.md" and docName.lower() != "link to launch guide.md" and docName.lower() != "use this template.md":    
             fullPath = "Status Reports and Roadmaps/Sample-Status-Reports/" + docName
             document = repo.contents(fullPath).decoded
             addProductToArray(document, executiveDashboardArray)
