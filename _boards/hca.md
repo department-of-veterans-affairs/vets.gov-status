@@ -7,15 +7,30 @@ tiles:
     datapoint: 750
     context: on average
 
-  - name: Mobile availability
-    layout: basic
-    datapoint: 100%
-    context: of content available on mobile
-
   - name: Fully automated
     layout: basic
     datapoint: 50%
-    context: of submission
+    context: of submissions
+
+  - name: Automated processing
+    layout: compare
+    datapoint: 50%
+    before: 4%
+    context: of applications can now be processed automatically
+
+  - name: Mobile availability
+    layout: icon
+    icon: smartphone.svg
+    text: Veterans can now complete their application entirely from a smartphone
+
+  - name: User experience
+    layout: image-compare
+    before: no-acrobat-error.jpg
+    after: healthcare.jpg
+
+  - name: Veteran testimonial
+    layout: quote
+    text: The other website takes you around the corner, over the meadow, and...in a back door blocked with spikes and IEDs
 
   - name: Site Traffic
     layout: chart
