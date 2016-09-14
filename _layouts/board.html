@@ -1,8 +1,3 @@
----
-title: Health Care Application
-subtitle: Before 8% of Veterans were able to access the application
----
-
 {% include header.html %}
 
     <div class="row">
@@ -19,20 +14,20 @@ subtitle: Before 8% of Veterans were able to access the application
 
     <div class="row">
 
-      {% for metric in site.data.hca %}
+      {% for tile in page.tiles %}
 
         <div class="col-sm-6 col-md-4">
             <div class="chart-wrapper">
               <div class="chart-title">
-                {{metric.name}}
+                {{tile.name}}
               </div>
               <div class="chart-stage">
                 <div id="grid-1-1">
-                  <h2>{{metric.datapoint}}</h2>
+                  <h2>{{tile.datapoint}}</h2>
                 </div>
               </div>
               <div class="chart-notes">
-                {{metric.context}}
+                {{tile.context}}
               </div>
             </div>
         </div>
