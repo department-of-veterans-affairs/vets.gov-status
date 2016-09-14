@@ -1,6 +1,14 @@
 ---
 title: Vets.gov Executive Scorecard
 subtitle: Vets.gov is the single digital experience for Veterans to acccess the benefits they have earned
+tiles:
+  - name: Site Traffic
+    layout: chart
+    data: hca_sessions
+    context: Total user sessions per day
+    cols:
+      - id: sessions
+        label: Number of Sessions
 ---
 
 {% include header.html %}
@@ -17,7 +25,11 @@ subtitle: Vets.gov is the single digital experience for Veterans to acccess the 
   </div>
 </div>
 
-{% include users_chart.html %}
+<div class="row">
+  {% for tile in page.tiles %}
+    {% include tiles/{{tile.layout}}.html %}
+  {% endfor %}
+</div>
 
 <div class="row">
   <div class="col-md-12">
