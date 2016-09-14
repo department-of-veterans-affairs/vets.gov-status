@@ -5,7 +5,7 @@
     </div>
     <div class="chart-stage">
       <div>
-        <canvas id="{{tile.id}}" width="400" height="150"></canvas>
+        <canvas id="{{tile.data}}" width="400" height="150"></canvas>
       </div>
     </div>
     <div class="chart-notes">
@@ -15,7 +15,7 @@
 </div>
 
 <script>
-var ctx = document.getElementById("{{tile.id}}");
+var ctx = document.getElementById("{{tile.data}}");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
