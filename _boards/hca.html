@@ -39,51 +39,7 @@ subtitle: Before 8% of Veterans were able to access the application
 
       {% endfor %}
 
-      <div class="col-md-12">
-          <div class="chart-wrapper">
-            <div class="chart-title">
-              Site Traffic
-            </div>
-            <div class="chart-stage">
-              <div id="grid-1-1">
-                <canvas id="sessions" width="400" height="150"></canvas>
-
-<script>
-var ctx = document.getElementById("sessions");
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [{% for line in site.data.hca_sessions %}"{{ line.day }}",{% endfor %}],
-        datasets: [{
-            label: 'Number of Sessions',
-            data: [{% for line in site.data.hca_sessions %}{{ line.sessions }},{% endfor %}],
-            backgroundColor: "rgba(17,46,81,0.3)",
-            borderColor: "rgba(17,46,81,1)",
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }],
-        },
-        legend: {
-          display: false
-        }
-    }
-});
-</script>
-
-              </div>
-            </div>
-            <div class="chart-notes">
-              Total user sessions per day
-            </div>
-          </div>
-      </div>
+      {% include users_chart.html %}
 
       <div class="col-md-12">
           <div class="chart-wrapper">

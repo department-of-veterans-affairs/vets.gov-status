@@ -1,32 +1,79 @@
 ---
-title: Dashboard
+title: Vets.gov Executive Scorecard
+subtitle: Vets.gov is the single digital experience for Veterans to acccess the benefits they have earned
 ---
 
 {% include header.html %}
 
-    <div class="row">
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{page.title}}</h1>
+  </div>
+</div>
 
-      {% for project in site.data.projects %}
+<div class="row">
+  <div class="col-md-12 subtitle">
+    <h3>{{page.subtitle}}</h3>
+  </div>
+</div>
 
-        <div class="col-sm-6 col-md-4">
-          <a href="boards/{{project.board}}.html">
-            <div class="chart-wrapper">
-              <div class="chart-title">
-                {{project.name}}
-              </div>
-              <div class="chart-stage">
-                <div id="grid-1-1">
-                  <h2>{{project.datapoint}}</h2>
-                </div>
-              </div>
-              <div class="chart-notes">
-                {{project.context}}
-              </div>
+{% include users_chart.html %}
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>Vets.gov features enable Veterans to do the following: </h3>
+  </div>
+</div>
+
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="category-header">
+              <h2>Discover</h2>
             </div>
-          </a>
+
+          <div class="row">
+          {% for project in site.data.discover %}
+
+          {% include project_tile.html %}
+          {% endfor %}
+    </div>
+      </div>
+
+      <div class="col-sm-6 col-md-3">
+          <div class="category-header">
+            <h2>Apply</h2>
+          </div>
+          <div class="row">
+            {% for project in site.data.apply %}
+
+            {% include project_tile.html %}
+            {% endfor %}
+          </div>
         </div>
 
-      {% endfor %}
+        <div class="col-sm-6 col-md-3">
+            <div class="category-header">
+              <h2>Track</h2>
+            </div>
+            <div class="row">
+              {% for project in site.data.track %}
+
+              {% include project_tile.html %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3">
+              <div class="category-header">
+                <h2>Manage</h2>
+              </div>
+              <div class="row">
+                {% for project in site.data.manage %}
+
+                {% include project_tile.html %}
+                {% endfor %}
+              </div>
+            </div>
 
     </div>
 

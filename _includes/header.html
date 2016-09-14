@@ -19,13 +19,13 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="{{site.baseurl}}/"><img
-          src="https://d3qcdigd1fhos0.cloudfront.net/production/site/6277/mobile_logo/1469047099/original/logo20160720-21379-15zcpsl.png?1469047099"></a>
+          src="{{site.baseurl}}/assets/img/logo.png"></a>
         </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
-{% if page.title != "Dashboard" %}
+{% unless page.title contains "Scorecard" %}
           <li><a href="{{site.baseurl}}/index.html"><span class="glyphicon glyphicon-chevron-left"></span> Home</a></li>
-{% endif %}
+{% endunless %}
         </ul>
       </div>
     </div>
@@ -33,4 +33,4 @@
 
 
 
-  <div class="container-fluid">
+  <div class="container">
