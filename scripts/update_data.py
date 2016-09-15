@@ -1,4 +1,4 @@
-"""Hello Analytics Reporting API V4."""
+"""Pulls in data to update dashboards"""
 
 import datetime
 import json
