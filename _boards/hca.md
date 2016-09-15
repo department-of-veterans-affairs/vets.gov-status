@@ -28,7 +28,7 @@ tiles:
 
   - name: User experience
     layout: image-compare
-    before: no-acrobat-error.jpg
+    before: old-healthcare.jpg
     after: healthcare.jpg
 
   - name: Veteran testimonial
