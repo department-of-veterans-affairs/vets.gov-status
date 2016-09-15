@@ -98,8 +98,29 @@ def make_df(report):
 def output_users(df, board):
     """Output a csv from dataframe contents."""
 
-
+    df.columns = ['new', 'all']
+    df['returning'] = df['all'] - df['new']
     filename = "{}_users.csv".format(board)
+    df.to_csv(filename, date_format="%m/%d/%y")
+
+def output_device(df, board):
+
+    df = df.reset_index()
+
+    mobile = df[df['ga:deviceCategory'] != 'desktop'].groupby('day').agg(np.sum)
+    mobile.columns = ['mobile']
+    #print(mobile)
+
+    df = df[df['ga:deviceCategory'] == 'desktop'].groupby('day').agg(np.sum)
+    df.columns = ['desktop']
+    #print(desktop)
+
+    df['mobile'] = mobile['mobile']
+    df['all'] = df['desktop'] + df['mobile']
+    df['mobile'] = df['mobile'] / df['all']
+    df['desktop'] = df['desktop'] / df['all']
+
+    filename = "{}_mobile.csv".format(board)
     df.to_csv(filename, date_format="%m/%d/%y")
 
 
@@ -107,7 +128,8 @@ def run_reports(analytics, board, view_id):
     response = get_reports(analytics, view_id)
     user_df = make_df(response['reports'][0])
     output_users(user_df, board)
-
+    device_df = make_df(response['reports'][1])
+    output_device(device_df, board)
 
 def main():
     analytics = initialize_analyticsreporting()
