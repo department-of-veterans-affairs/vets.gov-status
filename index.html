@@ -49,9 +49,22 @@ tiles:
 </div>
 
 <div class="row">
+  <div class="col-md-12 subtitle">
+    <h3>Overall Measures</h3>
+  </div>
+</div>
+
+<div class="row">
   {% for tile in page.tiles %}
     {% include tiles/{{tile.layout}}.html %}
   {% endfor %}
+</div>
+
+<div class="row">
+  <div class="col-md-12 subtitle">
+    <h3>Migration Status</h3>
+    <p>As we execute on the <a href="https://www.vets.gov/playbook/migration/">migration strategy</a> laid out in the <a href="https://www.vets.gov/playbook/">Vets.gov Playbook</a>, we track projects' status using the <a href="http://ec2-54-165-153-226.compute-1.amazonaws.com:8080/jekyll/update/2016/01/27/high-level-dashboard.html">Migration Status Dashboard</a>.
+  </div>
 </div>
 
 {% include footer.html %}
