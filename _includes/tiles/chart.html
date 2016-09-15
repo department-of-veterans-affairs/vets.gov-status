@@ -1,0 +1,54 @@
+<div class="col-sm-12">
+  <div class="chart-wrapper">
+    <div class="chart-title">
+      {{tile.name}}
+    </div>
+    <div class="chart-stage">
+      <canvas id="{{tile.data}}" width="400" height="150"></canvas>
+    </div>
+    <div class="chart-notes">
+      {{tile.context}}
+    </div>
+  </div>
+</div>
+
+<script>
+var ctx = document.getElementById("{{tile.data}}");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [{% for line in site.data[tile.data] %}'{{ line.day }}',{% endfor %}],
+        datasets: [
+        {% for col in tile.cols %}
+        {
+            label: '{{col.label}}',
+            data: [{% for line in site.data[tile.data] %}{{ line[col.id] }},{% endfor %}]
+
+            {% if tile.cols.size == 1 %},
+            backgroundColor: 'rgba(17,46,81,0.3)',
+            borderColor: 'rgb(17,46,81)'
+            {% else %},
+            backgroundColor: 'transparent',
+            borderColor: '{{col.color}}'
+            {% endif %}
+        },
+        {% endfor %}
+        ]
+    },
+    options: {
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: '{{tile.yLabel}}'
+                  {% if tile.yMax %}, max: {{tile.yMax}} {% endif %}
+                }
+            }]
+        }
+    }
+});
+</script>

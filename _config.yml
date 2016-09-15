@@ -2,6 +2,13 @@ collections:
   boards:
     output: true
 
-exclude: [ 'scripts', 'LICENSE', 'README.md' ]
+defaults:
+  - scope:
+      path: ""
+      type: boards
+    values:
+      layout: board
+
+exclude: [ "scripts", "LICENSE.md", "README.md" ]
 
 baseurl: "/vets.gov-status"

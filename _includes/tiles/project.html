@@ -1,17 +1,19 @@
 <div class="col-md-12">
-{% unless project.status == "in progress" %}<a href="boards/{{project.board}}.html">{% endunless %}
+{% unless project.status == "in progress" %}<a href="{{site.baseurl}}{{project.url}}">{% endunless %}
   <div class="chart-wrapper">
     <div class="chart-title">
-      {{project.name}}
+      {{project.title}}
       {% if project.status == "new" %}<span class="label label-primary label-status">New</span>{% endif %}
       {% if project.status == "in progress" %}<span class="label label-default label-status">In Progress</span>{% endif %}
     </div>
     <div class="chart-stage">
-        <h2>{{project.datapoint}}</h2>
+        <p>{{project.description}}</p>
     </div>
+    {% if project.date_added %}
     <div class="chart-notes">
-      {{project.context}}
+      Added: {{project.date_added | date: '%B %d, %Y'}}
     </div>
+    {% endif %}
   </div>
 {% unless project.status == "in progress" %}</a>{% endunless %}
 </div>

@@ -11,10 +11,6 @@ A dashboard for Vets.gov projects executive scorecard
   jekyll serve
   ```
 
-## License
-
-[The MIT License (MIT)](LICENSE.md)
-
 ## Previous repo
 
 This repo previously held a now defunct dashboard. The prior work is archived as a release on this repo in case that work needs to be revisited.

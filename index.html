@@ -1,6 +1,30 @@
 ---
-title: Vets.gov Executive Scorecard
-subtitle: Vets.gov is the single digital experience for Veterans to acccess the benefits they have earned
+title: Vets.gov Dashboard
+tiles:
+
+  - name: Health care
+    layout: compare
+    datapoint: 50%
+    before: 10%
+    context: of applications for health care submitted electronically
+
+  - name: Mobile availability
+    layout: icon
+    icon: smartphone.svg
+    text: Vets.gov is designed to work equally well on desktop and mobile devices
+
+  - name: 508 compliance
+    layout: basic
+    datapoint: 100%
+    context: of pages are 508 compliant
+
+  - name: Site Traffic
+    layout: chart
+    data: hca_sessions
+    context: Total user sessions per day
+    cols:
+      - id: sessions
+        label: Number of Sessions
 ---
 
 {% include header.html %}
@@ -13,68 +37,62 @@ subtitle: Vets.gov is the single digital experience for Veterans to acccess the 
 
 <div class="row">
   <div class="col-md-12 subtitle">
-    <h3>{{page.subtitle}}</h3>
+    <p class="lead">Vets.gov improves Veterans' ability to access to the benefits they have earned.</p>
   </div>
 </div>
 
-{% include users_chart.html %}
+<div class="row">
+  <div class="col-md-12 subtitle">
+    <h3>Featured Improvements</h3>
+  </div>
+</div>
+
+<div class="row">
+  {% for tile in page.tiles limit: 3 %}
+    {% include tiles/{{tile.layout}}.html %}
+  {% endfor %}
+</div>
 
 <div class="row">
   <div class="col-md-12">
-    <h3>Vets.gov features enable Veterans to do the following: </h3>
+    <h3>Vets.gov helps Veterans to&hellip;</h3>
   </div>
 </div>
 
-      <div class="row">
-        <div class="col-sm-6 col-md-3">
-            <div class="category-header">
-              <h2>Discover</h2>
-            </div>
+<div class="row">
+{% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
+{% for category in categories %}
+<div class="col-sm-6 col-md-3">
+  <div class="category-header">
+    <h2>{{category}}</h2>
+  </div>
+  <div class="row">
+    {% assign projects = site.boards | where: "category", category | sort: "date_added" %}
+    {% for project in projects %}
+      {% include tiles/project.html %}
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+</div>
 
-          <div class="row">
-          {% for project in site.data.discover %}
+<div class="row">
+  <div class="col-md-12 subtitle">
+    <h3>Overall Measures</h3>
+  </div>
+</div>
 
-          {% include project_tile.html %}
-          {% endfor %}
-    </div>
-      </div>
+<div class="row">
+  {% for tile in page.tiles offset: 3 %}
+    {% include tiles/{{tile.layout}}.html %}
+  {% endfor %}
+</div>
 
-      <div class="col-sm-6 col-md-3">
-          <div class="category-header">
-            <h2>Apply</h2>
-          </div>
-          <div class="row">
-            {% for project in site.data.apply %}
-
-            {% include project_tile.html %}
-            {% endfor %}
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-md-3">
-            <div class="category-header">
-              <h2>Track</h2>
-            </div>
-            <div class="row">
-              {% for project in site.data.track %}
-
-              {% include project_tile.html %}
-              {% endfor %}
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-md-3">
-              <div class="category-header">
-                <h2>Manage</h2>
-              </div>
-              <div class="row">
-                {% for project in site.data.manage %}
-
-                {% include project_tile.html %}
-                {% endfor %}
-              </div>
-            </div>
-
-    </div>
+<div class="row">
+  <div class="col-md-12 subtitle">
+    <h3>Migration Status</h3>
+    <p>As we execute on the <a href="https://www.vets.gov/playbook/migration/">migration strategy</a> laid out in the <a href="https://www.vets.gov/playbook/">Vets.gov Playbook</a>, we track projects' status using the <a href="http://ec2-54-165-153-226.compute-1.amazonaws.com:8080/jekyll/update/2016/01/27/high-level-dashboard.html">Migration Status Dashboard</a>.
+  </div>
+</div>
 
 {% include footer.html %}
