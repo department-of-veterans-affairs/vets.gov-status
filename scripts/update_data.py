@@ -37,20 +37,29 @@ def initialize_analyticsreporting():
     return analytics
 
 
-def get_report(analytics, view_id):
+def get_reports(analytics, view_id):
     """Use the Analytics Service Object to query Analytics Reporting API."""
     return analytics.reports().batchGet(
         body={
             'reportRequests': [{
-                'viewId': view_id,
-                'dateRanges': [{'startDate': '120daysAgo',
-                                'endDate': 'yesterday'}],
-                'metrics': [{'expression': 'ga:users'},
-                            {'expression': 'ga:newUsers'}],
-                'dimensions': [{'name': 'ga:isoYearIsoWeek'}]
+                    'viewId': view_id,
+                    'dateRanges': [{'startDate': '120daysAgo',
+                                    'endDate': 'yesterday'}],
+                    'metrics': [{'expression': 'ga:users'},
+                                {'expression': 'ga:newUsers'}],
+                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}]
+                },
+                {
+                    'viewId': view_id,
+                    'dateRanges': [{'startDate': '120daysAgo',
+                                    'endDate': 'yesterday'}],
+                    'metrics': [{'expression': 'ga:users'}],
+                    'dimensions': [{'name': 'ga:isoYearIsoWeek'},
+                                   {'name': 'ga:deviceCategory'}]
                 }]
         }
     ).execute()
+
 
 def make_df(report):
     """Turn a single report from a Google Analytics response into dataframe"""
@@ -86,20 +95,18 @@ def make_df(report):
     return raw_df
 
 
-def output_df(df, board):
+def output_users(df, board):
     """Output a csv from dataframe contents."""
 
-    df.columns = ['users']
 
     filename = "{}_users.csv".format(board)
-
     df.to_csv(filename, date_format="%m/%d/%y")
 
-def run_report(analytics, board, view_id):
-    for metric in ['ga:users', 'ga:newUsers', '']:
-        response = get_report(analytics, view_id, metric)
-        df = make_df(response['reports'][0])
-        output_df(df, board)
+
+def run_reports(analytics, board, view_id):
+    response = get_reports(analytics, view_id)
+    user_df = make_df(response['reports'][0])
+    output_users(user_df, board)
 
 
 def main():
@@ -109,7 +116,7 @@ def main():
         boards = json.load(json_data_file)
 
     for board in boards:
-        run_report(analytics, board, boards[board])
+        run_reports(analytics, board, boards[board])
 
 
 if __name__ == '__main__':
