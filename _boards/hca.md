@@ -69,3 +69,7 @@ tiles:
         label: Returning
         color: rgb(175,175,175)
 ---
+
+Only 10% of veterans apply for health care online...
+
+...maybe because more than 70% of browsers are unable to access the application.
