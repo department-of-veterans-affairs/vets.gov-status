@@ -1,5 +1,5 @@
 <div class="col-md-12">
-{% unless project.status == "in progress" %}<a href="boards/{{project.board}}.html">{% endunless %}
+{% unless project.status == "in progress" %}<a href="{{site.baseurl}}{{project.url}}">{% endunless %}
   <div class="chart-wrapper">
     <div class="chart-title">
       {{project.title}}
