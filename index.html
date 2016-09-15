@@ -1,7 +1,23 @@
 ---
 title: Vets.gov Dashboard
-subtitle: Vets.gov is the single digital experience for Veterans to acccess the benefits they have earned
 tiles:
+
+  - name: Health care
+    layout: compare
+    datapoint: 50%
+    before: 10%
+    context: of applications for health care submitted electronically
+
+  - name: Mobile availability
+    layout: icon
+    icon: smartphone.svg
+    text: Vets.gov is designed to work equally well on desktop and mobile devices
+
+  - name: 508 compliance
+    layout: basic
+    datapoint: 100%
+    context: of pages are 508 compliant
+
   - name: Site Traffic
     layout: chart
     data: hca_sessions
@@ -21,13 +37,25 @@ tiles:
 
 <div class="row">
   <div class="col-md-12 subtitle">
-    <h3>{{page.subtitle}}</h3>
+    <p class="lead">Vets.gov improves Veterans' ability to access to the benefits they have earned.</p>
   </div>
 </div>
 
 <div class="row">
+  <div class="col-md-12 subtitle">
+    <h3>Featured Improvements</h3>
+  </div>
+</div>
+
+<div class="row">
+  {% for tile in page.tiles limit: 3 %}
+    {% include tiles/{{tile.layout}}.html %}
+  {% endfor %}
+</div>
+
+<div class="row">
   <div class="col-md-12">
-    <h3>Vets.gov features enable Veterans to do the following: </h3>
+    <h3>Vets.gov helps Veterans to&hellip;</h3>
   </div>
 </div>
 
@@ -55,7 +83,7 @@ tiles:
 </div>
 
 <div class="row">
-  {% for tile in page.tiles %}
+  {% for tile in page.tiles offset: 3 %}
     {% include tiles/{{tile.layout}}.html %}
   {% endfor %}
 </div>
