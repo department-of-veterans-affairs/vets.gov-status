@@ -1,6 +1,9 @@
 ---
 title: Health Care Application
-subtitle: Before 8% of Veterans were able to access the application
+date_added: 2016-06-30 00:00:00 -0500
+status: new
+category: Apply
+description: Making it easy to apply for VA health care online
 tiles:
   - name: Daily Submissions
     layout: basic

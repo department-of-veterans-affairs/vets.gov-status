@@ -1,6 +1,7 @@
 ---
 title: Content
-subtitle: Content from 524 sites that enable Veterans to discover, apply for, track, and manage benefits rewritten and migrated to vets.gov
+category: Discover
+description: Combining content from 524 sites into a single user-friendly experience
 tiles:
   - name: Before
     layout: basic
