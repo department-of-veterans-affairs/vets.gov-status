@@ -37,16 +37,16 @@ tiles:
 
   - name: Site Traffic
     layout: chart
-    data: hca_sessions
-    context: Total user sessions per day
+    data: hca_users
+    context: Total users per week
     cols:
-      - id: sessions
-        label: Number of Sessions
+      - id: all
+        label: Count of users
 
   - name: Mobile Usage
     layout: chart
     data: hca_mobile
-    context: Percentage of sessions by device type
+    context: Percentage of users by device type used
     yLabel: Percentage
     yMax: 100
     cols:
