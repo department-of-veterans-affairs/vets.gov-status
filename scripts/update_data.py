@@ -100,7 +100,14 @@ def output_users(df, board):
 
     df.columns = ['new', 'all']
     df['returning'] = df['all'] - df['new']
+
+    users = df.copy()
+    del users['new'], users['returning']
     filename = "{}_users.csv".format(board)
+    users.to_csv(filename, date_format="%m/%d/%y")
+
+    del df['all']
+    filename = "{}_new.csv".format(board)
     df.to_csv(filename, date_format="%m/%d/%y")
 
 def output_device(df, board):
@@ -117,8 +124,8 @@ def output_device(df, board):
 
     df['mobile'] = mobile['mobile']
     df['all'] = df['desktop'] + df['mobile']
-    df['mobile'] = df['mobile'] / df['all']
-    df['desktop'] = df['desktop'] / df['all']
+    df['mobile'] = (df['mobile'] / df['all']) * 100
+    df['desktop'] = (df['desktop'] / df['all']) * 100
 
     filename = "{}_mobile.csv".format(board)
     df.to_csv(filename, date_format="%m/%d/%y")
