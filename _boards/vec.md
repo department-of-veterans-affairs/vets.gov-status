@@ -1,10 +1,16 @@
 ---
 title: Veterans Employment Center
 date_added: 2015-11-01 00:00:00 -0500
+vetsdotgov_url: https://www.vets.gov/employment/
 status: normal
 category: Manage
 description: Will enable Veterans to verify their military status online!
 tiles:
+
+  - name: User Experience
+    layout: image-compare
+    before: old-healthcare.jpg
+    after: healthcare.jpg
 
   - name: Daily Submissions
     layout: basic
@@ -16,10 +22,10 @@ tiles:
     icon: smartphone.svg
     text: Veterans can now complete their application entirely from a smartphone    
 
-  - name: User experience
-    layout: image-compare
-    before: old-healthcare.jpg
-    after: healthcare.jpg
+  - name: Daily Submissions
+    layout: basic
+    datapoint: 750
+    context: on average
 
   - name: Site Traffic
     layout: chart

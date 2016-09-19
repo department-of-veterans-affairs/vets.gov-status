@@ -1,10 +1,16 @@
 ---
 title: GI Bill Comparison Tool
 date_added: 2015-11-01 00:00:00 -0500
+vetsdotgov_url: https://www.vets.gov/gi-bill-comparison-tool/
 status: normal
 category: Discover
 description: Now includes performance metrics on schools--and caution flags
 tiles:
+
+  - name: User Experience
+    layout: image-compare
+    before: old-healthcare.jpg
+    after: healthcare.jpg
 
   - name: Mobile availability
     layout: compare
@@ -12,10 +18,10 @@ tiles:
     before: 46%
     context: of content available on mobile devices
 
-  - name: User experience
-    layout: image-compare
-    before: old-healthcare.jpg
-    after: healthcare.jpg
+  - name: Daily Submissions
+    layout: basic
+    datapoint: 750
+    context: on average
 
   - name: Veteran testimonial
     layout: quote

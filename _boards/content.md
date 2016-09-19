@@ -3,6 +3,12 @@ title: Content
 category: Discover
 description: Combining content from 524 sites into a single user-friendly experience
 tiles:
+
+  - name: User Experience
+    layout: image-compare
+    before: old-healthcare.jpg
+    after: healthcare.jpg
+
   - name: Before
     layout: basic
     datapoint: 0%
