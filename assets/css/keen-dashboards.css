@@ -37,9 +37,13 @@
 
 body.application,
 .keen-dashboard {
-  background: #f2f2f2;
+  background: #fff;
   font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
   padding: 60px 20px 0;
+}
+
+body.application h3{
+  font-family: Roboto Slab,Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
 }
 
 body.application > .container-fluid,
@@ -124,8 +128,8 @@ body.application .return-link:hover,
 
 .chart-wrapper {
   background: #fff;
-  border: 1px solid #e2e2e2;
-  border-radius: 3px;
+  /*border: 1px solid #e2e2e2;
+  border-radius: 3px;*/
   margin-bottom: 10px;
 }
 .chart-wrapper .chart-title {
@@ -144,7 +148,7 @@ body.application .return-link:hover,
 
 .chart-wrapper .chart-notes {
   background: #fbfbfb;
-  border-top: 1px solid #e2e2e2;
+  /*border-top: 1px solid #e2e2e2;*/
   color: #808080;
   font-size: 12px;
   padding: 8px 10px 5px;

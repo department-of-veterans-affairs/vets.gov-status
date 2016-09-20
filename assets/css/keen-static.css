@@ -3,7 +3,7 @@ a, a:focus, a:hover, a:active {
 }
 
 h1, h2, h3 {
-  font-family: "Gotham Rounded", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Slab Regular","Source Sans Pro",Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;;
   margin: 12px 0;
 }
 h1 {
@@ -29,12 +29,6 @@ h3 {
 .btn {
   background: transparent;
   border: 1px solid white;
-}
-
-.keen-logo {
-  height: 38px;
-  margin: 0 15px 0 0;
-  width: 150px;
 }
 
 .navbar-toggle {
