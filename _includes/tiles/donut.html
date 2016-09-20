@@ -19,7 +19,7 @@ var myChart = new Chart(ctx, {
         labels: ['Datapoint'],
         datasets: [{
             data: [ {{tile.datapoint}}, {{ 100 | minus: tile.datapoint }} ],
-            backgroundColor: ['rgba(17,46,81,0.9)',
+            backgroundColor: ['rgba(17,46,81)',
                               'rgba(17,46,81,0)'],
             borderColor: ['rgb(17,46,81)',
                           'rgba(17,46,81,0)']

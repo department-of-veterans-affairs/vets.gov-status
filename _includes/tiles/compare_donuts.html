@@ -1,0 +1,84 @@
+<div class="col-sm-6 col-md-4">
+  <div class="chart-wrapper">
+    <div class="chart-title">
+      {{tile.name}}
+    </div>
+    <div class="chart-stage">
+      <div class="row">
+        <div class="col-xs-6">
+          <canvas id="{{tile.id}}-before" width="350" height="100"></canvas>
+          <span>Before</span>
+        </div>
+        <div class="col-xs-6">
+          <canvas id="{{tile.id}}" width="350" height="100"></canvas>
+          <span>After</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-notes">
+      {{tile.context}}
+    </div>
+  </div>
+</div>
+<script>
+var ctx = document.getElementById("{{tile.id}}-before");
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Datapoint'],
+        datasets: [{
+            data: [ {{tile.before}}, {{ 100 | minus: tile.before }} ],
+            backgroundColor: ['rgba(17,46,81)',
+                              'rgba(17,46,81,0)'],
+            borderColor: ['rgb(17,46,81)',
+                          'rgba(17,46,81,0)']
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
+        title: {
+          text: "{{tile.before}}%",
+          display: true,
+          position: 'bottom',
+          fontSize: 20,
+          fontFamily: 'Source Sans Pro',
+          fontStyle: 'normal',
+          fontColor: 'rgb(17,46,81)',
+        }
+
+    }
+});
+var ctx = document.getElementById("{{tile.id}}");
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Datapoint'],
+        datasets: [{
+            data: [ {{tile.datapoint}}, {{ 100 | minus: tile.datapoint }} ],
+            backgroundColor: ['rgba(17,46,81)',
+                              'rgba(17,46,81,0)'],
+            borderColor: ['rgb(17,46,81)',
+                          'rgba(17,46,81,0)']
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
+        title: {
+          text: "{{tile.datapoint}}%",
+          display: true,
+          position: 'bottom',
+          fontSize: 20,
+          fontFamily: 'Source Sans Pro',
+          fontStyle: 'normal',
+          fontColor: 'rgb(17,46,81)',
+        }
+
+    }
+});
+</script>

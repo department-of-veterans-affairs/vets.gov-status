@@ -9,11 +9,12 @@ before_jpg: gibct_old.png
 after_jpg: gibct.png
 tiles:
 
-  - name: Mobile availability
-    layout: compare
-    datapoint: 100%
-    before: 46%
-    context: of content available on mobile devices
+  - name: Mobile-first design
+    layout: compare_donuts
+    id: mobile
+    datapoint: 100
+    before: 46
+    context: percentage of sites available on mobile
 
   - name: Veteran testimonial
     layout: quote

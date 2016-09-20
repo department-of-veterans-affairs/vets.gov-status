@@ -7,10 +7,11 @@ after_jpg: content.png
 tiles:
 
   - name: Mobile-first design
-    layout: compare
-    datapoint: 100%
-    before: 46%
-    context: of sites available on mobile
+    layout: compare_donuts
+    id: mobile
+    datapoint: 100
+    before: 46
+    context: percentage of sites available on mobile
 
   - name: Plain language compliance
     layout: donut
