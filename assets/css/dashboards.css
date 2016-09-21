@@ -3,38 +3,6 @@
  * Full-page application style
  */
 
- @font-face {
-   font-family: 'Roboto Slab';
-   font-style: normal;
-   font-weight: 400;
-   src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zogp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
- }
- @font-face {
-   font-family: 'Source Sans Pro';
-   font-style: normal;
-   font-weight: 300;
-   src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCP2LEk6lMzYsRqr3dHFImA.woff2) format('woff2');
- }
- @font-face {
-   font-family: 'Source Sans Pro';
-   font-style: normal;
-   font-weight: 400;
-   src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2');
- }
- @font-face {
-   font-family: 'Source Sans Pro';
-   font-style: normal;
-   font-weight: 600;
-   src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMzFoXZ-Kj537nB_-9jJhlA.woff2) format('woff2');
- }
- @font-face {
-   font-family: 'Source Sans Pro';
-   font-style: normal;
-   font-weight: 700;
-   src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGJkF8H8ye47wsfpWywda8og.woff2) format('woff2');
- }
-
-
 body.application,
 .keen-dashboard {
   background: #fff;
@@ -147,8 +115,6 @@ body.application .return-link:hover,
 }
 
 .chart-wrapper .chart-notes {
-  background: #fbfbfb;
-  /*border-top: 1px solid #e2e2e2;*/
   color: #808080;
   font-size: 12px;
   padding: 8px 10px 5px;
