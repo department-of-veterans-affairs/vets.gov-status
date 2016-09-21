@@ -1,0 +1,105 @@
+---
+title: Vets.gov Dashboard
+tiles:
+
+  - name: Basic
+    layout: basic
+    datapoint: 10
+    context: on average
+
+  - name: Icon
+    layout: icon
+    icon: smartphone.svg
+    text: Vets.gov is designed to work equally well on desktop and mobile devices
+
+  - name: Compare
+    layout: compare
+    datapoint: Daily
+    before: 60 to 90 days
+    context: release cycle to deliver improvements to Veterans' experience
+
+  - name: Compare Donuts
+    layout: compare_donuts
+    id: demo
+    datapoint: 75
+    before: 50
+    context: percentage of stuff
+
+  - name: Donut
+    layout: donut
+    id: fiveoheight
+    datapoint: 75
+    context: of pages are 508 compliant
+
+  - name: Quote
+    layout: quote
+    text: The other website takes you around the corner, over the meadow, and...in a back door blocked with spikes and IEDs
+
+  - name: Chart
+    layout: chart
+    data: core_users
+    context: Total users per week
+    cols:
+      - id: all
+        label: Count of users
+
+projects:
+
+  - title: Normal
+    date_added: 2015-11-01 00:00:00 -0500
+    status: normal
+    description: Stuff
+
+  - title: New
+    date_added: 2016-11-01 00:00:00 -0500
+    status: new
+    description: New stuff
+
+  - title: In Progress
+    date_added:
+    status: in progress
+    description: Not yet ready stuff
+---
+
+{% include header.html %}
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{page.title}}</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 subtitle">
+    <p class="lead">Vets.gov enables Veterans to discover, apply for, track, and manage the benefits they have earned.</p>
+  </div>
+</div>
+
+<div class="row">
+  {% for tile in page.tiles %}
+    {% include tiles/{{tile.layout}}.html %}
+  {% endfor %}
+</div>
+
+<div class="row">
+{% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
+{% for category in categories %}
+  <div class="col-sm-6 col-md-3">
+    <div class="row">
+        {% for project in page.projects %}
+          {% include tiles/project.html %}
+        {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+  <div class="col-sm-6 col-md-3">
+    <div class="row">
+        {% include tiles/suggest.html %}
+    </div>
+  </div>
+
+</div>
+
+
+
+{% include footer.html %}
