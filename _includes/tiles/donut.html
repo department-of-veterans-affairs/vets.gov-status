@@ -4,10 +4,8 @@
       {{tile.name}}
     </div>
     <div class="chart-stage">
-      <canvas id="{{tile.id}}" width="350" height="150"></canvas>
-    </div>
-    <div class="chart-notes">
-      {{tile.context}}
+      <canvas id="{{tile.id}}" width="300" height="120"></canvas>
+      <span class="chart-notes">{{tile.context}}: {{tile.datapoint}}</span>
     </div>
   </div>
 </div>
@@ -26,20 +24,10 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         legend: {
           display: false
-        },
-        title: {
-          text: "{{tile.datapoint}}%",
-          display: true,
-          position: 'bottom',
-          fontSize: 20,
-          fontFamily: 'Source Sans Pro',
-          fontStyle: 'normal',
-          fontColor: 'rgb(17,46,81)',
         }
-
     }
 });
 </script>

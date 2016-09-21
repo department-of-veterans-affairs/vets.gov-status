@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row row-tile">
   {% for tile in page.tiles limit: 3 %}
     {% include tiles/{{tile.layout}}.html %}
   {% endfor %}

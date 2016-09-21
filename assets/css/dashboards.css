@@ -93,8 +93,8 @@ b {
 }
 
 body.application div[class^="col-"] {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 body.application div[class^="col-"] div[class^="col-"] {
@@ -113,32 +113,45 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 .chart-wrapper {
   background: #F5F5F5;
-  margin-bottom: 10px;
+  padding: 20px;
 }
 .chart-wrapper .chart-title {
   color: #112e51;
   font-size: 24px;
   font-weight: 600;
-  padding: 10px 10px 4px;
-  min-height: 85px;
+  padding: 10px 10px 0px;
+  min-height: 60px;
+  line-height: 1em;
 }
 
 .chart-wrapper .chart-stage {
   overflow: hidden;
   padding: 5px 10px;
   position: relative;
-  min-height: 150px;
+  min-height: 130px;
 }
 
 .chart-stage .datapoint {
   font-size: 72px;
   font-weight: 700;
   color: #0071BC;
+  line-height: 1em;
+  margin: 0;
+}
+
+.compare-before {
+  border-right: 1px solid #AAA;
+}
+
+.before-text {
+  color: #4A4A4A;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1em;
+  margin: 0;
 }
 
 .chart-wrapper .chart-notes {
-  color: #808080;
-  font-size: 12px;
-  padding: 8px 10px 5px;
-  min-height: 32px;
+  color: #4A4A4A;
+  font-size: 16px;
 }

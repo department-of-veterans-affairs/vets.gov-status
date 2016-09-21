@@ -6,17 +6,14 @@
     <div class="chart-stage">
       <div class="row">
         <div class="col-xs-6">
-          <canvas id="{{tile.id}}-before" width="350" height="100"></canvas>
-          <span>Before</span>
+          <canvas id="{{tile.id}}-before" width="350" height="90"></canvas>
+          <span class="chart-notes">Before: {{tile.before}}%</span>
         </div>
         <div class="col-xs-6">
-          <canvas id="{{tile.id}}" width="350" height="100"></canvas>
-          <span>After</span>
+          <canvas id="{{tile.id}}" width="350" height="90"></canvas>
+          <span class="chart-notes">After: {{tile.datapoint}}%</span>
         </div>
       </div>
-    </div>
-    <div class="chart-notes">
-      {{tile.context}}
     </div>
   </div>
 </div>
@@ -42,7 +39,7 @@ var myChart = new Chart(ctx, {
         title: {
           text: "{{tile.before}}%",
           display: true,
-          position: 'bottom',
+          position: 'top',
           fontSize: 20,
           fontFamily: 'Source Sans Pro',
           fontStyle: 'normal',
@@ -70,9 +67,9 @@ var myChart = new Chart(ctx, {
           display: false
         },
         title: {
-          text: "{{tile.datapoint}}%",
+          text: "",
           display: true,
-          position: 'bottom',
+          position: 'top',
           fontSize: 20,
           fontFamily: 'Source Sans Pro',
           fontStyle: 'normal',

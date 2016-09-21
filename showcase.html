@@ -1,5 +1,5 @@
 ---
-title: Vets.gov Dashboard
+title: Tile Showcase
 tiles:
 
   - name: Basic
@@ -14,8 +14,8 @@ tiles:
 
   - name: Compare
     layout: compare
-    datapoint: Daily
-    before: 60 to 90 days
+    datapoint: 100
+    before: 60
     context: release cycle to deliver improvements to Veterans' experience
 
   - name: Compare Donuts
@@ -29,7 +29,7 @@ tiles:
     layout: donut
     id: fiveoheight
     datapoint: 75
-    context: of pages are 508 compliant
+    context: Percentage of stuff
 
   - name: Quote
     layout: quote
@@ -63,19 +63,7 @@ projects:
 
 {% include header.html %}
 
-<div class="row">
-  <div class="col-md-12">
-    <h1>{{page.title}}</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12 subtitle">
-    <p class="lead">Vets.gov enables Veterans to discover, apply for, track, and manage the benefits they have earned.</p>
-  </div>
-</div>
-
-<div class="row">
+<div class="row row-tile">
   {% for tile in page.tiles %}
     {% include tiles/{{tile.layout}}.html %}
   {% endfor %}
