@@ -3,8 +3,7 @@
  * Full-page application style
  */
 
-body.application,
-.keen-dashboard {
+body.application {
   background: #fff;
   font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
   padding: 60px 20px 0;
@@ -14,8 +13,7 @@ body.application h3{
   font-family: Roboto Slab,Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
 }
 
-body.application > .container-fluid,
-.keen-dashboard > .container-fluid {
+body.application > .container-fluid{
   margin: 0 0 32px;
   margin: 0 0 2rem;
   padding-left: 0;
@@ -35,26 +33,22 @@ body.application > .container-fluid,
   padding-bottom: 15px;
 }
 
-body.application div[class^="col-"],
-.keen-dashboard div[class^="col-"] {
+body.application div[class^="col-"] {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-body.application div[class^="col-"] div[class^="col-"],
-.keen-dashboard div[class^="col-"] div[class^="col-"] {
+body.application div[class^="col-"] div[class^="col-"] {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-body.application hr,
-.keen-dashboard hr {
+body.application hr {
   border-color: #d7d7d7;
   margin: 10px 0;
 }
 
-body.application .navbar-inverse,
-.keen-dashboard .navbar-inverse {
+body.application .navbar-inverse {
   background-color: #112E51;
   border-color: #333;
 }
@@ -64,9 +58,7 @@ body.application a {
 }
 
 body.application .navbar-inverse .navbar-nav > li > a,
-body.application .navbar .navbar-brand,
-.keen-dashboard .navbar-inverse .navbar-nav > li > a,
-.keen-dashboard .navbar .navbar-brand {
+body.application .navbar .navbar-brand {
   color: #fbfbfb;
   text-decoration: none;
 }
@@ -75,8 +67,7 @@ body.application .navbar .navbar-brand,
   padding-top: 0;
 }
 
-body.application .main-nav > li > a:hover,
-.keen-dashboard .main-nav > li > a:hover {
+body.application .main-nav > li > a:hover {
   border-bottom: 2px solid transparent;
   -webkit-transition: border 300ms ease;
   -o-transition: border 300ms ease;
@@ -86,10 +77,7 @@ body.application .main-nav > li > a:hover,
 
 body.application .return-link,
 body.application .return-link:focus,
-body.application .return-link:hover,
-.keen-dashboard .return-link,
-.keen-dashboard .return-link:focus,
-.keen-dashboard .return-link:hover {
+body.application .return-link:hover {
   text-decoration: none;
 }
 
