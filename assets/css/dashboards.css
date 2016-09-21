@@ -8,15 +8,62 @@ body.application {
   font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
 }
 
-body.application h3{
-  font-family: Roboto Slab,Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+b {
+  color: #FAC922;
 }
 
-body.application > .container-fluid{
+.dash-header {
   margin: 0 0 32px;
   margin: 0 0 2rem;
-  padding-left: 0;
+  padding-left: 20px;
   padding-right: 0;
+  background-color: #0071BC;
+  color: #fff;
+}
+
+.header-logo {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background:#112e51 url(http://vets.gov/img/design/background/thread.png) 100% no-repeat;
+  margin-left: -15px;
+  font-size: 36px;
+}
+
+.header-logo span {
+  padding-left: 1rem;
+}
+
+.header-logo img {
+  padding-left: 15px;
+}
+
+.dash-subhead {
+  padding-top: 3rem;
+  padding-left: 60px;
+  padding-bottom: 3rem;
+  padding-right: 60px;
+}
+
+.dash-subhead a, a:hover {
+    color: #fff;
+}
+
+.dash-subhead h1 {
+  font-weight: bold;
+}
+
+.dash-subhead p {
+  font-size: 16px;
+}
+
+.btn-app {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+.btn-app:hover {
+  color: #fff;
 }
 
 body.application div[class^="col-"] {
@@ -34,21 +81,6 @@ body.application hr {
   margin: 10px 0;
 }
 
-body.application .navbar-inverse {
-  background-color: #112E51;
-  border-color: #333;
-}
-
-body.application a {
-  color: #112E51;
-}
-
-body.application .navbar-inverse .navbar-nav > li > a,
-body.application .navbar .navbar-brand {
-  color: #fbfbfb;
-  text-decoration: none;
-}
-
 body.application .main-nav > li > a:hover {
   border-bottom: 2px solid transparent;
   -webkit-transition: border 300ms ease;
@@ -61,11 +93,6 @@ body.application .return-link,
 body.application .return-link:focus,
 body.application .return-link:hover {
   text-decoration: none;
-}
-
-.dash-header {
-    background-color: #112E51;
-    margin-top: -60px;
 }
 
 .label-status {
@@ -83,8 +110,6 @@ body.application .return-link:hover {
 
 .chart-wrapper {
   background: #fff;
-  /*border: 1px solid #e2e2e2;
-  border-radius: 3px;*/
   margin-bottom: 10px;
 }
 .chart-wrapper .chart-title {
