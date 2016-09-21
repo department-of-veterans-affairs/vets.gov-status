@@ -66,6 +66,21 @@ b {
   color: #fff;
 }
 
+.dash-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ux-compare {
+  padding-top: 3rem;
+}
+
+.ux-compare .title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #0071BC;
+}
+
 body.application div[class^="col-"] {
   padding-left: 5px;
   padding-right: 5px;
