@@ -6,7 +6,6 @@
 body.application {
   background: #fff;
   font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
-  padding: 60px 20px 0;
 }
 
 body.application h3{
@@ -18,19 +17,6 @@ body.application > .container-fluid{
   margin: 0 0 2rem;
   padding-left: 0;
   padding-right: 0;
-}
-
-.label-status {
-  vertical-align: super;
-  font-size: 12px;
-}
-
-.category-header {
-  text-align: center;
-}
-
-.subtitle {
-  padding-bottom: 15px;
 }
 
 body.application div[class^="col-"] {
@@ -63,10 +49,6 @@ body.application .navbar .navbar-brand {
   text-decoration: none;
 }
 
-.navbar-brand {
-  padding-top: 0;
-}
-
 body.application .main-nav > li > a:hover {
   border-bottom: 2px solid transparent;
   -webkit-transition: border 300ms ease;
@@ -81,6 +63,23 @@ body.application .return-link:hover {
   text-decoration: none;
 }
 
+.dash-header {
+    background-color: #112E51;
+    margin-top: -60px;
+}
+
+.label-status {
+  vertical-align: super;
+  font-size: 12px;
+}
+
+.category-header {
+  text-align: center;
+}
+
+.subtitle {
+  padding-bottom: 15px;
+}
 
 .chart-wrapper {
   background: #fff;
