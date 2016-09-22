@@ -75,17 +75,19 @@ b {
 
 .ux-compare {
   padding-top: 3rem;
+  margin-bottom: 20px;
 }
 
 .ux-compare > .title,
-.category-header {
+.category-header,
+.title {
   font-weight: bold;
   font-size: 24px;
   color: #0071BC;
 }
 
 .subtitle {
-  padding-top: 4rem;
+  padding-top: 2rem;
   padding-bottom: 4rem;
 }
 
@@ -138,7 +140,7 @@ body.application div[class^="col-"] div[class^="col-"] {
 }
 
 .category-grid a > .project-wrapper:hover{
-  background-color: #0071BC;  
+  background-color: #0071BC;
 }
 
 .project-wrapper {
@@ -158,8 +160,9 @@ body.application div[class^="col-"] div[class^="col-"] {
 .chart-wrapper {
   background: #F5F5F5;
   padding: 20px;
+  margin-bottom: 20px;
 }
-.chart-wrapper .chart-title {
+.chart-wrapper > .chart-title {
   color: #112e51;
   font-size: 24px;
   font-weight: 600;
@@ -177,7 +180,8 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 .chart-wrapper .chart-holder {
   overflow: hidden;
-  padding: 22px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   position: relative;
 }
 
@@ -187,6 +191,18 @@ body.application div[class^="col-"] div[class^="col-"] {
   color: #0071BC;
   line-height: 1em;
   margin: 0;
+}
+
+.quotes {
+  color: #0071BC;
+  font-size: 100px;
+  font-weight: 700;
+  vertical-align: top;
+  line-height: 80px;
+}
+
+.lead {
+  font-size: 16pt;
 }
 
 .compare-before {
@@ -225,7 +241,7 @@ body.application div[class^="col-"] div[class^="col-"] {
 }
 
 .tabs-chart > li.active {
-  border-left: 15px solid #F5A623;
+  border-left: 10px solid #F5A623;
 }
 
 .tabs-chart > li.active > a,
@@ -235,6 +251,14 @@ body.application div[class^="col-"] div[class^="col-"] {
   color: #FFF;
   border-radius: 0px 0px 0px 0px;
   border-width: 0px;
+}
+
+.migration-header {
+  color: #112e51;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1em;
+  margin-bottom: 30px;
 }
 
 .row-footer {

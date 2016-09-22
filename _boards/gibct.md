@@ -9,6 +9,11 @@ before_jpg: gibct_old.png
 after_jpg: gibct.png
 tiles:
 
+  - name: Mobile availability
+    layout: icon
+    icon: smartphone.svg
+    text: Veterans can now complete their application entirely from a smartphone
+
   - name: Mobile-first design
     layout: compare_donuts
     id: mobile
@@ -19,11 +24,6 @@ tiles:
   - name: Veteran testimonial
     layout: quote
     text: The other website takes you around the corner, over the meadow, and...in a back door blocked with spikes and IEDs
-
-  - name: Mobile availability
-    layout: icon
-    icon: smartphone.svg
-    text: Veterans can now complete their application entirely from a smartphone
 
   - name: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span><p>Site Traffic</p>
     layout: chart
