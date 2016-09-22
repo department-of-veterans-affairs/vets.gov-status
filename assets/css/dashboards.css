@@ -19,6 +19,7 @@ b {
   padding-right: 0;
   background-color: #0071BC;
   color: #fff;
+  overflow: hidden;
 }
 
 .header-logo {
@@ -26,11 +27,12 @@ b {
   padding-bottom: 3rem;
   background:#112e51 url(http://vets.gov/img/design/background/thread.png) 100% no-repeat;
   margin-left: -15px;
-  font-size: 36px;
+  font-size: 40px;
 }
 
 .header-logo span {
   padding-left: 1rem;
+  vertical-align: -5%;
 }
 
 .header-logo img {
@@ -102,6 +104,14 @@ body.application div[class^="col-"] div[class^="col-"] {
   padding-right: 15px;
 }
 
+.col-chart-tabs {
+    padding-right: 0 !important;
+}
+
+.col-charts  {
+  padding-left: 0 !important;
+}
+
 .label-status {
   vertical-align: super;
   font-size: 12px;
@@ -131,6 +141,12 @@ body.application div[class^="col-"] div[class^="col-"] {
   min-height: 130px;
 }
 
+.chart-wrapper .chart-holder {
+  overflow: hidden;
+  padding: 22px 10px;
+  position: relative;
+}
+
 .chart-stage .datapoint {
   font-size: 72px;
   font-weight: 700;
@@ -154,4 +170,41 @@ body.application div[class^="col-"] div[class^="col-"] {
 .chart-wrapper .chart-notes {
   color: #4A4A4A;
   font-size: 16px;
+}
+
+.tabs-chart {
+  padding-top: 0 !important;
+}
+
+.tabs-chart li {
+  background-color: #264060;
+  font-size: 32px;
+  text-align: center;
+}
+
+.tabs-chart > li > a:hover {
+  background-color: #112E51;
+}
+
+.tabs-chart > li > a {
+  color: #FFF;
+}
+
+.tabs-chart > li.active {
+  border-left: 15px solid #F5A623;
+}
+
+.tabs-chart > li.active > a,
+.tabs-chart > li.active > a:hover,
+.tabs-chart > li.active > a:focus {
+  background-color: #112E51;
+  color: #FFF;
+  border-radius: 0px 0px 0px 0px;
+  border-width: 0px;
+}
+
+.row-footer {
+  min-height: 60px;
+  background:#112e51 url(http://vets.gov/img/design/background/thread.png) 100% no-repeat;
+  margin-top: 100px;
 }

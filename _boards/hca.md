@@ -25,7 +25,7 @@ tiles:
     icon: smartphone.svg
     text: Veterans can now complete their application entirely from a smartphone
 
-  - name: Site Traffic
+  - name: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span><p>Site Traffic</p>
     layout: chart
     data: hca_users
     context: Total users per week
@@ -33,7 +33,7 @@ tiles:
       - id: all
         label: Count of users
 
-  - name: Mobile Usage
+  - name: <span class="glyphicon glyphicon-phone" aria-hidden="true"></span><p>Mobile Usage</p>
     layout: chart
     data: hca_mobile
     context: Percentage of users by device type used
@@ -45,18 +45,6 @@ tiles:
         color: rgb(17,46,81)
       - id: desktop
         label: Desktop
-        color: rgb(175,175,175)
-
-  - name: New and Returning Users
-    layout: chart
-    data: hca_new
-    context: Count of users
-    cols:
-      - id: new
-        label: New
-        color: rgb(17,46,81)
-      - id: returning
-        label: Returning
         color: rgb(175,175,175)
 ---
 

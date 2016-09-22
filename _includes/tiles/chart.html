@@ -1,19 +1,12 @@
-<div class="col-sm-12">
+
   <div class="chart-wrapper">
-    <div class="chart-title">
-      {{tile.name}}
-    </div>
-    <div class="chart-stage">
-      <canvas id="{{tile.data}}" width="400" height="150"></canvas>
-    </div>
-    <div class="chart-notes">
-      {{tile.context}}
+    <div class="chart-holder">
+      <canvas id="{{tile.data}}-chart" width="520" height="150"></canvas>
     </div>
   </div>
-</div>
 
 <script>
-var ctx = document.getElementById("{{tile.data}}");
+var ctx = document.getElementById("{{tile.data}}-chart");
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -36,7 +29,7 @@ var myChart = new Chart(ctx, {
         ]
     },
     options: {
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {
@@ -46,14 +39,29 @@ var myChart = new Chart(ctx, {
                   display: true,
                   labelString: '{{tile.yLabel}}'
                   {% if tile.yMax %}, max: {{tile.yMax}} {% endif %}
-                }
+                },
+            }],
+            xAxes: [{
+              gridLines: {
+                display: false
+              }
             }]
         },
-        {% if tile.cols.size == 1 %}
         legend: {
+          position: 'bottom',
+          {% if tile.cols.size == 1 %}
           display: false
+          {% endif %}
+        },
+        title: {
+          text: '{{tile.context}}',
+          display: true,
+          position: 'bottom',
+          fontSize: 20,
+          fontFamily: 'Source Sans Pro',
+          fontStyle: 'normal',
+          fontColor: 'rgb(17,46,81)'
         }
-        {% endif %}
     }
 });
 </script>

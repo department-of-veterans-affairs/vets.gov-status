@@ -13,13 +13,27 @@
 {% if page.tiles.size > 3 %}
 <div class="row subtitle">
   <div class="col-md-12">
-    <p>Overall Measures</p>
+    <p>Traffic</p>
   </div>
 </div>
 
 <div class="row">
-  {% for tile in page.tiles offset: 3 %}
-    {% include tiles/{{tile.layout}}.html %}
-  {% endfor %}
+  <div class="col-xs-2 col-chart-tabs"> <!-- required for floating -->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs tabs-left tabs-chart">
+        {% for tile in page.tiles offset: 3 %}
+        <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{tile.data}}" data-toggle="tab">{{tile.name}}</a></li>
+        {% endfor %}
+      </ul>
+  </div>
+
+  <div class="col-xs-10 col-charts">
+      <!-- Tab panes -->
+      <div class="tab-content">
+        {% for tile in page.tiles offset: 3 %}
+        <div class="tab-pane{% if forloop.first == true %} active{% endif %}" id="{{tile.data}}">{% include tiles/{{tile.layout}}.html %}</div>
+        {% endfor %}
+      </div>
+  </div>
 </div>
 {% endif %}
