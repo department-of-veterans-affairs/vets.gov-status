@@ -5,8 +5,8 @@ vetsdotgov_url:
 status: progress
 category: Track
 description: Track and update your claim all in one place
-before_jpg: old-healthcare.jpg
-after_jpg: healthcare.jpg
+before_jpg: 
+after_jpg:
 tiles:
 
   - name: Mobile availability

@@ -5,13 +5,13 @@ vetsdotgov_url:
 status: progress
 category: Apply
 description: Veterans can apply for eduction benefits online using any device.
-before_jpg: old-healthcare.jpg
-after_jpg: healthcare.jpg
+before_jpg: 
+after_jpg:
 tiles:
 
   - name: Mobile availability
     layout: icon
-    icon: smartphone.svg
+    icon: phone
     text: Veterans can now complete their application entirely from a smartphone
 
 ---

@@ -2,16 +2,16 @@
 title: Prescription Refills
 date_added:
 vetsdotgov_url:
-status: progress
+status: normal
 category: Manage
 description: Get necessary medicine ordered from any device
-before_jpg: old-healthcare.jpg
-after_jpg: healthcare.jpg
+before_jpg: rx_old.png
+after_jpg: rx.png
 tiles:
 
-  - name: Mobile availability
+  - name: On-the-go access
     layout: icon
-    icon: smartphone.svg
-    text: Veterans can now complete their application entirely from a smartphone
+    icon: phone
+    text: Veterans can refill their medicine from a smartphone
 
 ---

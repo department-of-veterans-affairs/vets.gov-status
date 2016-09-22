@@ -9,7 +9,7 @@ before_jpg: crisisline_old.png
 after_jpg: crisisline.png
 tiles:
 
-  - name: Mobile availability
+  - name: Simple access from mobile
     layout: icon
     icon: phone
     text: One click to text or call from any mobile device

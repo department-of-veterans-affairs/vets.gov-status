@@ -97,6 +97,12 @@ b {
   color: #112e51;
 }
 
+.access-sentence {
+  font-size: 24px;
+  color: #4A4A4A;
+  margin-top: -10px;
+}
+
 body.application div[class^="col-"] {
   padding-left: 10px;
   padding-right: 10px;
