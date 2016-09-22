@@ -9,16 +9,19 @@ before_jpg: content_old.png
 after_jpg: content.png
 tiles:
 
-  - name: Mobile-first design
-    layout: compare_donuts
-    id: mobile
-    datapoint: 100
-    before: 46
-    context: percentage of sites available on mobile
+  - name: Consolidated sites
+    layout: basic
+    datapoint: 524
+    context: into one location by early 2017
 
-  - name: Plain language compliance
+  - name: Mobile availability
+    layout: icon
+    icon: phone
+    text: Content displays equally as well on mobile devices
+
+  - name: Plain language
     layout: donut
-    id: plainlanguage
-    datapoint: 100
-    context: percentage of content rewritten
+    id: migration
+    datapoint: 75
+    context: Content rewritten
 ---

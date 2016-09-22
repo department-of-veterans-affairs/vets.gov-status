@@ -1,7 +1,7 @@
 
   <div class="chart-wrapper">
     <div class="chart-holder">
-      <canvas id="{{tile.data}}-chart" width="600" height="252"></canvas>
+      <canvas id="{{tile.data}}-chart" width="600" height="170"></canvas>
     </div>
   </div>
 
@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
         ]
     },
     options: {
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [{
                 ticks: {

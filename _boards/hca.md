@@ -6,24 +6,24 @@ status: new
 category: Apply
 description: Increasing online applications from 10% before to 40% in 2017
 before_jpg: healthcare_old.png
-after_jpg: healthcare.jpg
+after_jpg: healthcare.png
 tiles:
 
-  - name: Daily Submissions
-    layout: basic
-    datapoint: 555
-    context: on average each weekday in August
-
-  - name: Automatically processed applications
+  - name: Online applications
     layout: compare
-    datapoint: 500
-    before: 62
-    context: per day that require no manual intervention
+    datapoint: 50%
+    before: 10%
 
   - name: Mobile availability
     layout: icon
-    icon: smartphone.svg
+    icon: phone
     text: Veterans can now complete their application entirely from a smartphone
+
+  - name: Automatically processed applications
+    layout: compare
+    datapoint: 495
+    before: 62
+    context: per day that require no manual intervention
 
   - name: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span><p>Site Traffic</p>
     layout: chart

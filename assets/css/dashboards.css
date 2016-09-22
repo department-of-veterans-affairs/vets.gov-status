@@ -205,13 +205,21 @@ body.application div[class^="col-"] div[class^="col-"] {
   font-size: 16pt;
 }
 
+.compare {
+  float: left;
+  max-width: 50%;
+  padding-left: 20px;
+}
+
 .compare-before {
   border-right: 1px solid #AAA;
+  padding-right: 20px;
+  padding-left: 0px;
 }
 
 .before-text {
   color: #4A4A4A;
-  font-size: 72px;
+  font-size: 68px;
   font-weight: 700;
   line-height: 1em;
   margin: 0;

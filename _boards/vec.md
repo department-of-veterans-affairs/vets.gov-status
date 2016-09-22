@@ -9,20 +9,15 @@ before_jpg: vec_old.png
 after_jpg: vec.png
 tiles:
 
-  - name: Daily Submissions
+  - name: Savings
     layout: basic
-    datapoint: 750
-    context: on average
+    datapoint: $8m
+    context: using small, agile teams
 
   - name: Mobile availability
     layout: icon
-    icon: smartphone.svg
-    text: Veterans can now complete their application entirely from a smartphone    
-
-  - name: Daily Submissions
-    layout: basic
-    datapoint: 750
-    context: on average
+    icon: phone
+    text: Enables Veterans to find employment opportunities on their mobile devices   
 
   - name: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span><p>Site Traffic</p>
     layout: chart

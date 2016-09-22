@@ -9,21 +9,11 @@ before_jpg: gibct_old.png
 after_jpg: gibct.png
 tiles:
 
-  - name: Mobile availability
+  - name: Caution warnings
     layout: icon
-    icon: smartphone.svg
-    text: Veterans can now complete their application entirely from a smartphone
+    icon: warning-sign
+    text: Warns on schools, such as ITT, that are not performing well
 
-  - name: Mobile-first design
-    layout: compare_donuts
-    id: mobile
-    datapoint: 100
-    before: 46
-    context: percentage of sites available on mobile
-
-  - name: Veteran testimonial
-    layout: quote
-    text: The other website takes you around the corner, over the meadow, and...in a back door blocked with spikes and IEDs
 
   - name: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span><p>Site Traffic</p>
     layout: chart

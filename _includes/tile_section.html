@@ -1,16 +1,22 @@
+
+
 <div class="row subtitle">
   <div class="col-md-12">
     <p>Featured Improvements</p>
   </div>
 </div>
 
+
+{% assign featured = page.tiles | where_exp: "item", "item.layout != 'chart'" %}
 <div class="row row-tile">
-  {% for tile in page.tiles limit: 3 %}
+  {% for tile in featured limit: 3 %}
     {% include tiles/{{tile.layout}}.html %}
   {% endfor %}
 </div>
 
-{% if page.tiles.size > 3 %}
+
+{% assign charts = page.tiles | where: "layout", "chart" %}
+{% if charts.size > 0 %}
 <div class="row subtitle">
   <div class="col-md-12">
     <p>Traffic</p>
@@ -21,7 +27,7 @@
   <div class="col-xs-2 col-chart-tabs"> <!-- required for floating -->
       <!-- Nav tabs -->
       <ul class="nav nav-tabs tabs-left tabs-chart">
-        {% for tile in page.tiles offset: 3 %}
+        {% for tile in charts %}
         <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{tile.data}}" data-toggle="tab">{{tile.name}}</a></li>
         {% endfor %}
       </ul>
@@ -30,7 +36,7 @@
   <div class="col-xs-10 col-charts">
       <!-- Tab panes -->
       <div class="tab-content">
-        {% for tile in page.tiles offset: 3 %}
+        {% for tile in charts %}
         <div class="tab-pane{% if forloop.first == true %} active{% endif %}" id="{{tile.data}}">{% include tiles/{{tile.layout}}.html %}</div>
         {% endfor %}
       </div>
