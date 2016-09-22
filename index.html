@@ -3,22 +3,21 @@ title: Vets.gov Dashboard
 mission_statement: Vets.gov enables Veterans to <b>discover</b>, <b>track</b>, <b>apply</b>, and <b>manage</b> the benefits they have earned
 tiles:
 
-  - name: Delivery speed
+  - name: Days to release improvements
     layout: compare
     datapoint: 1
     before: 60
     context: days to release improvements to Veterans' experience
 
-  - name: Mobile availability
-    layout: icon
-    icon: smartphone.svg
-    text: Vets.gov is designed to work equally well on desktop and mobile devices
-
   - name: 508 compliance
-    layout: donut
-    id: fiveoheight
-    datapoint: 100
-    context: of pages are 508 compliant
+    layout: basic
+    datapoint: 100%
+    context: of pages are accessible
+
+  - name: Sites available on mobile
+    layout: compare
+    datapoint: 100%
+    before: 46%
 
   - name: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span><p>Site Traffic</p>
     layout: chart
@@ -77,22 +76,25 @@ tiles:
   </div>
 </div>
 
+
 <div class="row chart-stage">
-  <div class="col-sm-12 col-md-4">
+
+  <div class="col-sm-6 col-md-4">
       <div>
         <p class="migration-header">Products</p>
       </div>
-        <div class="row">
-          <div class="col-xs-6 compare-before">
+      <div class="chart-stage">
+        <div class="compare compare-before">
             <p class="datapoint">23</p>
             <span class="chart-notes">In development</span>
-          </div>
-          <div class="col-xs-6">
+        </div>
+        <div class="compare">
             <p class="before-text">12</p>
             <span class="chart-notes">In backlog</span>
-          </div>
         </div>
       </div>
+    </div>
+
 
   <div class="col-sm-12 col-md-4">
     <div class="row">

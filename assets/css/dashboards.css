@@ -219,9 +219,9 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 .before-text {
   color: #4A4A4A;
-  font-size: 68px;
+  font-size: 50px;
   font-weight: 700;
-  line-height: 1em;
+  line-height: 72px;
   margin: 0;
 }
 

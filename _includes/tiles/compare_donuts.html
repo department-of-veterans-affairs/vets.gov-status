@@ -4,16 +4,14 @@
       {{tile.name}}
     </div>
     <div class="chart-stage">
-      <div class="row">
-        <div class="col-xs-6">
-          <canvas id="{{tile.id}}-before" width="350" height="90"></canvas>
+        <div class="compare compare-before">
+          <canvas id="{{tile.id}}-before" width="100" height="100"></canvas>
           <span class="chart-notes">Before: {{tile.before}}%</span>
         </div>
-        <div class="col-xs-6">
-          <canvas id="{{tile.id}}" width="350" height="90"></canvas>
+        <div class="compare">
+          <canvas id="{{tile.id}}-after" width="100" height="100"></canvas>
           <span class="chart-notes">After: {{tile.datapoint}}%</span>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -28,6 +26,10 @@ var myChart = new Chart(ctx, {
             backgroundColor: ['rgba(17,46,81)',
                               'rgba(17,46,81,0)'],
             borderColor: ['rgb(17,46,81)',
+                          'rgba(17,46,81,0)'],
+            hoverBackgroundColor: ['rgba(17,46,81)',
+                              'rgba(17,46,81,0)'],
+            hoverBorderColor: ['rgb(17,46,81)',
                           'rgba(17,46,81,0)']
         }]
     },
@@ -36,19 +38,9 @@ var myChart = new Chart(ctx, {
         legend: {
           display: false
         },
-        title: {
-          text: "{{tile.before}}%",
-          display: true,
-          position: 'top',
-          fontSize: 20,
-          fontFamily: 'Source Sans Pro',
-          fontStyle: 'normal',
-          fontColor: 'rgb(17,46,81)',
-        }
-
     }
 });
-var ctx = document.getElementById("{{tile.id}}");
+var ctx = document.getElementById("{{tile.id}}-after");
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
@@ -58,6 +50,10 @@ var myChart = new Chart(ctx, {
             backgroundColor: ['rgba(17,46,81)',
                               'rgba(17,46,81,0)'],
             borderColor: ['rgb(17,46,81)',
+                          'rgba(17,46,81,0)'],
+            hoverBackgroundColor: ['rgba(17,46,81)',
+                                   'rgba(17,46,81,0)'],
+            hoverBorderColor: ['rgb(17,46,81)',
                           'rgba(17,46,81,0)']
         }]
     },
@@ -66,16 +62,6 @@ var myChart = new Chart(ctx, {
         legend: {
           display: false
         },
-        title: {
-          text: "",
-          display: true,
-          position: 'top',
-          fontSize: 20,
-          fontFamily: 'Source Sans Pro',
-          fontStyle: 'normal',
-          fontColor: 'rgb(17,46,81)',
-        }
-
     }
 });
 </script>

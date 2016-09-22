@@ -11,6 +11,6 @@ tiles:
 
   - name: Mobile availability
     layout: icon
-    icon: smartphone.svg
+    icon: phone
     text: Veterans can now complete their application entirely from a smartphone
 ---
