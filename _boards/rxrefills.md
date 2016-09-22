@@ -2,7 +2,7 @@
 title: Prescription Refills
 date_added:
 vetsdotgov_url:
-status: in progress
+status: progress
 category: Manage
 description: Get necessary medicine ordered from any device
 before_jpg: old-healthcare.jpg

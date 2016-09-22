@@ -2,7 +2,7 @@
 title: Education Application
 date_added:
 vetsdotgov_url:
-status: in progress
+status: progress
 category: Apply
 description: Veterans can apply for eduction benefits online using any device.
 before_jpg: old-healthcare.jpg

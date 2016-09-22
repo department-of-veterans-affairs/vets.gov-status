@@ -77,7 +77,8 @@ b {
   padding-top: 3rem;
 }
 
-.ux-compare .title {
+.ux-compare > .title,
+.category-header {
   font-weight: bold;
   font-size: 24px;
   color: #0071BC;
@@ -95,8 +96,8 @@ b {
 }
 
 body.application div[class^="col-"] {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 body.application div[class^="col-"] div[class^="col-"] {
@@ -113,12 +114,45 @@ body.application div[class^="col-"] div[class^="col-"] {
 }
 
 .label-status {
-  vertical-align: super;
-  font-size: 12px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 40px;
 }
 
-.category-header {
-  text-align: center;
+.category-grid {
+  margin-top: -30px;
+}
+
+.category-grid > .row {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+
+.row-shaded {
+  background-color: #F2F2F2;
+}
+
+.category-grid a:hover {
+  text-decoration: none;
+}
+
+.category-grid a > .project-wrapper:hover{
+  background-color: #0071BC;  
+}
+
+.project-wrapper {
+  background-color: #112E51;
+  color: #FFF;
+  padding: 20px;
+  border-radius: 4px;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .chart-wrapper {

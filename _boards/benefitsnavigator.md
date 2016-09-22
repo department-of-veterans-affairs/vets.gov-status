@@ -2,7 +2,7 @@
 title: Benefits Navigator
 date_added:
 vetsdotgov_url:
-status: in progress
+status: progress
 category: Discover
 description: Easily find every benefit a Veteran may have earned
 before_jpg: old-healthcare.jpg

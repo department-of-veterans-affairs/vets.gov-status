@@ -47,28 +47,28 @@ tiles:
 
 {% include tile_section.html %}
 
-<div class="row">
+<div class="row subtitle">
   <div class="col-md-12">
-    <h3>Vets.gov enables Veterans to&hellip;</h3>
+    <p>Enabling Veterans to&#8230;</p>
   </div>
 </div>
 
-<div class="row">
-{% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
-{% for category in categories %}
-<div class="col-sm-6 col-md-3">
-  <div class="category-header">
-    <h2>{{category}}</h2>
-  </div>
-  <div class="row">
-    {% assign projects = site.boards | where: "category", category | sort: "date_added" %}
+<div class="category-grid">
+  {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
+  {% for category in categories %}
+  {% assign shaded = forloop.index | modulo: 2 %}
+  <div class="row{% if shaded == 0 %} row-shaded{% endif %}">
+    <div class="col-xs-12 category-header">
+      <p>{{category}}</p>
+    </div>
+    {% assign projects = site.boards | where: "category", category | sort: "status" %}
     {% for project in projects %}
+    <div class="col-sm-6 col-md-3">
       {% include tiles/project.html %}
+    </div>
     {% endfor %}
-    {% include tiles/suggest.html %}
   </div>
-</div>
-{% endfor %}
+  {% endfor %}
 </div>
 
 <div class="row">

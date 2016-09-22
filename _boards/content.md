@@ -1,5 +1,8 @@
 ---
 title: Content
+date_added:
+vetsdotgov_url:
+status: normal
 category: Discover
 description: Relevant content consolidated to vets.gov and rewritten in plain language
 before_jpg: content_old.png
