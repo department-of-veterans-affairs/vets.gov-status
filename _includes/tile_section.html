@@ -1,15 +1,16 @@
 
-
-<div class="row subtitle">
-  <div class="col-md-12">
-    {% unless page.access %}
-    <p>Featured Improvements</p>
-    {% else %}
-    <p>Accesss Improvements</p>
-    <span class="access-sentence">{{page.access}}</span>
-    {% endunless %}
+<div class="container">
+  <div class="row subtitle">
+    <div class="col-md-12">
+      {% unless page.access %}
+      <p>Featured Improvements</p>
+      {% else %}
+      <p>Accesss Improvements</p>
+      <span class="access-sentence">{{page.access}}</span>
+      {% endunless %}
+    </div>
   </div>
-</div>
+
 
 
 {% assign featured = page.tiles | where_exp: "item", "item.layout != 'chart'" %}
@@ -48,3 +49,5 @@
   </div>
 </div>
 {% endif %}
+
+</div>  
