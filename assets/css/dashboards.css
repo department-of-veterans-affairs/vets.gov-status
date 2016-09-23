@@ -50,9 +50,10 @@ b {
     color: #fff;
 }
 
-.dash-subhead h1 {
-  font-weight: bold;
+.dash-subhead h2 {
+  font-weight: normal;
 }
+
 
 .dash-subhead p {
   font-size: 16px;
@@ -69,8 +70,7 @@ b {
 }
 
 .dash-content {
-  padding-left: 20px;
-  padding-right: 20px;
+
 }
 
 .ux-compare {
@@ -97,12 +97,6 @@ b {
   color: #112e51;
 }
 
-.access-sentence {
-  font-size: 24px;
-  color: #4A4A4A;
-  margin-top: -10px;
-}
-
 body.application div[class^="col-"] {
   padding-left: 10px;
   padding-right: 10px;
@@ -125,6 +119,8 @@ body.application div[class^="col-"] div[class^="col-"] {
   font-size: 14px;
   position: absolute;
   bottom: 40px;
+  padding: .25em .75em;
+  font-weight: normal;
 }
 
 .category-grid {
@@ -132,12 +128,37 @@ body.application div[class^="col-"] div[class^="col-"] {
 }
 
 .category-grid > .row {
-  padding: 20px;
-  border-radius: 4px;
+
+}
+
+.band {
+  display: block;
+  padding: 1.5em 0;
+  opacity: .95;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   backface-visibility: hidden;
+}
+
+.band:active, .band:hover {
+  opacity: 1;
+}
+
+.band:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 
 
-.row-shaded {
+
+.shaded {
   background-color: #F2F2F2;
 }
 
@@ -145,18 +166,54 @@ body.application div[class^="col-"] div[class^="col-"] {
   text-decoration: none;
 }
 
-.category-grid a > .project-wrapper:hover{
-  background-color: #0071BC;
-}
-
 .project-wrapper {
-  background-color: #112E51;
+  background-color: #003e73;
   color: #FFF;
   padding: 20px;
+  position: relative;
   border-radius: 4px;
   min-height: 200px;
   margin-bottom: 20px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,.45);
+  z-index: 200;
 }
+
+.project-wrapper p a {color: #fff; text-decoration: underline;}
+
+.project-wrapper:hover {
+    background-color: #0071bc;
+}
+
+
+.project-wrapper p.project-title:after {
+  content: "➔";
+  width: 3em;
+  height: 2em;
+  font-size: 5em;
+  display: block;
+  padding: 0;
+  position: absolute;
+  right: .25em;
+  text-align: right;
+  top: .25em;
+  color: #fff;
+  opacity: .05;
+  z-index: -500;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.project-wrapper:hover p.project-title:after {
+  right: .2em;
+  opacity: .1;
+}
+
 
 .project-title {
   font-weight: bold;
@@ -244,7 +301,13 @@ body.application div[class^="col-"] div[class^="col-"] {
   background-color: #264060;
   font-size: 32px;
   text-align: center;
+  position: relative;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
+
 
 .tabs-chart > li > a:hover {
   background-color: #112E51;
@@ -252,10 +315,29 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 .tabs-chart > li > a {
   color: #FFF;
+  font-size: .7em;
+  padding: 1.65em .9em;
+
 }
+
+
 
 .tabs-chart > li.active {
   border-left: 10px solid #F5A623;
+  position: relative;
+}
+
+.tabs-chart > li.active a {
+  display: block;
+  border: 1px solid red;
+}
+
+.tabs-chart > li.active:after {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:10px solid blue;
 }
 
 .tabs-chart > li.active > a,
