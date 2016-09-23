@@ -10,40 +10,54 @@ body.application {
 
 b {
   color: #FAC922;
+  line-height: 1em;
 }
 
 .dash-header {
-  margin: 0 0 32px;
   margin: 0 0 2rem;
-  padding-left: 20px;
-  padding-right: 0;
   background-color: #0071BC;
   color: #fff;
   overflow: hidden;
 }
 
+.header-logo h1 {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.header-logo h1 b {
+  padding: .2em 0 1em 0;
+  display: block;
+}
+
+.header-logo a {
+    width: 213px;
+    height: 50px;
+    color: #fff;
+    text-indent: 180%;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+    background: url(/vets.gov-status/assets/img/design/logo/logo.png) 0 0 no-repeat;
+    background-size: contain;
+    border-bottom: none;
+    text-decoration: none;
+    margin: 0;
+}
+
+
 .header-logo {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background:#112e51 url(http://vets.gov/img/design/background/thread.png) 100% no-repeat;
-  margin-left: -15px;
-  font-size: 40px;
-}
-
-.header-logo span {
-  padding-left: 1rem;
-  vertical-align: -5%;
-}
-
-.header-logo img {
-  padding-left: 15px;
+  padding: 1em 0;
+  background:#112e51 url(/vets.gov-status/assets/img/design/background/thread.png) center no-repeat;
+  background-size: cover;
 }
 
 .dash-subhead {
   padding-top: 3rem;
-  padding-left: 60px;
   padding-bottom: 3rem;
-  padding-right: 60px;
+  text-align: left;
 }
 
 .dash-subhead a, a:hover {
@@ -51,32 +65,41 @@ b {
 }
 
 .dash-subhead h2 {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 
 .dash-subhead p {
   font-size: 16px;
+  opacity: .85;
+}
+
+.breadcrumbs a {
+  text-decoration: underline;
 }
 
 .btn-app {
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 3px;
 }
 
 .btn-app:hover {
   color: #fff;
-}
-
-.dash-content {
-
+  border: 2px solid #112e51;
 }
 
 .ux-compare {
   padding-top: 3rem;
-  margin-bottom: 20px;
+
 }
+
+
+.ux-compare img {
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,.2);
+  margin-bottom: 3em;
+}
+
 
 .ux-compare > .title,
 .category-header,
@@ -299,13 +322,19 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 .tabs-chart li {
   background-color: #264060;
-  font-size: 32px;
+
   text-align: center;
   position: relative;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+  .tabs-chart li {
+  font-size: 32px;
+  }
 }
 
 
@@ -330,11 +359,12 @@ body.application div[class^="col-"] div[class^="col-"] {
 .tabs-chart > li.active a {
   display: block;
   border: 1px solid red;
+  position: relative;
 }
 
-.tabs-chart > li.active:after {
-  width: 0;
-  height: 0;
+.tabs-chart > li.active a:after {
+  width: 10px;
+  height: 10px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right:10px solid blue;
@@ -358,7 +388,7 @@ body.application div[class^="col-"] div[class^="col-"] {
 }
 
 .row-footer {
-  min-height: 60px;
-  background:#112e51 url(http://vets.gov/img/design/background/thread.png) 100% no-repeat;
+  min-height: 30px;
+  background:#112e51;
   margin-top: 100px;
 }

@@ -13,50 +13,54 @@
   <div class="container-fluid dash-header">
     <div class="row">
       <div class="col-md-12 header-logo">
-        <img src="{{site.baseurl}}/assets/img/logo.png"><span><b>Dashboard</b></span>
+        <h1 role="banner" class="va-header-logo"><a href="{{site.baseurl}}/index.html">Vets.gov</a> <b>Dashboard</b></span></h1>
       </div>
     </div>
 
-
     <div class="dash-subhead">
+      <div class="container">
 
-      {% if page.mission_statement %}
+        {% if page.mission_statement %}
 
-      <div class="row">
-        <div class="col-md-12">
-          <h1>{{page.mission_statement}}</h1>
+          <div class="row">
+            <div class="col-md-12">
+              <h1>{{page.mission_statement}}</h1>
+            </div>
+          </div>
+
+        {% else %}
+
+        <div class="breadcrumbs">
+          <div class="row">
+            <div class="col-md-12">
+              <a href="{{site.baseurl}}/index.html">Home</a><span> / {{page.title}}</span>
+            </div>
+          </div>
         </div>
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <h2>{{page.title}}</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-9">
+            <p>
+            {% if page.date_added %}
+            Added {{page.date_added | date: '%B %Y'}}<br>
+            {% endif %}
+            {{page.description}}</p>
+          </div>
+          <div class="col-xs-12 col-sm-3">
+            {% if page.vetsdotgov_url %}
+            <a class="btn btn-app" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
       </div>
-
-      {% else %}
-
-      <div class="row">
-        <div class="col-md-12">
-          <a href="../index.html">Home</a><span> / {{page.title}}</span>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <h1>{{page.title}}</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-9">
-          <p>
-          {% if page.date_added %}
-          Added {{page.date_added | date: '%B %Y'}}<br>
-          {% endif %}
-          {{page.description}}</p>
-        </div>
-        <div class="col-xs-12 col-sm-3">
-          {% if page.vetsdotgov_url %}
-          <a class="btn btn-app" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a>
-          {% endif %}
-        </div>
-      </div>
-      {% endif %}
     </div>
 
   </div>
