@@ -248,6 +248,11 @@ body.application div[class^="col-"] div[class^="col-"] {
   padding: 20px;
   margin-bottom: 20px;
 }
+
+.real-chart {
+  margin-bottom: 0;
+}
+
 .chart-wrapper > .chart-title {
   color: #112e51;
   font-size: 24px;
@@ -295,6 +300,12 @@ body.application div[class^="col-"] div[class^="col-"] {
   float: left;
   max-width: 50%;
   padding-left: 20px;
+  text-align: center;
+}
+
+.compare-after  .chart-notes {
+  color: #0071BC !important;
+  font-weight: bold;
 }
 
 .compare-before {
@@ -321,7 +332,6 @@ body.application div[class^="col-"] div[class^="col-"] {
 }
 
 .tabs-chart li {
-  background-color: #264060;
 
   text-align: center;
   position: relative;
@@ -329,6 +339,7 @@ body.application div[class^="col-"] div[class^="col-"] {
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+  border-top: 5px solid #FFF;
 }
 
 @media only screen and (min-width: 768px) {
@@ -340,35 +351,36 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 .tabs-chart > li > a:hover {
   background-color: #112E51;
+  text-decoration: underline;
 }
 
 .tabs-chart > li > a {
+    background-color: #264060;
   color: #FFF;
-  font-size: .7em;
-  padding: 1.65em .9em;
-
+  font-size: 1em;
+  /*padding: 1.65em .9em;*/
+  text-decoration: underline;
 }
 
 
 
 .tabs-chart > li.active {
-  border-left: 10px solid #F5A623;
-  position: relative;
+
 }
 
-.tabs-chart > li.active a {
+/*.tabs-chart > li.active a {
   display: block;
   border: 1px solid red;
   position: relative;
-}
+}*/
 
-.tabs-chart > li.active a:after {
+/*.tabs-chart > li.active a:after {
   width: 10px;
   height: 10px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right:10px solid blue;
-}
+}*/
 
 .tabs-chart > li.active > a,
 .tabs-chart > li.active > a:hover,
@@ -377,6 +389,17 @@ body.application div[class^="col-"] div[class^="col-"] {
   color: #FFF;
   border-radius: 0px 0px 0px 0px;
   border-width: 0px;
+  text-decoration: none;
+  border-top: 5px solid #F5A623;
+  position: relative;
+}
+
+.tab-content {
+  border: 1px solid #112E51;
+}
+
+.tab-icon {
+  margin-right: 5px;
 }
 
 .migration-header {

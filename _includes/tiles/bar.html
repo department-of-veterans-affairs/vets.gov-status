@@ -12,18 +12,18 @@
 <script>
 var ctx = document.getElementById("{{tile.id}}");
 var myChart = new Chart(ctx, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
-        labels: ['Datapoint'],
+        labels: [''],
         datasets: [{
-            data: [ {{tile.datapoint}}, {{ 100 | minus: tile.datapoint }} ],
-            backgroundColor: ['rgba(17,46,81,1)',
+            data: [ {{tile.datapoint}}],
+            backgroundColor: ['rgba(0,113,188,1)',
                               'rgba(17,46,81,0)'],
-            borderColor: ['rgb(17,46,81,1)',
+            borderColor: ['rgb(0,113,188,1)',
                           'rgba(17,46,81,0)'],
-            hoverBackgroundColor: ['rgba(17,46,81,1)',
+            hoverBackgroundColor: ['rgba(0,113,188,1)',
                               'rgba(17,46,81,0)'],
-            hoverBorderColor: ['rgb(17,46,81)',
+            hoverBorderColor: ['rgb(0,113,188)',
                           'rgba(17,46,81,0)']
         }]
     },
@@ -32,6 +32,17 @@ var myChart = new Chart(ctx, {
         legend: {
           display: false
         },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                scaleLabel: {
+                  display: true,
+                  max: 100
+                },
+              }]
+            }
     }
 });
 </script>

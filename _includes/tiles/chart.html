@@ -1,7 +1,7 @@
 
-  <div class="chart-wrapper">
+  <div class="chart-wrapper real-chart">
     <div class="chart-holder">
-      <canvas id="{{tile.data}}-chart" width="600" height="170"></canvas>
+      <canvas id="{{tile.data}}-chart" width="600" height="250"></canvas>
     </div>
   </div>
 
@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
         ]
     },
     options: {
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         scales: {
             yAxes: [{
                 ticks: {
@@ -57,11 +57,16 @@ var myChart = new Chart(ctx, {
           text: '{{tile.context}}',
           display: true,
           position: 'bottom',
-          fontSize: 20,
+          fontSize: 16,
           fontFamily: 'Source Sans Pro',
           fontStyle: 'normal',
           fontColor: 'rgb(17,46,81)'
         }
     }
 });
+window.onload = function () {
+  ctx.height=250
+  ctx.style.height="250px"
+  myChart.update()
+}
 </script>

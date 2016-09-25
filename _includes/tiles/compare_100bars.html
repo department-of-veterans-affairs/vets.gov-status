@@ -1,0 +1,89 @@
+<div class="col-md-6 col-lg-4">
+  <div class="chart-wrapper">
+    <div class="chart-title">
+      {{tile.name}}
+    </div>
+    <div class="chart-stage">
+        <div class="compare compare-before">
+          <canvas id="{{tile.id}}-before" width="150" height="100"></canvas>
+          <span class="chart-notes">Before: {{tile.before}}%</span>
+        </div>
+        <div class="compare compare-after">
+          <canvas id="{{tile.id}}-after" width="150" height="100"></canvas>
+          <span class="chart-notes">After: {{tile.datapoint}}%</span>
+        </div>
+    </div>
+  </div>
+</div>
+<script>
+var ctx = document.getElementById("{{tile.id}}-before");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [''],
+        datasets: [{
+            data: [ {{tile.before}}],
+            backgroundColor: ['rgba(74,47,74,1)',
+                              'rgba(17,46,81,0)'],
+            borderColor: ['rgb(74,74,74,1)',
+                          'rgba(17,46,81,0)'],
+            hoverBackgroundColor: ['rgba(74,74,74,1)',
+                              'rgba(17,46,81,0)'],
+            hoverBorderColor: ['rgb(74,74,74)',
+                          'rgba(17,46,81,0)']
+        }]
+    },
+    options: {
+        responsive: false,
+        legend: {
+          display: false
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                  beginAtZero:true,
+                  max: 100,                },
+                scaleLabel: {
+                  display: false,
+                },
+              }]
+            }
+    }
+});
+var ctx = document.getElementById("{{tile.id}}-after");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [''],
+        datasets: [{
+            data: [ {{tile.datapoint}} ],
+            backgroundColor: ['rgba(0,113,188,1)',
+                              'rgba(17,46,81,0)'],
+            borderColor: ['rgb(0,113,188,1)',
+                          'rgba(17,46,81,0)'],
+            hoverBackgroundColor: ['rgba(0,113,188,1)',
+                                   'rgba(17,46,81,0)'],
+            hoverBorderColor: ['rgb(0,113,188)',
+                          'rgba(17,46,81,0)']
+        }]
+    },
+    options: {
+        responsive: false,
+        legend: {
+          display: false
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    max: 100,
+                    display: false,
+                },
+                scaleLabel: {
+                  display: true,
+                },
+              }]
+            }
+    }
+});
+</script>

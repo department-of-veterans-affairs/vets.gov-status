@@ -14,15 +14,15 @@ tiles:
     datapoint: $8k
     before: $8m
 
+  - name: Daily online submissions
+    layout: compare_bars
+    datapoint: 500
+    before: 62
+
   - name: Minutes to complete
     layout: compare
     datapoint: 12-22
     before: 45+
-
-  - name: Daily online submissions
-    layout: compare
-    datapoint: 500
-    before: 62
 
   - name: <span class="glyphicon glyphicon-signal" aria-hidden="true"></span><p>Site Traffic</p>
     layout: chart

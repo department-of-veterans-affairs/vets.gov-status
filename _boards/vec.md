@@ -20,7 +20,7 @@ tiles:
     text: Enables Veterans to find employment opportunities on their mobile devices   
 
   - name: Months to deliver
-    layout: savings
+    layout: compare_bars
     datapoint: 1
     before: 12
 
