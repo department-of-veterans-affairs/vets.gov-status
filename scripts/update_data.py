@@ -47,7 +47,7 @@ def get_reports(analytics, view_id):
         body={
             'reportRequests': [{
                     'viewId': view_id,
-                    'dateRanges': [{'startDate': '126daysAgo',
+                    'dateRanges': [{'startDate': '140daysAgo',
                                     'endDate': 'yesterday'}],
                     'metrics': [{'expression': 'ga:users'},
                                 {'expression': 'ga:newUsers'}],
@@ -55,12 +55,20 @@ def get_reports(analytics, view_id):
                 },
                 {
                     'viewId': view_id,
-                    'dateRanges': [{'startDate': '126daysAgo',
+                    'dateRanges': [{'startDate': '140daysAgo',
                                     'endDate': 'yesterday'}],
-                    'metrics': [{'expression': 'ga:users'}],
+                    'metrics': [{'expression': 'ga:sessions'}],
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'},
                                    {'name': 'ga:deviceCategory'}]
-                }]
+                },
+                {
+                    'viewId': view_id,
+                    'dateRanges': [{'startDate': '140daysAgo',
+                                    'endDate': 'yesterday'}],
+                    'metrics': [{'expression': 'ga:pageviews'}],
+                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}]
+                }
+                ]
         }
     ).execute()
 
@@ -134,6 +142,16 @@ def output_device(df, board):
     filename = "{}_mobile.csv".format(board)
     df.to_csv(filename, date_format="%m/%d/%y")
 
+def output_pageviews(df, board):
+    """Output a csv from dataframe contents."""
+
+    print(df)
+
+    df.columns = ['views']
+    filename = "{}_views.csv".format(board)
+    df.to_csv(filename, date_format="%m/%d/%y")
+
+
 
 def run_reports(analytics, board, view_id):
     response = get_reports(analytics, view_id)
@@ -141,6 +159,8 @@ def run_reports(analytics, board, view_id):
     output_users(user_df, board)
     device_df = make_df(response['reports'][1])
     output_device(device_df, board)
+    pageviews_df = make_df(response['reports'][2])
+    output_pageviews(pageviews_df, board)
 
 def main():
     analytics = initialize_analyticsreporting()

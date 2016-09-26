@@ -20,7 +20,7 @@ tiles:
     datapoint: 100
     before: 46
 
-  - name: <span class="glyphicon glyphicon-signal tab-icon" aria-hidden="true"></span><span>Site Traffic</span>
+  - name: <span class="glyphicon glyphicon-signal tab-icon" aria-hidden="true"></span><span>Users</span>
     layout: chart
     data: core_users
     context: Total users per week
@@ -41,6 +41,14 @@ tiles:
       - id: desktop
         label: Desktop
         color: rgb(175,175,175)
+
+  - name: <span class="glyphicon glyphicon-signal tab-icon" aria-hidden="true"></span><span>Page views</span>
+    layout: chart
+    data: core_views
+    context: Total page views per week
+    cols:
+      - id: views
+        label: Count of pageviews
 ---
 
 {% include header.html %}
