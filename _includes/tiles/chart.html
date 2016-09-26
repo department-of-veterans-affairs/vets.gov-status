@@ -33,12 +33,19 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:true,
+                    {% unless tile.yLabel == "Percentage" %}
+                    callback: function(num, index, values) {
+                                return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+                              }
+                    {% else %}
+                    callback: function(num, index, values) {
+                                return num.toString().concat("%")
+                              }
+                    {% endunless %}
                 },
                 scaleLabel: {
-                  display: true,
-                  labelString: '{{tile.yLabel}}'
-                  {% if tile.yMax %}, max: {{tile.yMax}} {% endif %}
+                  {% if tile.yMax %}max: {{tile.yMax}} {% endif %}
                 },
             }],
             xAxes: [{

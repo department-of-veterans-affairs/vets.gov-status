@@ -1,4 +1,5 @@
-{% unless project.status == "progress" %}<a href="{{site.baseurl}}{{project.url}}">{% endunless %}
+{% unless project.status == "progress" %}
+<a href="{{site.baseurl}}{{project.url}}">
   <div class="project-wrapper">
       <p class="project-title">{{project.title}}</p>
       <p>{{project.description}}</p>
@@ -6,4 +7,11 @@
       {% if project.status == "new" %}<span class="label label-primary label-status">New</span>{% endif %}
       {% if project.status == "progress" %}<span class="label label-default label-status">Coming Soon</span>{% endif %}
   </div>
-{% unless project.status == "progress" %}</a>{% endunless %}
+</a>
+{% else %}
+<div class="comingsoon-wrapper">
+    <p class="project-title">{{project.title}}</p>
+    <p>{{project.description}}</p>
+    <span class="label label-default label-status">Coming Soon</span>
+</div>
+{% endunless %}

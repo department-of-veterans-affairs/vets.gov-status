@@ -34,7 +34,7 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs tabs-chart">
         {% for tile in charts %}
-        <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{tile.data}}" data-toggle="tab" class="shaded">{{tile.name}}</a></li>
+        <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{tile.data}}" data-toggle="tab">{{tile.name}}</a></li>
         {% endfor %}
       </ul>
       <!-- Tab panes -->
@@ -51,7 +51,8 @@ window.onload = function () {
 
   canvases = document.getElementsByClassName("metric-chart");
   var i;
-  for (i = 0; i < canvases.length; i++) {
+  //Skip first that's already displayed
+  for (i = 1; i < canvases.length; i++) {
       canvases[i].height=250;
       canvases[i].style.height="250px";
   }

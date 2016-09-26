@@ -189,7 +189,8 @@ body.application div[class^="col-"] div[class^="col-"] {
   text-decoration: none;
 }
 
-.project-wrapper {
+.project-wrapper,
+.comingsoon-wrapper {
   background-color: #003e73;
   color: #FFF;
   padding: 20px;
@@ -266,7 +267,7 @@ body.application div[class^="col-"] div[class^="col-"] {
   overflow: hidden;
   padding: 5px 10px;
   position: relative;
-  min-height: 130px;
+  min-height: 135px;
 }
 
 .chart-wrapper .chart-holder {
@@ -344,7 +345,7 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 @media only screen and (min-width: 768px) {
   .tabs-chart li {
-  font-size: 32px;
+  font-size: 28px;
   }
 }
 
