@@ -19,7 +19,7 @@ tiles:
     before: 90
     datapoint: 7
 
-  - name: <span class="glyphicon glyphicon-signal tab-icon" aria-hidden="true"></span><span>Site Traffic</span>
+  - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
     layout: chart
     data: gibct_users
     context: Total users per week

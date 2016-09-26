@@ -24,7 +24,7 @@ tiles:
     datapoint: 12-22
     before: 45+
 
-  - name: <span class="glyphicon glyphicon-signal tab-icon" aria-hidden="true"></span><span>Site Traffic</span>
+  - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
     layout: chart
     data: hca_users
     context: Total users per week

@@ -45,6 +45,18 @@
       </div>
   </div>
 </div>
+
+<script>
+window.onload = function () {
+
+  canvases = document.getElementsByClassName("metric-chart");
+  var i;
+  for (i = 0; i < canvases.length; i++) {
+      canvases[i].height=250;
+      canvases[i].style.height="250px";
+  }
+}
+</script>
 {% endif %}
 
 </div>

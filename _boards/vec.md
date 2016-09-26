@@ -4,7 +4,7 @@ date_added: 2015-11-01 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/employment/
 status: normal
 category: Manage
-description: Will enable Veterans to verify their military status online!
+description: Provides single site focused on Veteran employment
 before_jpg: vec_old.png
 after_jpg: vec.png
 tiles:
@@ -24,7 +24,7 @@ tiles:
     datapoint: 1
     before: 12
 
-  - name: <span class="glyphicon glyphicon-signal tab-icon" aria-hidden="true"></span><span>Site Traffic</span>
+  - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
     layout: chart
     data: vec_users
     context: Total users per week

@@ -22,5 +22,5 @@ tiles:
   - name: Integrated directions
     layout: icon
     icon: road
-    text: Connects with Google Maps to provide distance and driving directions
+    text: Connects with Google Maps to provide driving and public transit directions
 ---
