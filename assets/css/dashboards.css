@@ -351,7 +351,7 @@ body.application div[class^="col-"] div[class^="col-"] {
 
 .tabs-chart > li > a:hover {
   background-color: #112E51;
-  text-decoration: underline;
+
 }
 
 .tabs-chart > li > a {
@@ -359,7 +359,7 @@ body.application div[class^="col-"] div[class^="col-"] {
   color: #FFF;
   font-size: 1em;
   /*padding: 1.65em .9em;*/
-  text-decoration: underline;
+
 }
 
 

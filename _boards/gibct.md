@@ -9,11 +9,15 @@ before_jpg: gibct_old.png
 after_jpg: gibct.png
 tiles:
 
-  - name: Caution warnings
+  - name: Real-time caution warnings
     layout: icon
     icon: warning-sign
-    text: Warns on schools that are not performing well
+    text: Warns on schools that are not performing well immediately
 
+  - name: Days in release cycle
+    layout: compare_bars
+    before: 90
+    datapoint: 7
 
   - name: <span class="glyphicon glyphicon-signal tab-icon" aria-hidden="true"></span><span>Site Traffic</span>
     layout: chart
