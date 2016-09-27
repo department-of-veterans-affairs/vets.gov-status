@@ -31,6 +31,21 @@ b {
   display: block;
 }
 
+.tab-content.loading-data .tab-pane {
+  display: block;
+}
+
+.tab-content>.tab-pane {
+  display: block !important;
+  height: 0px;
+  overflow: hidden;
+}
+
+.tab-content>.active {
+  display: block;
+  height: 270px;
+}
+
 .header-logo a {
     width: 213px;
     height: 50px;
@@ -271,10 +286,20 @@ body.application div[class^="col-"] div[class^="col-"] {
 }
 
 .chart-wrapper .chart-holder {
-  overflow: hidden;
+  position: relative !important;
   padding-left: 10px;
   padding-right: 10px;
-  position: relative;
+}
+
+canvas.metric-chart {
+  display: block !important;
+  overflow: auto !important;
+}
+
+iframe {
+  border: 4px solid purple;
+  height: 100%;
+  display: block;
 }
 
 .chart-stage .datapoint {

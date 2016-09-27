@@ -48,16 +48,25 @@
 
 <script>
 window.onload = function () {
-
   canvases = document.getElementsByClassName("metric-chart");
+
   var i;
+
+  responsive : true;
+  animation: true;
+
   //Skip first that's already displayed
   for (i = 1; i < canvases.length; i++) {
       canvases[i].height=250;
       canvases[i].style.height="250px";
+      canvases[i].style.width="100%";
   }
 }
 </script>
+
+
+
+
 {% endif %}
 
 </div>
