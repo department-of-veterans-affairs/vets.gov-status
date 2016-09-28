@@ -30,7 +30,7 @@ b {
 }
 
 .dash-header {
-  margin: 0 0 2rem;
+  margin: 0;
   background-color: #0071BC;
   color: #fff;
   overflow: hidden;
@@ -43,8 +43,16 @@ b {
 }
 
 .header-logo h1 b {
-  padding: .2em 0 1em 0;
-  display: block;
+  padding: .2em 0 0 208px;
+  display: inline-block;
+}
+
+.header-logo h1 span {
+  text-indent: -9999em;
+  height: 1px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .tab-content.loading-data .tab-pane {
@@ -63,12 +71,9 @@ b {
 }
 
 .header-logo a {
-    width: 213px;
+    width: 530px;
     height: 50px;
     color: #fff;
-    text-indent: 180%;
-    white-space: nowrap;
-    overflow: hidden;
     float: left;
     display: inline-block;
     background: url(/vets.gov-status/assets/img/design/logo/logo.png) 0 0 no-repeat;
@@ -77,6 +82,7 @@ b {
     text-decoration: none;
     margin: 0;
 }
+
 
 
 .header-logo {
@@ -306,7 +312,7 @@ h1.centered a {
   color: #112e51;
   font-size: 24px;
   font-weight: 600;
-  padding: 10px 10px 0px;
+  padding: 10px 10px 10px 0px;
   min-height: 60px;
   line-height: 1em;
 }
@@ -344,7 +350,8 @@ iframe {
 }
 
 .quotes {
-  color: #0071BC;
+  color: #fff;
+  opacity: .2;
   font-size: 100px;
   font-weight: 700;
   vertical-align: top;
@@ -391,7 +398,6 @@ iframe {
 }
 
 .tabs-chart li {
-
   text-align: center;
   position: relative;
   -webkit-transition: all .2s ease-in-out;
@@ -414,9 +420,11 @@ iframe {
 }
 
 .tabs-chart > li > a {
-    background-color: #264060;
-  color: #FFF;
-  font-size: 1em;
+  background-color: #264060;
+  color: #fff;
+  border-top: 5px solid #264060;
+  border-radius: 0;
+  font-size: .85em;
   /*padding: 1.65em .9em;*/
 
 }
@@ -445,12 +453,16 @@ iframe {
 .tabs-chart > li.active > a:hover,
 .tabs-chart > li.active > a:focus {
   background-color: #112E51;
-  color: #FFF;
-  border-radius: 0px 0px 0px 0px;
-  border-width: 0px;
+  color: #fff;
+  border-radius: 0;
+  border-width: 0;
   text-decoration: none;
   border-top: 5px solid #F5A623;
   position: relative;
+}
+
+.nav-tabs>li>a:hover {
+  border-top: 5px solid #264060;
 }
 
 .tab-content {
@@ -468,6 +480,51 @@ iframe {
   line-height: 1em;
   margin-bottom: 30px;
 }
+
+.quote-band {
+  clear: both;
+  margin: 0 0 1em 0;
+  padding: 0 0 2em 0;
+  background: #323a45;
+  color: #fff;
+}
+
+.quote-band h3 {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.chart-title {
+  margin: 0;
+  padding: 0 0 1.5em 0;
+  opacity: .9;
+}
+
+a.usa-button {
+  color: #fff;
+  display: inline-block;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  padding: .5em;
+  text-align: center;
+  white-space: wrap !important;
+  text-decoration: none;
+}
+
+a.usa-button:hover {
+  border: 2px solid #dce4ef;
+  color: #dce4ef;
+}
+
+a.usa-button.dark {
+  border: 2px solid #112e51;
+  color: #112e51;
+}
+
+a.usa-button.dark:hover {
+  color: #112e51;
+}
+
 
 .row-footer {
   min-height: 30px;
