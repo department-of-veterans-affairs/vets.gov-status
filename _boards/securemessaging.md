@@ -5,13 +5,13 @@ vetsdotgov_url:
 status: progress
 category: Manage
 description: HIPAA compliant, easy, mobile messaging
-before_jpg:
-after_jpg:
+before_jpg: placeholder.png
+after_jpg: placeholder.png
 tiles:
 
   - name: Mobile availability
     layout: icon
-    icon: smartphone.svg
+    icon: phone
     text: Veterans can message on their smartphones
 
 ---

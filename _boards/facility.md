@@ -9,18 +9,18 @@ before_jpg: facility_old.png
 after_jpg: facility.png
 tiles:
 
-  - name: Search locations and services
-    layout: icon
-    icon: map-marker
-    text: Veterans can not only see where a facility is but also what services it offers
-
-  - name: Locators being consolidated
-    layout: compare
-    datapoint: 1
-    before: 43
+  - name: Improved experience for blind Veterans
+    layout: basic
+    datapoint: 79
+    context: fixed accessibility issues from prior locators
 
   - name: Integrated directions
     layout: icon
     icon: road
     text: Connects with Google Maps to provide driving and public transit directions
+
+  - name: Locators being consolidated
+    layout: compare
+    datapoint: 1
+    before: 43
 ---

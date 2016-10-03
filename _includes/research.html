@@ -1,7 +1,8 @@
 {% if page.feedback.size > 0 %}
 
+
     <div class="row row-tile">
-      {% for tile in page.feedback limit: 3 %}
+      {% for tile in page.feedback %}
         {% include tiles/{{tile.layout}}.html %}
       {% endfor %}
     </div>

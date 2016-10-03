@@ -9,20 +9,25 @@ before_jpg: healthcare_old.png
 after_jpg: healthcare.png
 tiles:
 
-  - name: Cost per year
-    layout: savings
-    datapoint: $30k
-    before: $8m
-
   - name: Daily online submissions
     layout: compare_bars
+    id: submissions
     datapoint: 500
     before: 62
+    before_text: Veteran Online Application
 
   - name: Veteran use in first 60 days
     layout: basic
     datapoint: "30,000"
     context: online applications submitted
+
+  - name: Online portion of 582k annual healthcare applications
+    layout: compare_pie
+    id: applications
+    datapoint: 50
+    before: 10
+    context: Percentage submitted online
+    after_text: 2017
 
   - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
     layout: chart
@@ -45,4 +50,12 @@ tiles:
       - id: desktop
         label: Desktop
         color: rgb(175,175,175)
+
+  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Page views</span>
+    layout: chart
+    data: core_views
+    context: Total page views per week
+    cols:
+      - id: views
+        label: Count of pageviews
 ---

@@ -14,9 +14,9 @@ tiles:
     icon: lock
     text: Mitigated security issues with legacy site
 
-  - name: TBD Quote
-    layout: quote
-    text: Quote from usability testing
+  - name: Veteran reaction
+    layout: quote-tile
+    text: It’s really simple. It’s like, [barney] proof. Military people love that. They love that."
 
   - name: Improved user experience
     layout: icon

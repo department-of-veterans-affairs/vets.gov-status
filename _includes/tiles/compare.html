@@ -6,11 +6,11 @@
     <div class="chart-stage">
       <div class="compare compare-before">
           <p class="before-text">{{tile.before}}</p>
-          <span class="chart-notes">Before</span>
+          <span class="chart-notes">{{tile.before_text | default: "Before"}}:</span>
       </div>
       <div class="compare">
           <p class="datapoint">{{tile.datapoint}}</p>
-          <span class="chart-notes">After</span>
+          <span class="chart-notes">{{tile.after_text | default: "After"}}:</span>
       </div>
     </div>
   </div>

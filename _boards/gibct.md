@@ -4,7 +4,7 @@ date_added: 2015-11-01 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/gi-bill-comparison-tool/
 status: normal
 category: Discover
-description: Includes school performance data--and caution flags to warn Veterans
+description: Replaced $1M nonfunctional vendor prototype with a $50K working product in two weeks
 before_jpg: gibct_old.png
 after_jpg: gibct.png
 tiles:
@@ -45,5 +45,13 @@ tiles:
       - id: desktop
         label: Desktop
         color: rgb(175,175,175)
+
+  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Page views</span>
+    layout: chart
+    data: core_views
+    context: Total page views per week
+    cols:
+      - id: views
+        label: Count of pageviews
 
 ---

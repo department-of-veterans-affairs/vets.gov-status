@@ -4,25 +4,27 @@ date_added: 2015-11-01 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/employment/
 status: normal
 category: Manage
-description: Provides single site focused on Veteran employment
+description: Saved $14M+ in vendor costs by merging 40 Veteran employment sites for just $9K in two weeks
 before_jpg: vec_old.png
 after_jpg: vec.png
 tiles:
 
-  - name: Cost
+  - name: Development cost
     layout: savings
-    datapoint: $6k
-    before: $24m
-
-  - name: Mobile availability
-    layout: icon
-    icon: phone
-    text: Enables Veterans to find employment opportunities on their mobile devices   
+    datapoint: $9k
+    before: $14m
 
   - name: Months to deliver
     layout: compare_bars
     datapoint: 1
-    before: 12
+    before: 24
+    before_text: Vendor estimate
+    after_text: Vets.gov actual
+
+  - name: Maintenance marginal cost for each updated link
+    layout: savings
+    datapoint: $0
+    before: $100k
 
   - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
     layout: chart
@@ -45,4 +47,12 @@ tiles:
       - id: desktop
         label: Desktop
         color: rgb(175,175,175)
+
+  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Page views</span>
+    layout: chart
+    data: core_views
+    context: Total page views per week
+    cols:
+      - id: views
+        label: Count of pageviews
 ---

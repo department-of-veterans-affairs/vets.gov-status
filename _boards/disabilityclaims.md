@@ -15,9 +15,9 @@ tiles:
     datapoint: 7
 
   - name: Site reliability
-    layout: basic
-    datapoint: 99.99%
-    context: targeted availability for Veteran use
+    layout: icon
+    icon: cloud
+    text: Improved reliability by deploying on cloud architecture
 
   - name: Claims and appeals phone calls per year
     layout: basic

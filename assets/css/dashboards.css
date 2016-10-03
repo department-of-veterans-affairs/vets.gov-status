@@ -317,6 +317,7 @@ h1.centered a {
   background: #F5F5F5;
   padding: 20px;
   margin-bottom: 20px;
+  min-height: 270px;
 }
 
 .real-chart {
@@ -328,7 +329,7 @@ h1.centered a {
   font-size: 24px;
   font-weight: 600;
   padding: 10px 10px 10px 0px;
-  min-height: 60px;
+  min-height: 68px;
   line-height: 1em;
 }
 
@@ -372,6 +373,11 @@ iframe {
   font-weight: 700;
   vertical-align: top;
   line-height: 80px;
+}
+
+.quotes-tile {
+  color: #0071BC;
+  opacity: 1;
 }
 
 .lead {
@@ -506,6 +512,10 @@ iframe {
 
 .quote-band.big {
   padding: 3em 0 2em 0;
+}
+
+.research-list .chart-title {
+  margin-bottom: 50px; 
 }
 
 .quote-band h3 {
