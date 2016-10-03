@@ -11,18 +11,18 @@ tiles:
 
   - name: Searches
     layout: basic
-    datapoint: "13,610"
-    context: total last month on vets.gov
+    datapoint: "12,179"
+    context: total in September on vets.gov
 
   - name: One-click access target
     layout: basic
     datapoint: 100
     context: most frequent search terms
 
-  - name: Top search terms
+  - name: Top search terms in September
     layout: icon
     icon: search
-    text: job search<br>jobs<br>ebenefits<br>coursera
+    text: job search<br>jobs<br>coursera<br>ebenefits
 
 
 ---

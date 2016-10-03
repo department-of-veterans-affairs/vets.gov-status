@@ -34,7 +34,7 @@ tiles:
       - id: all
         label: Count of users
 
-  - name: <span class="glyphicon glyphicon-phone tab-icon" aria-hidden="true"></span><span>Mobile Usage</span>
+  - name: <span class="glyphicon glyphicon-phone tab-icon" aria-hidden="true"></span><span>Mobile Use</span>
     layout: chart
     data: vec_mobile
     context: Percentage of users by device type used
@@ -48,7 +48,7 @@ tiles:
         label: Desktop
         color: rgb(175,175,175)
 
-  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Page views</span>
+  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Views</span>
     layout: chart
     data: core_views
     context: Total page views per week

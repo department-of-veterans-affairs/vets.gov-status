@@ -48,9 +48,18 @@ b {
   margin: 0;
 }
 
-.header-logo h1 b {
-  padding: .2em 0 0 208px;
+.header-logo b {
+  padding: 0;
   display: inline-block;
+  font-size: 36px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-logo b {
+    position: absolute;
+    left: 230px;
+    top: 24px;
+  }
 }
 
 .header-logo h1 span {
@@ -122,12 +131,13 @@ b {
 }
 
 .dash-subhead p {
-  font-size: 18px;
+  font-size: 24px;
   opacity: .85;
+  font-weight: 200;
 }
 
 .access-sentence {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .breadcrumbs a {
@@ -397,10 +407,16 @@ iframe {
 }
 
 .compare-before {
-  border-right: 1px solid #AAA;
   padding-right: 20px;
   padding-left: 0px;
 }
+
+@media only screen and (min-width: 768px) {
+  .compare-before {
+    border-right: 1px solid #AAA;
+  }
+}
+
 
 .before-text {
   color: #4A4A4A;
@@ -538,6 +554,7 @@ a.usa-button {
   text-align: center;
   white-space: wrap !important;
   text-decoration: none;
+  font-size: 18px;
 }
 
 a.usa-button:hover {

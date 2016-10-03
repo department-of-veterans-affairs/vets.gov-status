@@ -24,8 +24,8 @@
     <div class="row">
       <div class="col-md-12 header-logo">
         <h1 role="banner" class="va-header-logo"><a href="{{site.baseurl}}/">
-          <span>Vets.gov</span>
-          <b>Dashboard</b></a></h1>
+          <span>Vets.gov</span></a></h1>
+          <b>Dashboard</b>
       </div>
     </div>
 
@@ -63,7 +63,12 @@
             {% if page.date_added %}
             Added {{page.date_added | date: '%B %Y'}}<br>
             {% endif %}
-            {{page.description}}</p>
+
+            {% if page.extended_description %}
+            {{page.extended_description}}
+            {% else %}
+            {{page.description}}
+            {% endif %}</p>
           </div>
           <div class="col-xs-12 col-sm-3">
             {% if page.vetsdotgov_url %}

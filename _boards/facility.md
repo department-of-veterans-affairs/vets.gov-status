@@ -9,10 +9,10 @@ before_jpg: facility_old.png
 after_jpg: facility.png
 tiles:
 
-  - name: Improved experience for blind Veterans
+  - name: Fixed for Veterans who are blind or have low-vision
     layout: basic
     datapoint: 79
-    context: fixed accessibility issues from prior locators
+    context: accessibility issues from prior locators
 
   - name: Integrated directions
     layout: icon
