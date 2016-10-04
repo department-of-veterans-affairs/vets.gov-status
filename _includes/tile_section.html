@@ -31,6 +31,10 @@
   </div>
 </div>
 
+<script>
+var myCharts = [];
+</script>
+
 <div class="row">
   <div class="col-md-12"> <!-- required for floating -->
       <!-- Nav tabs -->
@@ -59,9 +63,8 @@ window.onload = function () {
 
   //Skip first that's already displayed
   for (i = 1; i < canvases.length; i++) {
-      canvases[i].height=250;
-      canvases[i].style.height="250px";
-      canvases[i].style.width="100%";
+      canvases[i].style.height=canvases[0].style.height;
+      canvases[i].style.width=canvases[0].style.width;
   }
 }
 </script>
