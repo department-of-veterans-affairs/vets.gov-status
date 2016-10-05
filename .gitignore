@@ -1,4 +1,5 @@
 _site/
+_vendor/
 .sass-cache
 *.lock
 .DS_Store

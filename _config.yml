@@ -9,6 +9,11 @@ defaults:
     values:
       layout: board
 
-exclude: [ "scripts", "LICENSE.md", "README.md" ]
+exclude:
+  - scripts
+  - LICENSE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
 
-baseurl: "/vets.gov-status"
+baseurl: "/scorecard"
