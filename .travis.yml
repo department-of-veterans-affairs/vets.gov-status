@@ -25,4 +25,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: department-of-veterans-affairs/vets.gov-status
-    branch: travis-integration
+    branch: master
