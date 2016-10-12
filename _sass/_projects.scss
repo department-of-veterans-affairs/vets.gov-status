@@ -1,0 +1,111 @@
+.category-grid {
+  margin-top: -30px;
+}
+
+.category-grid a:hover {
+  text-decoration: none;
+}
+
+.project-wrapper,
+.comingsoon-wrapper {
+  background-color: $medium-blue;
+  color: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  min-height: 200px;
+  margin-bottom: 20px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,.45);
+  z-index: 200;
+}
+
+.project-wrapper p a {
+  color: white;
+  text-decoration: underline;
+}
+
+.project-wrapper:hover {
+    background-color: $bright-blue;
+}
+
+
+.project-wrapper p.project-title:after {
+  content: "➔";
+  width: 3em;
+  height: 2em;
+  font-size: 5em;
+  display: block;
+  padding: 0;
+  position: absolute;
+  right: .25em;
+  text-align: right;
+  top: .25em;
+  color: white;
+  opacity: .05;
+  z-index: -500;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.project-wrapper:hover p.project-title:after {
+  right: .2em;
+  opacity: .1;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.label-status {
+  font-size: 14px;
+  position: absolute;
+  bottom: 40px;
+  padding: .25em .75em;
+  font-weight: normal;
+}
+
+.category-header {
+  font-weight: bold;
+  font-size: 24px;
+  color: $bright-blue;
+}
+
+.band {
+  display: block;
+  padding: 1.5em 0;
+  opacity: .95;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   backface-visibility: hidden;
+}
+
+.band-spaced {
+  margin-top: 80px;
+}
+
+.band:active, .band:hover {
+  opacity: 1;
+}
+
+.band:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.shaded {
+  background-color: $light-gray;
+}

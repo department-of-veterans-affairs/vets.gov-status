@@ -1,0 +1,50 @@
+---
+---
+
+@import "variables";
+@import "va-notice";
+@import "header";
+@import "subhead";
+@import "tabs";
+@import "research-quotes";
+@import "tiles";
+@import "projects";
+@import "screenshots";
+@import "footer";
+
+body.application {
+  background: white;
+  font-family: Source Sans Pro,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-size: 16px;
+}
+
+body.application div[class^="col-"] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+body.application div[class^="col-"] div[class^="col-"] {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+b {
+  color: $contrast-orange;
+  line-height: 1em;
+}
+
+//These are here to use liquid templates
+.header-logo a {
+    background: url({{site.baseurl}}/assets/img/design/logo/logo.png) 0 0 no-repeat;
+    background-size: contain;
+}
+.header-logo {
+  background: $dark-blue url({{site.baseurl}}/assets/img/design/background/thread.png) center no-repeat;
+  background-size: cover;
+}
+
+iframe {
+  border: 4px solid purple;
+  height: 100%;
+  display: block;
+}

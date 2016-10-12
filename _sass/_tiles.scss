@@ -1,0 +1,116 @@
+.tile-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.subtitle p {
+  font-weight: bold;
+  font-size: 36px;
+  color: $dark-blue;
+}
+
+.access-sentence {
+  font-size: 24px;
+}
+
+.chart-wrapper {
+  background: $light-gray;
+  padding: 20px;
+  margin-bottom: 20px;
+  min-height: 270px;
+}
+
+.real-chart {
+  margin-bottom: 0;
+}
+
+.chart-wrapper > .chart-title {
+  color: $dark-blue;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 10px 10px 0px;
+  min-height: 68px;
+  line-height: 1em;
+}
+
+.chart-wrapper .chart-stage {
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+  min-height: 135px;
+}
+
+.chart-wrapper .chart-holder {
+  position: relative !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+canvas.metric-chart {
+  display: block !important;
+  overflow: auto !important;
+}
+
+.chart-stage .datapoint {
+  font-size: 72px;
+  font-weight: 700;
+  color: $bright-blue;
+  line-height: 1em;
+  margin: 0;
+}
+
+.compare {
+  float: left;
+  max-width: 50%;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.compare-after  .chart-notes {
+  color: $bright-blue !important;
+  font-weight: bold;
+}
+
+.compare-before {
+  padding-right: 20px;
+  padding-left: 0px;
+}
+
+@media only screen and (min-width: 768px) {
+  .compare-before {
+    border-right: 1px solid #AAA;
+  }
+}
+
+.before-text {
+  color: $medium-gray;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 72px;
+  margin: 0;
+}
+
+.chart-wrapper .chart-notes {
+  color: $medium-gray;
+  font-size: 16px;
+}
+
+.chart-title {
+  margin: 0;
+  padding: 0 0 1.5em 0;
+  opacity: .9;
+}
+
+.lead {
+  font-size: 16pt;
+}
+
+.quotes-tile {
+  color: $bright-blue;
+  opacity: 1;
+}

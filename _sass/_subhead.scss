@@ -1,0 +1,34 @@
+.dash-subhead {
+  padding-top: 3rem;
+  padding-bottom: 3.75rem;
+  text-align: left;
+}
+
+.dash-subhead a, a:hover {
+    color: white;
+}
+
+.dash-subhead h2 {
+  font-weight: bold;
+}
+
+.dash-subhead p {
+  font-size: 24px;
+  opacity: .85;
+  font-weight: 200;
+}
+
+.breadcrumbs a {
+  text-decoration: underline;
+}
+
+.btn-app {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 3px;
+}
+
+.btn-app:hover {
+  color: white;
+  border: 2px solid $dark-blue;
+}

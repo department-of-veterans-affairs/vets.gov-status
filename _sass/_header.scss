@@ -1,0 +1,61 @@
+.dash-header {
+  margin: 0;
+  background-color: $bright-blue;
+  color: white;
+  overflow: hidden;
+}
+
+.header-logo h1 {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.header-logo b {
+  padding: 0;
+  display: inline-block;
+  font-size: 36px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-logo b {
+    position: absolute;
+    left: 230px;
+    top: 24px;
+  }
+}
+
+.header-logo h1 span {
+  text-indent: -9999em;
+  height: 1px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+//Background in main file
+.header-logo a {
+    width: 530px;
+    height: 50px;
+    color: white;
+    float: left;
+    display: inline-block;
+    border-bottom: none;
+    text-decoration: none;
+    margin: 0;
+}
+
+//Background in main file
+.header-logo {
+  padding: 1em 0;
+  display: block;
+}
+
+.header-logo:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
