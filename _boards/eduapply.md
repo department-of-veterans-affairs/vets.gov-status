@@ -16,7 +16,7 @@ tiles:
 
   - name: Veteran reaction
     layout: quote-tile
-    text: It’s really simple. It’s like, [barney] proof. Military people love that. They love that."
+    text: It’s really simple ... Military people love that. They love that.
 
   - name: Improved user experience
     layout: icon
