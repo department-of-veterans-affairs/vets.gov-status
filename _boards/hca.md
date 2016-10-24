@@ -16,17 +16,16 @@ tiles:
     before: 62
     before_text: Veteran Online Application
 
-  - name: Veteran use in first 60 days
+  - name: Online applications submitted
     layout: basic
-    datapoint: "30,000"
-    context: online applications submitted
+    datapoint: "50,797"
+    context: since launch
 
   - name: Online portion of 582k annual healthcare applications
     layout: compare_pie
     id: applications
     datapoint: 50
     before: 10
-    context: Percentage submitted online
     after_text: 2017
 
   - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
