@@ -5,8 +5,7 @@ vetsdotgov_url: https://search.vets.gov/search?utf8=%E2%9C%93&affiliate=vets.gov
 status: normal
 category: Discover
 description: 1-click access to top queries
-before_jpg: search_old.png
-after_jpg: search.png
+screenshot: search
 tiles:
 
   - name: Searches
@@ -23,6 +22,5 @@ tiles:
     layout: icon
     icon: search
     text: job search<br>jobs<br>coursera<br>ebenefits
-
 
 ---

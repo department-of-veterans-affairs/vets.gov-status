@@ -5,8 +5,7 @@ vetsdotgov_url:
 status: progress
 category: Manage
 description: HIPAA compliant, easy, mobile messaging
-before_jpg: securemessaging_old.png
-after_jpg: securemessaging.png
+screenshot: securemessaging
 tiles:
 
   - name: Mobile availability

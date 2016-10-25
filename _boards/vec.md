@@ -5,8 +5,7 @@ vetsdotgov_url: https://www.vets.gov/employment/
 status: normal
 category: Manage
 description: Saved $14M+ in vendor costs by merging 40 Veteran employment sites for just $9K in two weeks
-before_jpg: vec_old.png
-after_jpg: vec.png
+screenshot: vec
 tiles:
 
   - name: Development cost
@@ -26,33 +25,5 @@ tiles:
     datapoint: $0
     before: $100k
 
-  - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
-    layout: chart
-    data: vec_users
-    context: Total users per week
-    cols:
-      - id: all
-        label: Count of users
-
-  - name: <span class="glyphicon glyphicon-phone tab-icon" aria-hidden="true"></span><span>Mobile Use</span>
-    layout: chart
-    data: vec_mobile
-    context: Percentage of users by device type used
-    yLabel: Percentage
-    yMax: 100
-    cols:
-      - id: mobile
-        label: Mobile
-        color: rgb(17,46,81)
-      - id: desktop
-        label: Desktop
-        color: rgb(175,175,175)
-
-  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Views</span>
-    layout: chart
-    data: vec_views
-    context: Total page views per week
-    cols:
-      - id: views
-        label: Count of pageviews
+charts: vec
 ---

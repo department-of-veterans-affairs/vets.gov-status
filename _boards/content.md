@@ -6,8 +6,7 @@ status: normal
 category: Discover
 description: More than 500 pages of content rewritten using plain language guidance
 extended_description: We create content to help users accomplish their goals — using words that Veterans and their families know and understand.  We develop and prioritize content based on data from user research, VA call centers, and website analytics.
-before_jpg: content_old.png
-after_jpg: content.png
+screenshot: content
 tiles:
 
   - name: Consolidated services from
@@ -23,5 +22,5 @@ tiles:
   - name: Plain language
     layout: basic
     datapoint: 500
-    context: pages of content rewritten to conform with plain language guidelines 
+    context: pages of content rewritten to conform with plain language guidelines
 ---

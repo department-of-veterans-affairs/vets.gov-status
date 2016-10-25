@@ -5,8 +5,7 @@ vetsdotgov_url: https://www.vets.gov/gi-bill-comparison-tool/
 status: normal
 category: Discover
 description: Replaced $1M nonfunctional vendor prototype with a $50K working product in two weeks
-before_jpg: gibct_old.png
-after_jpg: gibct.png
+screenshot: gibct
 tiles:
 
   - name: Real-time caution warnings
@@ -24,34 +23,5 @@ tiles:
     icon: tasks
     text: Provides Veterans data on how schools perform on key education metrics
 
-  - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
-    layout: chart
-    data: gibct_users
-    context: Total users per week
-    cols:
-      - id: all
-        label: Count of users
-
-  - name: <span class="glyphicon glyphicon-phone tab-icon" aria-hidden="true"></span><span>Mobile Use</span>
-    layout: chart
-    data: gibct_mobile
-    context: Percentage of users by device type used
-    yLabel: Percentage
-    yMax: 100
-    cols:
-      - id: mobile
-        label: Mobile
-        color: rgb(17,46,81)
-      - id: desktop
-        label: Desktop
-        color: rgb(175,175,175)
-
-  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Views</span>
-    layout: chart
-    data: gibct_views
-    context: Total page views per week
-    cols:
-      - id: views
-        label: Count of pageviews
-
+charts: gibct
 ---

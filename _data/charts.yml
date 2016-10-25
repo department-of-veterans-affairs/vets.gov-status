@@ -1,0 +1,29 @@
+- name: Users
+  icon: user
+  data: _users
+  context: Total users per week
+  cols:
+    - id: all
+      label: Count of users
+
+- name: Mobile Use
+  icon: phone
+  data: _mobile
+  context: Percentage of users by device type used
+  yLabel: Percentage
+  yMax: 100
+  cols:
+    - id: mobile
+      label: Mobile
+      color: rgb(17,46,81)
+    - id: desktop
+      label: Desktop
+      color: rgb(175,175,175)
+
+- name: Views
+  icon: file
+  data: _views
+  context: Total page views per week
+  cols:
+    - id: views
+      label: Count of pageviews

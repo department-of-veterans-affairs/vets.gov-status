@@ -5,8 +5,7 @@ vetsdotgov_url:
 status: progress
 category: Apply
 description: Veterans can apply for eduction benefits online using any mobile device
-before_jpg: eduapply_old.png
-after_jpg: eduapply.png
+screenshot: eduapply
 tiles:
 
   - name: Increased security

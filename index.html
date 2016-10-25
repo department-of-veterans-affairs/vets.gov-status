@@ -22,39 +22,7 @@ tiles:
     before: 10
     after_text: 2017
 
-  - name: No special software required
-    layout: quote
-    text: Some Veterans don’t have the finances to upgrade to a computer that carries the most recent version of Adobe" - Reserach participant
-
-  - name: <span class="glyphicon glyphicon-user tab-icon" aria-hidden="true"></span><span>Users</span>
-    layout: chart
-    data: core_users
-    context: Total users per week
-    cols:
-      - id: all
-        label: Count of users
-
-  - name: <span class="glyphicon glyphicon-phone tab-icon" aria-hidden="true"></span><span>Mobile Use</span>
-    layout: chart
-    data: core_mobile
-    context: Percentage of sessions by device type
-    yLabel: Percentage
-    yMax: 100
-    cols:
-      - id: mobile
-        label: Mobile
-        color: rgb(17,46,81)
-      - id: desktop
-        label: Desktop
-        color: rgb(175,175,175)
-
-  - name: <span class="glyphicon glyphicon-file tab-icon" aria-hidden="true"></span><span>Views</span>
-    layout: chart
-    data: core_views
-    context: Total page views per week
-    cols:
-      - id: views
-        label: Count of pageviews
+charts: core
 
 feedback:
 

@@ -5,8 +5,7 @@ vetsdotgov_url:
 status: progress
 category: Track
 description: Track and update your claim all in one place
-before_jpg: disabilityclaims_old.png
-after_jpg: disabilityclaims.png
+screenshot: disabilityclaims
 tiles:
 
   - name: Days in release cycle

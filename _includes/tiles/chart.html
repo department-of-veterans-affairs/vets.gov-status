@@ -1,23 +1,24 @@
 
   <div class="chart-wrapper real-chart">
     <div class="chart-holder">
-      <canvas class="metric-chart" id="{{tile.data}}-chart" width="600" height="250"></canvas>
+      <canvas class="metric-chart" id="{{chart.data}}-chart" width="600" height="250"></canvas>
     </div>
   </div>
 
 <script>
-var ctx = document.getElementById("{{tile.data}}-chart");
+var ctx = document.getElementById("{{chart.data}}-chart");
+{% capture datafile %}{{ page.charts | append: chart.data }}{% endcapture %}
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: [{% for line in site.data[tile.data] %}'{{ line.day }}',{% endfor %}],
+        labels: [{% for line in site.data[datafile] %}'{{ line.day }}',{% endfor %}],
         datasets: [
-        {% for col in tile.cols %}
+        {% for col in chart.cols %}
         {
             label: '{{col.label}}',
-            data: [{% for line in site.data[tile.data] %}{{ line[col.id] }},{% endfor %}]
+            data: [{% for line in site.data[datafile] %}{{ line[col.id] }},{% endfor %}]
 
-            {% if tile.cols.size == 1 %},
+            {% if chart.cols.size == 1 %},
             backgroundColor: 'rgba(17,46,81,0.3)',
             borderColor: 'rgb(17,46,81)'
             {% else %},
@@ -34,7 +35,7 @@ var myChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     beginAtZero:true,
-                    {% unless tile.yLabel == "Percentage" %}
+                    {% unless chart.yLabel == "Percentage" %}
                     callback: function(num, index, values) {
                                 return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
                               }
@@ -45,7 +46,7 @@ var myChart = new Chart(ctx, {
                     {% endunless %}
                 },
                 scaleLabel: {
-                  {% if tile.yMax %}max: {{tile.yMax}} {% endif %}
+                  {% if chart.yMax %}max: {{chart.yMax}} {% endif %}
                 },
             }],
             xAxes: [{
@@ -56,12 +57,12 @@ var myChart = new Chart(ctx, {
         },
         legend: {
           position: 'bottom',
-          {% if tile.cols.size == 1 %}
+          {% if chart.cols.size == 1 %}
           display: false
           {% endif %}
         },
         title: {
-          text: '{{tile.context}}',
+          text: '{{chart.context}}',
           display: true,
           position: 'bottom',
           fontSize: 16,

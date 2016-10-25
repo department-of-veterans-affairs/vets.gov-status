@@ -1,0 +1,46 @@
+{% if page.charts %}
+<div class="row subtitle">
+  <div class="col-md-12">
+    <p>Traffic</p>
+  </div>
+</div>
+
+<script>
+var myCharts = [];
+</script>
+
+<div class="row">
+  <div class="col-md-12"> <!-- required for floating -->
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs tabs-chart">
+        {% for chart in site.data.charts %}
+        <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
+        {% endfor %}
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        {% for chart in site.data.charts %}
+        <div class="tab-pane{% if forloop.first == true %} active{% endif %}" id="{{chart.data}}">{% include tiles/chart.html %}</div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+
+<script>
+window.onload = function () {
+  canvases = document.getElementsByClassName("metric-chart");
+
+  var i;
+
+  responsive : true;
+  animation: true;
+
+  //Skip first that's already displayed
+  for (i = 1; i < canvases.length; i++) {
+      canvases[i].style.height=canvases[0].style.height;
+      canvases[i].style.width=canvases[0].style.width;
+  }
+}
+</script>
+
+{% endif %}

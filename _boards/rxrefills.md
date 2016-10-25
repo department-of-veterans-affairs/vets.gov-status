@@ -5,8 +5,7 @@ vetsdotgov_url:
 status: progress
 category: Manage
 description: Veterans can refill their VA prescriptions from any device
-before_jpg: rx_old.png
-after_jpg: rx.png
+screenshot: rx
 tiles:
 
   - name: On-the-go access
