@@ -10,7 +10,7 @@ tiles:
 
   - name: Searches
     layout: basic
-    datapoint: "12,179"
+    datapoint: "10,067"
     context: total in September on vets.gov
 
   - name: One-click access target
@@ -21,6 +21,6 @@ tiles:
   - name: Top search terms in September
     layout: icon
     icon: search
-    text: job search<br>jobs<br>coursera<br>ebenefits
+    text: coursera<br>gi bill comparison tool<br>ebenefits<br>job search
 
 ---
