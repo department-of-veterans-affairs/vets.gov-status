@@ -23,4 +23,5 @@ tiles:
     icon: heart-empty
     text: Used human centered design to improve Veteran experience
 
+charts: eduapply
 ---
