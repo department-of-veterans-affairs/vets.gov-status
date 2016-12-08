@@ -2,7 +2,7 @@
 title: Secure Messaging
 date_added:
 vetsdotgov_url:
-status: progress
+status: normal
 category: Manage
 description: HIPAA compliant, easy, mobile messaging
 screenshot: securemessaging
