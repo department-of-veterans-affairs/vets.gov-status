@@ -2,7 +2,7 @@
 title: Disability Claims Status
 date_added:
 vetsdotgov_url:
-status: progress
+status: normal
 category: Track
 description: Track and update your claim all in one place
 screenshot: disabilityclaims
