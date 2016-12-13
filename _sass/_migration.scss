@@ -23,24 +23,25 @@
 .not-applicable {
   background-color: #808080; }
 
-table {
+.migration_table {
   border-spacing: 0;
-  margin: 2em 0;
-  min-width: 100%; }
-  table thead tr {
+  margin: 2em 0;}
+
+.migration_table thead tr {
     background-color: #f1f1f1; }
-  table thead th {
+
+.migration_table thead th {
     text-align: left; }
-  table th, table td {
+
+.migration_table th,
+.migration_table td {
     border: 1px solid #5b616b;
     padding: 1.5rem; }
 
-table {
-  border-collapse: collapse;
-  font: 12px sans-serif; }
-
 ul.legend {
-  margin-left: 0; }
+  padding-top: 50px;
+  margin-left: 0;
+  font-size: 24px;}
   ul.legend li {
     list-style: none;
     display: inline-block;
