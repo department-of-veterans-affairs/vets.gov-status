@@ -1,0 +1,55 @@
+
+.status {
+  width: 20px;
+  height: 10px;
+  display: inline-block; }
+
+.complete {
+  background-color: #C0C0C0; }
+
+.in-progress {
+  background-color: #009900; }
+
+.low-risk {
+  background-color: yellow; }
+
+.high-risk {
+  background-color: red; }
+
+.not-started {
+  background-color: #fff;
+  border: 1px solid #999; }
+
+.not-applicable {
+  background-color: #808080; }
+
+table {
+  border-spacing: 0;
+  margin: 2em 0;
+  min-width: 100%; }
+  table thead tr {
+    background-color: #f1f1f1; }
+  table thead th {
+    text-align: left; }
+  table th, table td {
+    border: 1px solid #5b616b;
+    padding: 1.5rem; }
+
+table {
+  border-collapse: collapse;
+  font: 12px sans-serif; }
+
+ul.legend {
+  margin-left: 0; }
+  ul.legend li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 1rem; }
+    ul.legend li:before {
+      content: ""; }
+
+.note {
+  text-align: right;
+  font-size: 12px;
+  color: #333;
+  font-style: italic; }
