@@ -23,4 +23,5 @@ tiles:
     datapoint: 1.5M
     context: targeted for conversion to simple online interactions
 
+charts: claims
 ---
