@@ -17,7 +17,7 @@ tiles:
 
   - name: Online applications submitted
     layout: basic
-    datapoint: "83,530"
+    datapoint: "85,423"
     context: since public launch in July 2016
 
   - name: Online portion of 582k annual healthcare applications
