@@ -27,3 +27,11 @@
   cols:
     - id: views
       label: Count of pageviews
+
+- name: Account sign ups
+  icon: file
+  data: _signups
+  context: Total account sign ups per week
+  cols:
+    - id: signups
+      label: Number of signups
