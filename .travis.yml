@@ -25,7 +25,7 @@ deploy:
     skip_cleanup: true
     on:
       repo: department-of-veterans-affairs/vets.gov-status
-      branch: master
+      branch: account-sign-ups
   - provider: script
     script: aws s3 sync --acl public-read --delete --region us-gov-west-1 _site s3://dsva-vetsgov-scorecard-staging/
     skip_cleanup: true
