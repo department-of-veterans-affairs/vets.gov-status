@@ -17,12 +17,22 @@ var myCharts = [];
         {% for chart in site.data.charts %}
         <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
         {% endfor %}
+        {% if page.accounts %}
+          {% for chart in site.data.accounts %}
+          <li><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
+          {% endfor %}
+        {% endif %}
       </ul>
       <!-- Tab panes -->
       <div class="tab-content">
         {% for chart in site.data.charts %}
         <div class="tab-pane{% if forloop.first == true %} active{% endif %}" id="{{chart.data}}">{% include tiles/chart.html %}</div>
         {% endfor %}
+        {% if page.accounts %}
+          {% for chart in site.data.accounts %}
+          <div class="tab-pane" id="{{chart.data}}">{% include tiles/chart.html %}</div>
+          {% endfor %}
+        {% endif %}
       </div>
   </div>
 </div>

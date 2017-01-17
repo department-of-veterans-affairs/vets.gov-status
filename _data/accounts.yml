@@ -1,0 +1,23 @@
+- name: Account sign-ups
+  icon: file
+  data: _signups
+  context: New account sign ups per day
+  cols:
+    - id: loa1signups
+      label: New LOA1 signups
+      color: rgb(17,46,81)
+    - id: loa3signups
+      label: New LOA3 signups
+      color: rgb(175,175,175)
+
+- name: Total accounts
+  icon: file
+  data: _signupstotal
+  context: Total accounts
+  cols:
+    - id: totalloa1signups
+      label: Total LOA1 signups
+      color: rgb(17,46,81)
+    - id: totalloa3signups
+      label: Total LOA3 signups
+      color: rgb(175,175,175)
