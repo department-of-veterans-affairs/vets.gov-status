@@ -21,6 +21,15 @@
     {% include tiles/{{tile.layout}}.html %}
   {% endfor %}
 </div>
+
+{% if featured.size > 3 %}
+<div class="row row-tile">
+  {% for tile in featured offset: 3 %}
+    {% include tiles/{{tile.layout}}.html %}
+  {% endfor %}
+</div>
+{% endif %}
+
 {% endif %}
 
 {% include chart_section.html %}
