@@ -11,7 +11,7 @@ tiles:
   - name: Searches
     layout: basic
     datapoint: "17,480"
-    context: total in December on vets.gov
+    context: total in January, 2017 on vets.gov
 
   - name: One-click access target
     layout: basic
