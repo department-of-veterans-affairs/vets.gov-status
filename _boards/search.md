@@ -10,7 +10,7 @@ tiles:
 
   - name: Searches
     layout: basic
-    datapoint: "14,685"
+    datapoint: "17,480"
     context: total in December on vets.gov
 
   - name: One-click access target
@@ -21,6 +21,6 @@ tiles:
   - name: Top search terms in December
     layout: icon
     icon: search
-    text: 22-1995<br>jobs<br>coursera<br>employment center
+    text: 22-1995<br>va form 22-1995<br>22-1990<br>resume builder
 
 ---
