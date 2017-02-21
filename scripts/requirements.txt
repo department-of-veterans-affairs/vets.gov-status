@@ -1,4 +1,4 @@
-wheel
+setuptools
 pandas == 0.18.1
 google-api-python-client == 1.5.3
 pyOpenSSL == 16.1.0
