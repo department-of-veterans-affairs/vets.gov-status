@@ -1,3 +1,10 @@
+
+def isDeployable = {
+  (env.BRANCH_NAME == 'master' ||
+    env.BRANCH_NAME == 'production') &&
+    !env.CHANGE_TARGET
+}
+
 pipeline {
   agent {
     label 'rails-testing'
@@ -18,6 +25,10 @@ pipeline {
     }
 
     stage('Upload') {
+      if (!isDeployable()) {
+        return
+      }
+
       steps {
         script {
           def envs = [
