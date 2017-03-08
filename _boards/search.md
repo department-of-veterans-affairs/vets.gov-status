@@ -21,6 +21,6 @@ tiles:
   - name: Top search terms in January 2017
     layout: icon
     icon: search
-    text: 22-1995<br>va form 22-1995<br>22-1990<br>resume builder
+    text: 22-1995<br>22-1990<br>resume builder<br>va form 22-1995
 
 ---
