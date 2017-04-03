@@ -10,17 +10,17 @@ tiles:
 
   - name: Searches
     layout: basic
-    datapoint: "11,971"
-    context: total in February 2017 on vets.gov
+    datapoint: "14,733"
+    context: total in March 2017 on vets.gov
 
   - name: One-click access target
     layout: basic
     datapoint: 100
     context: most frequent search terms
 
-  - name: Top search terms in February 2017
+  - name: Top search terms in March 2017
     layout: icon
     icon: search
-    text: 22-1995<br>22-1990<br>resume builder<br>va form 22-1995
+    text: 22-1995<br>22-1990<br>secure messaging<br>secure message
 
 ---
