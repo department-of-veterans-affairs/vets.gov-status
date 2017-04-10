@@ -15,7 +15,7 @@ tiles:
 
   - name: Online applications submitted
     layout: basic
-    datapoint: "7,134"
+    datapoint: "9,930"
     context: since public launch in March 2017
 
   - name: Improved user experience
