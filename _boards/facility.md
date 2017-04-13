@@ -18,10 +18,10 @@ tiles:
     icon: road
     text: Connects with Google Maps to provide driving and public transit directions
 
-  - name: Locators being consolidated
+  - name: Locators in process of being consolidated
     layout: compare
     datapoint: 1
-    before: 43
+    before: 43+
 
 charts: facility
 ---

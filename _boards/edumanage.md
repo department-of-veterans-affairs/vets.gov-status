@@ -1,7 +1,7 @@
 ---
 title: Education Benefits
-date_added:
-vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/appliation/1995
+date_added: 2017-03-05 00:00:00 -0500
+vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/application/1995
 status: normal
 category: Manage
 description: Veterans can manage eduction benefits online using any mobile device
@@ -15,7 +15,7 @@ tiles:
 
   - name: Online applications submitted
     layout: basic
-    datapoint: "1526"
+    datapoint: "9,930"
     context: since public launch in March 2017
 
   - name: Improved user experience
