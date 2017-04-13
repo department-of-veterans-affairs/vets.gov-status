@@ -16,7 +16,7 @@ tiles:
   - name: Application volume transitioned
     layout: basic
     datapoint: "69%"
-    text: of March 2016 online applications submitted on vets.gov in March 2017
+    context: of March 2016 online applications submitted on vets.gov in March 2017
 
   - name: Improved user experience
     layout: icon
