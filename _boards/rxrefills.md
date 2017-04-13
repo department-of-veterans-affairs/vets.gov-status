@@ -8,6 +8,11 @@ description: Veterans can refill their VA prescriptions from any device
 screenshot: rx
 tiles:
 
+  - name: Prescriptions refilled
+    layout: basic
+    datapoint: "5,085"
+    context: since public launch in December 2016
+
   - name: On-the-go access
     layout: icon
     icon: phone

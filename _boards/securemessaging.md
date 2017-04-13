@@ -8,10 +8,20 @@ description: HIPAA compliant, easy, mobile messaging
 screenshot: securemessaging
 tiles:
 
+  - name: Secure messages sent
+    layout: basic
+    datapoint: "2,220"
+    context: since public launch in December 2016
+
   - name: Mobile availability
     layout: icon
     icon: phone
     text: Veterans can message on their smartphones
+
+  - name: Files securely sent to medical team
+    layout: basic
+    datapoint: "89"
+    context: since public launch in December 2016
 
 charts: messaging
 ---
