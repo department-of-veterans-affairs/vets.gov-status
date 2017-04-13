@@ -8,20 +8,20 @@ description: Veterans can apply for eduction benefits online using any mobile de
 screenshot: eduapply
 tiles:
 
-  - name: Increased security
-    layout: icon
-    icon: lock
-    text: Mitigated security issues with legacy site
-
   - name: Online applications submitted
     layout: basic
     datapoint: "88,854"
     context: since public launch in November 2016
 
-  - name: Improved user experience
-    layout: icon
-    icon: heart-empty
-    text: Used human centered design to improve Veteran experience
+  - name: Online applications for dependents to get transferred benefits
+    layout: basic
+    datapoint: "454"
+    context: since public launch in April 2017
+
+  - name: Percentage of Veterans completing each step
+    layout: basic
+    datapoint: ">90%"
+    context: in the application form once they begin
 
 charts: 1990
 ---
