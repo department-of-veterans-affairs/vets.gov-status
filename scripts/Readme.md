@@ -4,7 +4,7 @@ These scripts automate updating the data that powers the charts for the scorecar
 
 ## Running the scripts
 
-There are three main scripts. They currently share a large portion of the code and will be refactored at some point.
+There are four main scripts. They currently share a large portion of the code and will be refactored at some point.
 
 - `update_data.py` is the main script providing the general chart data
 
@@ -12,7 +12,11 @@ There are three main scripts. They currently share a large portion of the code a
 
 - `update_vcl_clicks.py` is a specific script for pulling in clicks on the Veterans' Crisis Line
 
+- `update_from_prometheus.py` pulls metric data from prometheus.
+
 The scripts expect `serviceaccount.p12` which is a Google Service Account with access to the Google Analytics account. There are instructions at https://developers.google.com/identity/protocols/OAuth2ServiceAccount on getting that setup.
+
+The prometheus script expects access to Prometheus (via SOCKS), and the addresses of both the environment-specific and utility prometheus instance API endpoints, defined as `PROMETHEUS_API_SITE` and `PROMETHEUS_API_UTILITY`.
 
 ### System requirements
 
@@ -23,6 +27,7 @@ The steps are:
  - `python3 update_data.py`
  - `python3 update_vcl_clicks.py`
  - `python3 update_filtered_views.py`
+ - `PROMETHEUS_API_SITE=X PROMETHEUS_API_UTILITY=Y python3 update_from_prometheus.py`
 
  Once complete you will have a set of csv files with the updated data. These can be moved to `_data` to update the charts.
 

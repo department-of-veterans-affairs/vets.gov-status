@@ -15,6 +15,8 @@ bin/pip3 install -r requirements.txt
 bin/python3 update_data.py
 bin/python3 update_vcl_clicks.py
 bin/python3 update_filtered_views.py
+bin/python3 update_from_prometheus.py
+
 mv *.csv ../_data
 
 cd ..
