@@ -1,6 +1,6 @@
 - name: New accounts
   icon: plus-sign
-  data: _signups
+  data: _signups_weekly
   context: New account sign ups per day
   cols:
     - id: loa1signups

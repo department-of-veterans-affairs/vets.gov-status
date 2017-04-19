@@ -26,14 +26,14 @@ def run_report(csv):
     weekly_df = df.groupby('week').agg('sum')
     weekly_df = weekly_df.reset_index()
     weekly_df['day'] = weekly_df['week'].apply(lambda x: week_to_day.loc[x,'day'])
-    weekly_df.set_index('day')
+    weekly_df = weekly_df.set_index('day')
     del weekly_df['week']
 
-    filename = os.path.splitext(csv)[0] + "_weekly.csv"
-    weekly_df.to_csv(filename)
+    filename = os.path.splitext(os.path.basename(csv))[0] + "_weekly.csv"
+    weekly_df.to_csv(filename, date_format="%m/%d/%y")
 
 def get_df(csv):
-    df = pd.read_csv(csv), index_col="day", parse_dates=True)
+    df = pd.read_csv(csv, index_col="day", parse_dates=True)
     df = filter_timerange(df)
     df['week']= df.index
     df['week']= df['week'].apply(lambda x: x.date().isocalendar()[1])
