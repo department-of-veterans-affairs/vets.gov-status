@@ -17,8 +17,8 @@ def find_sunday():
     days_after_sunday = datetime.timedelta(days=today.isoweekday())
     return today - days_after_sunday
 
-def run_report(csv):
-    df = get_df(csv)
+def run_reports():
+    df = get_df("../_data/core_signups.csv")
 
     week_to_day = df.reset_index()
     week_to_day = week_to_day[['day','week']].groupby('week').agg('max')
@@ -26,11 +26,26 @@ def run_report(csv):
     weekly_df = df.groupby('week').agg('sum')
     weekly_df = weekly_df.reset_index()
     weekly_df['day'] = weekly_df['week'].apply(lambda x: week_to_day.loc[x,'day'])
-    weekly_df = weekly_df.set_index('day')
-    del weekly_df['week']
 
+    print(weekly_df)
+    output_csv(weekly_df, "../_data/core_signups.csv")
+
+    total_df = get_df("../_data/core_signupstotal.csv")
+    total_df = total_df.reset_index()
+    total_df = total_df.groupby('week').max()
+
+
+    print(total_df)
+    output_csv(total_df, "../_data/core_signupstotal.csv")
+
+def output_csv(df, csv):
+    df = df.set_index('day')
+    if 'week' in df:
+        del df['week']
     filename = os.path.splitext(os.path.basename(csv))[0] + "_weekly.csv"
-    weekly_df.to_csv(filename, date_format="%m/%d/%y")
+    df.to_csv(filename, date_format="%m/%d/%y")
+
+
 
 def get_df(csv):
     df = pd.read_csv(csv, index_col="day", parse_dates=True)
@@ -46,11 +61,7 @@ def filter_timerange(df):
     return df[startDate:endDate]
 
 def main():
-
-    csvs = ["../_data/core_signups.csv"]
-
-    for csv in csvs:
-        run_report(csv)
+    run_reports()
 
 
 if __name__ == '__main__':
