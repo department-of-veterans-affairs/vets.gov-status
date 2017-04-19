@@ -4,7 +4,7 @@ date_added:
 vetsdotgov_url: https://www.vets.gov/facility-locator/
 status: normal
 category: Discover
-description: Veterans can search facilities AND VA services!
+description: Veterans can search facilities and VA services
 screenshot: facility
 tiles:
 

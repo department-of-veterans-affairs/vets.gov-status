@@ -1,0 +1,37 @@
+<div class="col-md-6 col-lg-4">
+  <div class="chart-wrapper">
+    <div class="chart-title">
+      {{tile.name}}
+    </div>
+    <div class="chart-stage">
+      <canvas id="{{tile.id}}" width="300" height="100"></canvas>
+      <span class="chart-notes">{{tile.context}}: {{tile.datapoint}}</span>
+    </div>
+  </div>
+</div>
+<script>
+var ctx = document.getElementById("{{tile.id}}");
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Datapoint'],
+        datasets: [{
+            data: [ {{tile.datapoint}}, {{ 100 | minus: tile.datapoint }} ],
+            backgroundColor: ['rgba(17,46,81,1)',
+                              'rgba(17,46,81,0)'],
+            borderColor: ['rgb(17,46,81,1)',
+                          'rgba(17,46,81,0)'],
+            hoverBackgroundColor: ['rgba(17,46,81,1)',
+                              'rgba(17,46,81,0)'],
+            hoverBorderColor: ['rgb(17,46,81)',
+                          'rgba(17,46,81,0)']
+        }]
+    },
+    options: {
+        responsive: false,
+        legend: {
+          display: false
+        },
+    }
+});
+</script>

@@ -8,7 +8,7 @@ description: Replaced $1M nonfunctional vendor prototype with a $50K working pro
 screenshot: gibct
 tiles:
 
-  - name: Users since launch
+  - name: Users since November 2015
     layout: basic
     datapoint: "1.74M"
     context: helped make more informed choices when they utilize their hard-earned GI Bill benefits
@@ -18,7 +18,7 @@ tiles:
     icon: warning-sign
     text: Warns on schools that are not performing well immediately
 
-  - name: Page views since launch
+  - name: Page views since November 2015
     layout: basic
     datapoint: "5.6M"
     context: with traffic steadily increasing since moving to vets.gov

@@ -5,7 +5,6 @@ vetsdotgov_url:
 status: normal
 category: Discover
 description: Veterans can find the information they need to access their benefits&mdash;in plain language
-extended_description: We create content to help users accomplish their goals — using words that Veterans and their families know and understand.  We develop and prioritize content based on data from user research, VA call centers, and website analytics.
 screenshot: content
 tiles:
 

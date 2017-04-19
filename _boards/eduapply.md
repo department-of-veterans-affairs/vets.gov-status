@@ -10,18 +10,13 @@ tiles:
 
   - name: Online applications submitted
     layout: basic
-    datapoint: "94,534"
+    datapoint: "96,353"
     context: since public launch in November 2016
 
   - name: Online applications for dependents to get transferred benefits
     layout: basic
-    datapoint: "454"
+    datapoint: "1,090"
     context: since public launch in April 2017
-
-  - name: Percentage of Veterans completing each step
-    layout: basic
-    datapoint: ">90%"
-    context: in the application form once they begin
 
 charts: 1990
 ---

@@ -10,13 +10,13 @@ tiles:
 
   - name: Online applications submitted
     layout: basic
-    datapoint: "12,640"
+    datapoint: "14,033"
     context: since public launch in March 2017
 
   - name: Application volume transitioned
-    layout: basic
-    datapoint: "69%"
-    context: of March 2016 online applications submitted on vets.gov in March 2017
+    layout: pie
+    datapoint: 69
+    context: Proportion of last year's submissions now on vets.gov
 
   - name: Improved user experience
     layout: icon

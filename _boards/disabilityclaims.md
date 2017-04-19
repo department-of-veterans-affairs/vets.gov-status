@@ -18,7 +18,7 @@ tiles:
     icon: cloud
     text: Improved reliability by deploying on cloud architecture
 
-  - name: Claims and appeals phone calls per year
+  - name: Claims phone calls per year
     layout: basic
     datapoint: 1.5M
     context: targeted for conversion to simple online interactions
