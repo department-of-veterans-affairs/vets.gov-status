@@ -2,6 +2,7 @@
 
 import datetime
 import json
+import os
 
 from apiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
@@ -14,7 +15,7 @@ import pandas as pd
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 DISCOVERY_URI = ('https://analyticsreporting.googleapis.com/$discovery/rest')
-KEY_FILE_LOCATION = 'serviceaccount.p12'
+KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
 SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
 
 
@@ -158,7 +159,7 @@ def output_device(df, board):
 
 def output_pageviews(df, board):
     """Output a csv from dataframe contents."""
-    
+
     df.columns = ['views']
     filename = "{}_views.csv".format(board)
     df.to_csv(filename, date_format="%m/%d/%y")
