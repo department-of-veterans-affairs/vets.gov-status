@@ -3,12 +3,14 @@ pipeline {
     label ''
   }
 
+  stages {
     stage('Build') {
       steps {
 
-		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'FILE')]) {
-      		sh 'use $FILE'
-    	}
+    		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'FILE')]) {
+          		sh 'use $FILE'
+        	}
+      }
     }
   }
 }
