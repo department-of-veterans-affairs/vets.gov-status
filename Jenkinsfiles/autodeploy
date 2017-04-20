@@ -9,7 +9,6 @@ pipeline {
 		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'FILE')]) {
       		sh 'use $FILE'
     	}
-      }
     }
   }
 }
