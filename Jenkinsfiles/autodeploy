@@ -4,6 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+			cleanDir
     		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'GA_SERVICEACCOUNT')]) {
           		sh 'python3 --version'
 				sh 'scripts/run_update.sh'

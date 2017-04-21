@@ -12,7 +12,7 @@ echo $PWD
 
 ls -al bin
 
-bin/activate
+#source bin/activate
 
 # Install requirements
 bin/pip3 install wheel
