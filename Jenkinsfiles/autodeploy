@@ -8,8 +8,6 @@ pipeline {
           		sh 'python3 --version'
 				sh 'scripts/run_update.sh'
         	}
-
-			deleteDir()
       }
     }
   }
