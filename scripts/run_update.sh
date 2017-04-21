@@ -9,6 +9,6 @@ scripts/run_python_script.sh
 # Push our changes up to github and clean up local branch
 git add .
 git commit -m "$(date -I) automated GA data pull"
-git push -u origin HEAD
+#git push -u origin HEAD
 git checkout master
-git branch -d "$(date -I)-ga-data"
+git branch -D "$(date -I)-ga-data"

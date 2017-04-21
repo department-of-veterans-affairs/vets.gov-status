@@ -10,11 +10,11 @@ cd update_data
 
 echo $PWD
 
-ls -al
+ls -al bin
 
 # Install requirements
-bin/pip3 install wheel
-bin/pip3 install -r requirements.txt
+./bin/pip3 install wheel
+./bin/pip3 install -r requirements.txt
 
 bin/python3 update_data.py
 bin/python3 update_vcl_clicks.py
