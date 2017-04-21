@@ -5,7 +5,8 @@ pipeline {
     stage('Build') {
       steps {
     		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'GA_SERVICEACCOUNT')]) {
-          		sh 'scripts/run_update.sh'
+          		sh 'python3 --version'
+				sh 'scripts/run_update.sh'
         	}
       }
     }
