@@ -10,6 +10,8 @@ cd update_data
 
 echo $PWD
 
+ls -al
+
 # Install requirements
 bin/pip3 install wheel
 bin/pip3 install -r requirements.txt
