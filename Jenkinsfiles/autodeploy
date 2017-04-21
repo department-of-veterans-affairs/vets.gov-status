@@ -1,14 +1,11 @@
 pipeline {
-  agent {
-    label ''
-  }
+  agent any
 
   stages {
     stage('Build') {
       steps {
-
-    		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'FILE')]) {
-          		sh 'use $FILE'
+    		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'GA_SERVICEACCOUNT')]) {
+          		sh 'run_update.sh'
         	}
       }
     }
