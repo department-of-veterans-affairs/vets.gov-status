@@ -12,9 +12,9 @@ cd update_data
 
 echo $PWD
 
-ls -al bin
+cat bin/pip3
 
-#source bin/activate
+source bin/activate
 
 # Install requirements
 bin/pip3 install wheel
