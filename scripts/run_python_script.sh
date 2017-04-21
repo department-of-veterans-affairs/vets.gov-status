@@ -5,6 +5,7 @@ python3 -m venv update_data
 
 # move our scripts over into the venv
 cp -r scripts/* update_data/
+cp $GA_SERVICEACCOUNT update_data/
 
 cd update_data
 
