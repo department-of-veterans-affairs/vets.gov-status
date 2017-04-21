@@ -12,11 +12,11 @@ cd update_data
 
 echo $PWD
 
-ls -al
+ls -al bin
 
 # Install requirements
-bin/pip3 install wheel
-bin/pip3 install -r requirements.txt
+./bin/pip3 install wheel
+./bin/pip3 install -r requirements.txt
 
 export GA_SERVICEACCOUNT=serviceaccount.p12
 
