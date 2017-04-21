@@ -8,12 +8,6 @@ cp -r scripts/* update_data/
 
 cd update_data
 
-echo $PWD
-
-cat bin/pip3
-
-source bin/activate
-
 # Install requirements
 bin/pip3 install wheel
 bin/pip3 install -r requirements.txt
