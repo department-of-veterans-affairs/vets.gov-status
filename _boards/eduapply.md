@@ -10,7 +10,7 @@ tiles:
 
   - name: Online applications submitted
     layout: basic
-    datapoint: "96,353"
+    datapoint: "100,644"
     context: since public launch in November 2016
 
   - name: Online applications for dependents to get transferred benefits
