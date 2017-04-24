@@ -4,7 +4,7 @@ date_added: 2015-11-01 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/gi-bill-comparison-tool/
 status: normal
 category: Discover
-description: Replaced $1M nonfunctional vendor prototype with a $50K working product in two weeks
+description: Replaced $1M nonfunctional vendor prototype with a $50K working product in 2 weeks
 screenshot: gibct
 tiles:
 

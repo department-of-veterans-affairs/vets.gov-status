@@ -4,7 +4,7 @@ date_added:
 vetsdotgov_url:
 status: normal
 category: Discover
-description: Veterans can find the information they need to access their benefits&mdash;in plain language
+description: Veterans can discover the benefits available to them&mdash;in plain language
 screenshot: content
 tiles:
 
