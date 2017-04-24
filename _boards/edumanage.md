@@ -10,7 +10,7 @@ tiles:
 
   - name: Online applications submitted
     layout: basic
-    datapoint: "14,033"
+    datapoint: "15,702"
     context: since public launch in March 2017
 
   - name: Application volume transitioned
