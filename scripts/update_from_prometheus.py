@@ -68,7 +68,6 @@ def df_from_response(response):
     elif parsed_response['data']['resultType'] == 'matrix':
       data['value'] = [v[1] for v in ts['values']]
 
-  print(data)
   # Convert the data into a data frame and parse the timestamps into something usable
   df = pd.DataFrame.from_dict(data)
   df['day'] = df['timestamp'].apply(lambda ts: datetime.datetime.fromtimestamp(ts))
