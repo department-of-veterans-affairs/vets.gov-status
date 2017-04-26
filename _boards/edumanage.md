@@ -1,27 +1,27 @@
 ---
-title: Education Benefits
-date_added: 2017-03-05 00:00:00 -0500
+title: Manage Education Benefits
+date_added:
 vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/application/1995
 status: normal
 category: Manage
-description: Veterans can manage eduction benefits online using any mobile device
+description: Veterans can manage education benefits online using any mobile device
 screenshot: edumanage
 tiles:
 
-  - name: Increased security
-    layout: icon
-    icon: lock
-    text: Mitigated security issues with legacy site
-
-  - name: Online applications submitted
+  - name: Online applications to change schools submitted
     layout: basic
-    datapoint: "9,930"
-    context: since public launch in March 2017
+    datapoint: "15,702"
+    context: since public launch in March 2017 (Form 22-1995)
 
-  - name: Improved user experience
-    layout: icon
-    icon: heart-empty
-    text: Used human centered design to improve Veteran experience
+  - name: Online applications to change schools for dependents in special circumstances submitted
+    layout: basic
+    datapoint: "15,702"
+    context: Coming Soon in May 2017 (Form 22-5495 for Dependents receiving benefits based on the Veteran's status)
+
+  - name: Application volume transitioned
+    layout: basic
+    datapoint: "69%"
+    context: proportion of last year's submissions now on vets.gov
 
 charts: 1995
 ---

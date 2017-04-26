@@ -1,7 +1,7 @@
-<a href="{{site.baseurl}}{{project.url}}">
+{% if project.status != "progress" %}<a href="{{site.baseurl}}{{project.url}}">{% endif %}
   <div class="project-wrapper">
       <p class="project-title">{{project.title}}</p>
       <p>{{project.description}}</p>
       {% if project.status == "progress" %}<span class="label label-default label-status">Coming Soon</span>{% endif %}
   </div>
-</a>
+{% if project.status != "progress" %}</a>{% endif %}

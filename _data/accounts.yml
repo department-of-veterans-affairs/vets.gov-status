@@ -1,7 +1,7 @@
 - name: New accounts
   icon: plus-sign
-  data: _signups
-  context: New account sign ups per day
+  data: _signups_weekly
+  context: New account sign ups per week
   cols:
     - id: loa1signups
       label: New LOA1 signups
@@ -12,7 +12,7 @@
 
 - name: Total accounts
   icon: globe
-  data: _signupstotal
+  data: _signupstotal_weekly
   context: Total accounts created since launch
   cols:
     - id: totalloa1signups

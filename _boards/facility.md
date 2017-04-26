@@ -4,7 +4,7 @@ date_added:
 vetsdotgov_url: https://www.vets.gov/facility-locator/
 status: normal
 category: Discover
-description: Veterans can search facilities AND VA services!
+description: Veterans can search facilities and VA services
 screenshot: facility
 tiles:
 
@@ -18,10 +18,10 @@ tiles:
     icon: road
     text: Connects with Google Maps to provide driving and public transit directions
 
-  - name: Locators in process of being consolidated
-    layout: compare
-    datapoint: 1
-    before: 43+
+  - name: Increased transparency at the facility hospital level
+    layout: icon
+    icon: calendar
+    text: Reports percentage of Veterans who marked they were “always” or “usually” able to get an appointment
 
 charts: facility
 ---

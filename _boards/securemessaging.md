@@ -8,6 +8,11 @@ description: HIPAA compliant, easy, mobile messaging
 screenshot: securemessaging
 tiles:
 
+  - name: Secure messages sent
+    layout: basic
+    datapoint: "2,416"
+    context: since public launch in December 2016
+
   - name: Mobile availability
     layout: icon
     icon: phone

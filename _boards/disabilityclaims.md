@@ -4,7 +4,7 @@ date_added: 2016-12-05 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/track-claims
 status: normal
 category: Track
-description: Track and update your claim all in one place
+description: Veterans can track and update claims in one place
 screenshot: disabilityclaims
 tiles:
 
@@ -18,7 +18,7 @@ tiles:
     icon: cloud
     text: Improved reliability by deploying on cloud architecture
 
-  - name: Claims and appeals phone calls per year
+  - name: Claims phone calls per year
     layout: basic
     datapoint: 1.5M
     context: targeted for conversion to simple online interactions
