@@ -52,6 +52,22 @@ feedback:
     url: research.html
     layout: link
     text:
+
+cloud:
+  - name: Availabilty
+    layout: basic
+    datapoint: "99.99279%"
+    context: based on our continuous reachability monitoring
+
+  - name: Deployments per month pace
+    layout: basic
+    datapoint: "30"
+    context: each of which provides multiple improvements for Veterans
+
+  - name: Defect rate
+    layout: basic
+    datapoint: "0.00625%"
+    context: of requests on which our software throws an error
 ---
 
 {% include header.html %}
@@ -100,5 +116,7 @@ feedback:
     {% include research.html %}
   </div>
 </div>
+
+{% include cloud.html %}
 
 {% include footer.html %}

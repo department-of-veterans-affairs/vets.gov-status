@@ -27,20 +27,22 @@ def df_from_response(response):
 
   Example:
     query:
-      sum(rate(nginx_http_request_total{status=~"5.."}[5m])) 
+      sum(rate(nginx_http_request_total{status=~"5.."}[5m]))
         / sum(rate(nginx_http_request_total[5m]))
     returns:
-      | ts         | day                       | value | 
-      | ---        | ---                       | --- | 
-      | 1492445066 | 2017-04-17 10:04:26 -0600 | 0   | 
-      | 1492531466 | 2017-04-18 10:04:26 -0600 | 0   | 
-      | 1492617866 | 2017-04-19 10:04:26 -0600 | 0   | 
+      | ts         | day                       | value |
+      | ---        | ---                       | --- |
+      | 1492445066 | 2017-04-17 10:04:26 -0600 | 0   |
+      | 1492531466 | 2017-04-18 10:04:26 -0600 | 0   |
+      | 1492617866 | 2017-04-19 10:04:26 -0600 | 0   |
 
 
   Returns: a pandas DataFrame object
   """
 
   data = {}
+
+  print(response.text)
 
   parsed_response = response.json()
 

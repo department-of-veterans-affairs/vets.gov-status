@@ -1,0 +1,15 @@
+
+<div class="container tile-container">
+  <div class="row subtitle">
+    <div class="col-md-12">
+      <p>Cloud Infrastructure</p>
+      <span class="access-sentence">Operational effiency and system stability powered by commercial cloud technology</span>
+    </div>
+  </div>
+
+  <div class="row row-tile">
+    {% for tile in cloud limit: 3 %}
+      {% include tiles/{{tile.layout}}.html %}
+    {% endfor %}
+  </div>
+</div>
