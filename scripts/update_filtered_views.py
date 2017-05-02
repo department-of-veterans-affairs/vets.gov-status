@@ -72,7 +72,7 @@ def get_reports(analytics, view_id, page_filter):
                         "filters": [
                             {
                               "dimensionName": "ga:pagePath",
-                              "operator": "BEGINS_WITH",
+                              "operator": "REGEXP",
                               "expressions": page_filter
                             }
                             ]}],
@@ -88,7 +88,7 @@ def get_reports(analytics, view_id, page_filter):
                        "filters": [
                            {
                              "dimensionName": "ga:pagePath",
-                             "operator": "BEGINS_WITH",
+                             "operator": "REGEXP",
                              "expressions": page_filter
                            }
                            ]}],
@@ -103,7 +103,7 @@ def get_reports(analytics, view_id, page_filter):
                        "filters": [
                            {
                              "dimensionName": "ga:pagePath",
-                             "operator": "BEGINS_WITH",
+                             "operator": "REGEXP",
                              "expressions": page_filter
                            }
                            ]}],

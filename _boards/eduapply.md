@@ -10,13 +10,13 @@ tiles:
 
   - name: Online applications for education benefits submitted
     layout: basic
-    datapoint: "100,644"
+    datapoint: "108,959"
     context: since public launch in November 2016 (Form 22-1990)
 
   - name: Online applications for Veterans in the National Call to Service programs
     layout: basic
-    datapoint: "N/A"
-    context: Coming soon in May 2017 (Form 22-1990N)
+    datapoint: "Coming Soon"
+    context: in May 2017 (Form 22-1990N)
 
   - name: Improved user experience
     layout: icon

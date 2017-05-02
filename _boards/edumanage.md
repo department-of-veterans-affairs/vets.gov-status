@@ -10,13 +10,13 @@ tiles:
 
   - name: Online applications to change schools submitted
     layout: basic
-    datapoint: "15,702"
+    datapoint: "19,747"
     context: since public launch in March 2017 (Form 22-1995)
 
   - name: Online applications to change schools for dependents in special circumstances submitted
     layout: basic
-    datapoint: "15,702"
-    context: Coming Soon in May 2017 (Form 22-5495 for Dependents receiving benefits based on the Veteran's status)
+    datapoint: "Coming Soon"
+    context: in May 2017 (Form 22-5495 for Dependents receiving benefits based on the Veteran's status)
 
   - name: Application volume transitioned
     layout: basic

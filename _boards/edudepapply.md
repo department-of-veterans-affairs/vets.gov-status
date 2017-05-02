@@ -10,18 +10,18 @@ tiles:
 
   - name: Online applications for transferred benefits submitted
     layout: basic
-    datapoint: "XXX"
+    datapoint: "3,246"
     context: since public launch in April 2017 (Form 22-1990E)
 
   - name: Online applications for dependents based on Veteran's status
     layout: basic
-    datapoint: "N/A"
-    context: since public launch in April 2017 (Form 22-1990E)
+    datapoint: "2,104"
+    context: since public launch in April 2017 (Form 22-5490)
 
   - name: Improved user experience
     layout: icon
     icon: heart-empty
     text: Used human centered design to improve Veteran experience
 
-charts: 1990
+charts: edu_dep
 ---

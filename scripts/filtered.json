@@ -1,10 +1,14 @@
 {
   "1990": {
       "view": "132469923",
-      "page_filter": "/education/apply-for-education-benefits/application/1990/"
+      "page_filter": "/education/apply-for-education-benefits/application/(1990|1990n).*"
       },
   "1995": {
       "view": "132469923",
-      "page_filter": "/education/apply-for-education-benefits/application/1995/"
+      "page_filter": "/education/apply-for-education-benefits/application/(1995|5495).*"
+    },
+  "edu_dep": {
+      "view": "132469923",
+      "page_filter": "/education/apply-for-education-benefits/application/(1990e|5490).*"
       }
 }
