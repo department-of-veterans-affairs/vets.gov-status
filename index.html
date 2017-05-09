@@ -57,17 +57,17 @@ cloud:
 
   - name: Availabilty
     layout: basic
-    datapoint: "99.9860%"
+    datapoint: "{{ site.data.cloud.reachability }}"
     context: based on our continuous reachability monitoring
 
   - name: Deployments per month pace
     layout: basic
-    datapoint: "36"
+    datapoint: {{ site.data.cloud.deployments }}
     context: each of which provides multiple improvements for Veterans
 
   - name: Defect rate
     layout: basic
-    datapoint: "0.0041%"
+    datapoint: "{{ site.data.cloud.error_rate }}"
     context: of requests on which our software throws an error
 ---
 

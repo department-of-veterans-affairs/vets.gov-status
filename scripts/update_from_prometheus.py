@@ -4,6 +4,8 @@ import os
 import pandas as pd
 import requests
 
+import ruamel.yaml as yaml
+
 PROXY_CONFIG    = {
   'http': 'socks5://127.0.0.1:2001'
 }
@@ -42,7 +44,7 @@ def df_from_response(response):
 
   data = {}
 
-  print(response.text)
+  #print(response.text)
 
   parsed_response = response.json()
 
@@ -139,7 +141,7 @@ REPORTS = [
       },
     },
 
-    'path': '../_data/deployments_daily.csv',
+    'path': 'deployments_daily.csv',
   },
 
   # Projected monthly deployment count
@@ -151,7 +153,7 @@ REPORTS = [
       },
     },
 
-    'path': '../_data/deployments_monthly.csv',
+    'path': 'deployments_monthly.csv',
   },
 
   # Error rate daily
@@ -166,7 +168,7 @@ REPORTS = [
       },
     },
 
-    'path': '../_data/error_rate.csv',
+    'path': 'error_rate.csv',
   },
 
   # Total system reachability average (daily) (single EW instance)
@@ -181,10 +183,24 @@ REPORTS = [
       },
     },
 
-    'path': '../_data/reachability.csv',
+    'path': 'reachability.csv',
   },
 ]
 
 
 for report_definition in REPORTS:
   write_report(report_definition)
+
+output = {}
+
+df = pd.read_csv("error_rate.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+output['error_rate'] = '{:.4%}'.format(df[-7:].mean().value.item())
+
+df = pd.read_csv("reachability.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+output['reachability'] = '{:.4%}'.format(df[-7:].mean().value.item())
+
+df = pd.read_csv("deployments_monthly.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+output['deployments'] = df.iloc[0,0].item()
+
+with open('cloud.yml', 'w') as outfile:
+    outfile.write(yaml.dump(output, default_flow_style=False))
