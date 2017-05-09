@@ -56,19 +56,19 @@ feedback:
 cloud:
 
   - name: Availabilty
-    layout: basic
-    datapoint: {{ site.data.cloud.reachability }}
+    layout: basic_cloud
+    datapoint: reachability
     context: based on our continuous reachability monitoring
 
   - name: Deployments per month pace
-    layout: basic
-    datapoint: {{ site.data.cloud.deployments }}
+    layout: basic_cloud
+    datapoint: deployments
     context: each of which provides multiple improvements for Veterans
 
-  - name: Defect rate
-    layout: basic
-    datapoint: {{ site.data.cloud.error_rate }}
-    context: of requests on which our software throws an error
+  - name: Error rate
+    layout: basic_cloud
+    datapoint: error_rate
+    context: of requests that our software does not handle successfully
 ---
 
 {% include header.html %}
