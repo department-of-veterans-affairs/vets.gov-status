@@ -10,7 +10,7 @@ tiles:
 
   - name: Secure messages sent
     layout: basic
-    datapoint: "2,834"
+    datapoint: "3,026"
     context: since public launch in December 2016
 
   - name: Mobile availability

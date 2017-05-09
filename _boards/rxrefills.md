@@ -10,7 +10,7 @@ tiles:
 
   - name: Prescriptions refilled
     layout: basic
-    datapoint: "6,030"
+    datapoint: "6,370"
     context: since public launch in December 2016
 
   - name: On-the-go access
