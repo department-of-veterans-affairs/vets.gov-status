@@ -57,7 +57,7 @@ cloud:
 
   - name: Availabilty
     layout: basic
-    datapoint: "{{ site.data.cloud.reachability }}"
+    datapoint: {{ site.data.cloud.reachability }}
     context: based on our continuous reachability monitoring
 
   - name: Deployments per month pace
@@ -67,7 +67,7 @@ cloud:
 
   - name: Defect rate
     layout: basic
-    datapoint: "{{ site.data.cloud.error_rate }}"
+    datapoint: {{ site.data.cloud.error_rate }}
     context: of requests on which our software throws an error
 ---
 
