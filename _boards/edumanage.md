@@ -10,7 +10,7 @@ tiles:
 
   - name: Online applications to change schools submitted
     layout: basic
-    datapoint: "23,194"
+    datapoint: "25,780"
     context: since public launch in March 2017 (Form 22-1995)
 
   - name: Online applications to change schools for dependents in special circumstances submitted

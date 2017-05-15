@@ -10,7 +10,7 @@ tiles:
 
   - name: Online applications for education benefits submitted
     layout: basic
-    datapoint: "115,467"
+    datapoint: "120,569"
     context: since public launch in November 2016 (Form 22-1990)
 
   - name: Online applications for Veterans in the National Call to Service programs
