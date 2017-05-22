@@ -9,8 +9,8 @@ screenshot: securemessaging
 tiles:
 
   - name: Secure messages sent
-    layout: basic
-    datapoint: "3,190"
+    layout: basic_count
+    datapoint: smsent
     context: since public launch in December 2016
 
   - name: Mobile availability

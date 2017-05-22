@@ -9,14 +9,14 @@ screenshot: edumanage
 tiles:
 
   - name: Online applications to change schools submitted
-    layout: basic
-    datapoint: "25,780"
+    layout: basic_count
+    datapoint: form1995
     context: since public launch in March 2017 (Form 22-1995)
 
   - name: Online applications to change schools for dependents in special circumstances submitted
-    layout: basic
-    datapoint: "N/A"
-    context: coming soon in May 2017 (Form 22-5495 for Dependents receiving benefits based on the Veteran's status)
+    layout: basic_count
+    datapoint: form5495
+    context: since public launch in May 2017 (Form 22-5495 for Dependents receiving benefits based on the Veteran's status)
 
   - name: Application volume transitioned
     layout: basic

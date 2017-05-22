@@ -9,14 +9,14 @@ screenshot: eduapply
 tiles:
 
   - name: Online applications for education benefits submitted
-    layout: basic
-    datapoint: "120,569"
+    layout: basic_count
+    datapoint: form1990
     context: since public launch in November 2016 (Form 22-1990)
 
   - name: Online applications for Veterans in the National Call to Service programs
-    layout: basic
-    datapoint: "N/A"
-    context: coming soon in May 2017 (Form 22-1990N)
+    layout: basic_count
+    datapoint: form1990n
+    context: since public launch in May 2017 (Form 22-1990N)
 
   - name: Improved user experience
     layout: icon

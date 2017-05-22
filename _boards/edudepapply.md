@@ -9,13 +9,13 @@ screenshot: eduapply
 tiles:
 
   - name: Online applications for transferred benefits submitted
-    layout: basic
-    datapoint: "5,228"
+    layout: basic_count
+    datapoint: form1990e
     context: since public launch in April 2017 (Form 22-1990E)
 
   - name: Online applications for dependents based on Veteran's status
-    layout: basic
-    datapoint: "3,596"
+    layout: basic_count
+    datapoint: form5490
     context: since public launch in April 2017 (Form 22-5490)
 
   - name: Improved user experience
