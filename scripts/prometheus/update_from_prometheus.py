@@ -44,7 +44,7 @@ def df_from_response(response):
 
   data = {}
 
-  print(response.text)
+  # print(response.text)
 
   parsed_response = response.json()
 
