@@ -44,7 +44,7 @@ def df_from_response(response):
 
   data = {}
 
-  #print(response.text)
+  print(response.text)
 
   parsed_response = response.json()
 
@@ -102,8 +102,8 @@ def query_prometheus(query):
       end = find_last_sunday()
       start = end - datetime.timedelta(days=qparams['days_back'])
       del qparams['days_back']
-      qparams['start'] = pd.Timestamp(start).isoformat()
-      qparams['end']= pd.Timestamp(end).isoformat()
+      qparams['start'] = pd.Timestamp(start).isoformat() + 'Z'
+      qparams['end']= pd.Timestamp(end).isoformat() + 'Z'
 
   return requests.get(query['endpoint']+query['endpoint_path'],
                       params=qparams,
