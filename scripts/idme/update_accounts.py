@@ -1,3 +1,5 @@
+import datetime
+
 from googleapiclient import discovery
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -8,8 +10,7 @@ import ruamel.yaml as yaml
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 DISCOVERY_URI = ('https://analyticsreporting.googleapis.com/$discovery/rest')
-#TODO: Update this to envvar
-KEY_FILE_LOCATION = 'serviceaccount.p12'
+KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
 SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
 
 def fetch_sheet_data():
@@ -59,6 +60,61 @@ def output_loa3_count(loa3_accounts):
     with open(output_file, 'w') as output:
         yaml.dump(output_dict, output, Dumper=yaml.RoundTripDumper, default_style='"')
 
+def find_sunday():
+    """Finds the prior Sunday to ensure a full week of data
+
+    returns a datetime representing that Sunday"""
+
+    today = datetime.date.today()
+
+    # Monday is 1 and Sunday is 7 for isoweekday()
+    days_after_sunday = datetime.timedelta(days=today.isoweekday())
+    return today - days_after_sunday
+
+def make_daily_chart(df):
+
+    df = filter_timerange(df)
+    df = df.reset_index()
+
+    # Find the iso week of every day
+    df['week']= df['day'].apply(lambda x: x.date().isocalendar()[1])
+
+    # Create mapping from days to weeks. We'll lose this when
+    # we sum because dates don't sum
+    week_to_day = df[['day','week']].groupby('week').agg('max')
+
+    df = df.groupby('week').agg('sum')
+    df = df.reset_index()
+
+    # Add back in the last day of that week
+    df['day'] = df['week'].apply(lambda x: week_to_day.loc[x,'day'])
+
+    output_csv(df, "core_signups_weekly.csv")
+
+def make_total_chart(df):
+
+    df = filter_timerange(df)
+    df = df.reset_index()
+
+    # Find the iso week of every day
+    df['week']= df['day'].apply(lambda x: x.date().isocalendar()[1])
+
+    df = df.groupby('week').max()
+
+    output_csv(df, "core_signupstotal_weekly.csv")
+
+def output_csv(df, csv):
+    df = df.set_index('day')
+    if 'week' in df:
+        del df['week']
+    df.to_csv(os.path.join(os.environ['DATA_DIR'], csv), date_format="%m/%d/%y")
+
+def filter_timerange(df):
+    sunday = find_sunday()
+    endDate = pd.Timestamp(find_sunday())
+    startDate = pd.Timestamp(sunday - datetime.timedelta(days=139))
+    return df[startDate:endDate]
+
 
 def main():
 
@@ -67,10 +123,14 @@ def main():
     daily_signups_df = make_df(values)
 
     # The added values are the totals prior to 1/6/2017 when the online gsheet counts begin
-    totals = daily_signups_df.sum() + pd.Series({'loa1signups': 26701, 'loa3signups': 11046})
+    totals = daily_signups_df.sum() + pd.Series({'loa1signups': 26701,
+                                                 'loa3signups': 11046})
     output_loa3_count(totals['loa3signups'])
 
-    total_signups_df = values_df.cumsum() + pd.Series({'loa1signups': 26701, 'loa3signups': 11046})
+    make_daily_chart(daily_signups_df)
+
+    total_signups_df = daily_signups_df.cumsum() + pd.Series({'loa1signups': 26701, 'loa3signups': 11046})
+    make_total_chart(total_signups_df)
 
 if __name__ == '__main__':
     main()

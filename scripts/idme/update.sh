@@ -10,11 +10,13 @@ cp -r idme/* update_data/
 
 cd update_data
 
+export GA_SERVICEACCOUNT="serviceaccount.p12"
+
 # Install requirements
 bin/pip3 install wheel
 bin/pip3 install -r requirements.txt
 
-bin/python3 weekly_account_rollup.py
+bin/python3 update_accounts.py
 
 mv *.csv $DATA_DIR
 
