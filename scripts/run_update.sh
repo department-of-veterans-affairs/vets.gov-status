@@ -1,12 +1,5 @@
 #! /usr/bin/env bash
 
-# Get to git repo root directory from the directory of this script
-cd $(dirname $0)/..
-
-# Get the latest version locally
-git checkout master
-git pull
-
 # Create branch for the update using data to differentiate
 git checkout -b "$(date -I)-ga-data"
 
