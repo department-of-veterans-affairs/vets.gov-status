@@ -108,7 +108,8 @@ def output_csv(df, csv):
     df = df.set_index('day')
     if 'week' in df:
         del df['week']
-    df.to_csv(csv, date_format="%m/%d/%y")
+    df.to_csv(os.path.join(os.environ['DATA_DIR'],csv),
+              date_format="%m/%d/%y")
 
 def filter_timerange(df):
     sunday = find_sunday()

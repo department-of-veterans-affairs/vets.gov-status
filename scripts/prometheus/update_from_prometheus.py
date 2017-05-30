@@ -148,7 +148,8 @@ def make_cloud_data():
     df = pd.read_csv("deployments_monthly.csv", usecols=['day','value'], index_col='day', parse_dates=True)
     output['deployments'] = df.iloc[0,0].item()
 
-    with open('cloud.yml', 'w') as outfile:
+    output_file = os.path.join(os.environ['DATA_DIR'],'cloud.yml')
+    with open(output_file, 'w') as outfile:
         outfile.write(yaml.dump(output, default_flow_style=False))
 
 def main():
