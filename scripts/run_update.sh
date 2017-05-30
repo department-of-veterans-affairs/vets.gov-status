@@ -10,32 +10,11 @@ cd $(dirname $0)/..
 # Create branch for the update using data to differentiate
 #git checkout -b "$(date -I)-ga-data"
 
-# Set environment variables for later username
-export DATA_DIR="${PWD}/_data"
-export GA_SERVICEACCOUNT="serviceaccount.p12"
-
-# Create a virtual environment to run our script in to prevent any package version conflicts
-python3 -m venv update_data
-
-cp -r scripts/* update_data
-
-cd update_data
-
-# Install requirements
-bin/pip3 install wheel
-bin/pip3 install -r requirements.txt
-
-bin/python3 google_analytics/update_data.py
-bin/python3 google_analytics/update_counts.py
-
-bin/python3 idme/update_accounts.py
-
-bin/python3 prometheus/update_from_prometheus.py
+cd scripts
+docker build -t vets-scorecard-updater .
 
 cd ..
-
-# Clean up venv so git doesn't pick it up
-rm -rf update_data
+docker run -v ./_/data:/data -ti vets-scorecard-updater
 
 # Push our changes up to github and clean up local branch
 # git add .
