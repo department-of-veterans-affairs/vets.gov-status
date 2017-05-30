@@ -1,4 +1,0 @@
-pandas == 0.18.1
-google-api-python-client == 1.5.3
-pyOpenSSL == 16.2.0
-ruamel.yaml == 0.14.11
