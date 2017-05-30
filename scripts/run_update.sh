@@ -10,10 +10,32 @@ git pull
 # Create branch for the update using data to differentiate
 git checkout -b "$(date -I)-ga-data"
 
+# Set environment variables for later username
 export DATA_DIR="${PWD}/_data"
+export GA_SERVICEACCOUNT="serviceaccount.p12"
 
 # Create a virtual environment to run our script in to prevent any package version conflicts
-scripts/updates.sh
+python3 -m venv update_data
+
+cp -r scripts/* update_data
+
+cd update_data
+
+# Install requirements
+bin/pip3 install wheel
+bin/pip3 install -r requirements.txt
+
+bin/python3 google_analytics/update_data.py
+bin/python3 google_analytics/update_counts.py
+
+bin/python3 idme/update_accounts.py
+
+bin/python3 prometheus/update_from_prometheus.py
+
+cd ..
+
+# Clean up venv so git doesn't pick it up
+rm -rf update_data
 
 # Push our changes up to github and clean up local branch
 git add .
