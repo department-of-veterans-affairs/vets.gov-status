@@ -4,11 +4,11 @@
 cd $(dirname $0)/..
 
 # Get the latest version locally
-git checkout master
-git pull
+#git checkout master
+#git pull
 
 # Create branch for the update using data to differentiate
-git checkout -b "$(date -I)-ga-data"
+#git checkout -b "$(date -I)-ga-data"
 
 # Set environment variables for later username
 export DATA_DIR="${PWD}/_data"
