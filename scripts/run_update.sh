@@ -14,7 +14,7 @@ cd scripts
 docker build -t vets-scorecard-updater .
 
 cd ..
-docker run -v ./_/data:/data -ti vets-scorecard-updater
+docker run -v ${PWD}/_data:/data -ti --rm vets-scorecard-updater
 
 # Push our changes up to github and clean up local branch
 # git add .
