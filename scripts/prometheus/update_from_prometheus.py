@@ -7,8 +7,8 @@ import requests
 import ruamel.yaml as yaml
 
 PROXY_CONFIG    = {
-  'http': 'socks5h://127.0.0.1:2001',
-  'https': 'socks5h://127.0.0.1:2001'
+  'http': 'socks5h://172.17.0.1:2001',
+  'https': 'socks5h://172.17.0.1:2001'
 }
 
 def find_last_sunday():
