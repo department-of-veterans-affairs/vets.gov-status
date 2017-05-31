@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ['/bin/bash','/application/updates.sh']
+CMD ["/application/updates.sh"]
