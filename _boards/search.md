@@ -10,17 +10,17 @@ tiles:
 
   - name: Searches
     layout: basic
-    datapoint: "13,298"
-    context: total in April 2017 on vets.gov
+    datapoint: "13,684"
+    context: total in May 2017 on vets.gov
 
   - name: One-click access target
     layout: basic
     datapoint: 100
     context: most frequent search terms
 
-  - name: Top search terms in April 2017
+  - name: Top search terms in May 2017
     layout: icon
     icon: search
-    text: 22-1995<br>secure messages<br>secure messaging<br>messages
+    text: 22-1995<br>secure messages<br>22-1990<br>22-1990e
 
 ---
