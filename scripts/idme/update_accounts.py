@@ -27,7 +27,7 @@ def fetch_sheet_data():
     http = credentials.authorize(httplib2.Http())
 
     # Build the service object.
-    service =  discovery.build('sheets', 'v4', credentials=credentials)
+    service = discovery.build('sheets', 'v4', credentials=credentials)
 
     request = (service.spreadsheets().values().get(
                 spreadsheetId='1WYHGRN51c7b1yVceA8uEG16lIhikxwOe25wbCSjB-S4',
