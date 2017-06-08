@@ -8,7 +8,7 @@ pipeline {
     stage('Get Credentials') {
       steps {
           sh 'ls -al scripts'
-          sh 'base64 -d ${GA_SERVICE_BASE64} > scripts/serviceaccount.p12'
+          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'
       }
     }
     stage('Update Data') {
@@ -24,7 +24,7 @@ pipeline {
       }
     }
   }
-  
+
   post {
     always {
       deleteDir() /* clean up our workspace */
