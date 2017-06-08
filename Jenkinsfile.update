@@ -1,12 +1,14 @@
 pipeline {
   agent any
+  environment {
+    GA_SERVICE_BASE64 = credentials('ga_serviceaccount_b64')
+  }
 
   stages {
     stage('Get Credentials') {
       steps {
-    		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'GA_SERVICEACCOUNT')]) {
-          sh 'cp ${GA_SERVICEACCOUNT} scripts/'
-        }
+          sh 'ls -al'
+          sh 'base64 -d ${GA_SERVICE_BASE64} > scripts/serviceaccount.p12'
       }
     }
     stage('Update Data') {
@@ -17,6 +19,7 @@ pipeline {
           }
       }
       steps {
+          echo $GA_SERVICE_BASE64
           sh '/application/updates.sh'
       }
     }
