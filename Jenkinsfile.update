@@ -6,8 +6,10 @@ pipeline {
       steps {
     		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'GA_SERVICEACCOUNT')]) {
           sh 'cp ${GA_SERVICEACCOUNT} scripts/'
-          var updater = docker.build('vets-scorecard-updater', 'scripts')
-          updater.run
+          script {
+            updater = docker.build('vets-scorecard-updater', 'scripts')
+            updater.run
+          }
         }
       }
     }
