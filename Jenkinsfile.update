@@ -18,7 +18,6 @@ pipeline {
       }
       steps {
           sh '/application/updates.sh'
-        }
       }
     }
   }
