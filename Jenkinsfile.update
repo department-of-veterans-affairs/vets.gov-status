@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Get Credentials') {
       steps {
-          sh 'ls -al'
+          sh 'ls -al scripts'
           sh 'base64 -d ${GA_SERVICE_BASE64} > scripts/serviceaccount.p12'
       }
     }
