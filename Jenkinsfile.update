@@ -2,14 +2,21 @@ pipeline {
   agent any
 
   stages {
-    stage('Build') {
+    stage('Get Credentials') {
       steps {
     		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'GA_SERVICEACCOUNT')]) {
           sh 'cp ${GA_SERVICEACCOUNT} scripts/'
-          script {
-            updater = docker.build('vets-scorecard-updater', 'scripts')
-            updater.run
+      }
+    }
+    stage('Update Data') {
+      agent {
+        dockerfile { 
+          dir 'scripts'
+          args '-v ${PWD}/_data:/data --rm'
           }
+      }
+      steps {
+          sh '/application/updates.sh'
         }
       }
     }
