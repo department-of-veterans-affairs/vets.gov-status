@@ -10,13 +10,6 @@ pipeline {
           sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'          
       }
     }
-    stage('Setup Socks Proxy') {
-      steps {
-        sshagent(['vetsdotgov_id_rsa']) {
-          sh 'ssh socks -D 0.0.0.0:2001 -N &'
-        }
-      }
-    }
     stage('Update Data') {
       steps{
         script {
@@ -33,13 +26,6 @@ pipeline {
         sh 'git diff'
       }
     }
-    stage('Teardown Socks Proxy') {
-      steps {
-        sh 'kill %1'
-        sh 'eval "$(ssh-agent -k)"'
-      }
-    }
-  }
 
   post {
     always {
