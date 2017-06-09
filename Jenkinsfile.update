@@ -14,7 +14,8 @@ pipeline {
       steps{
         script {
           dockerImage = docker.build('scorecard-updater', 'scripts')
-          dockerImage.inside('-v _data:/data --rm') {
+          args = "-v ${pwd()}/_data:/data"
+          dockerImage.inside(args) {
             sh '/application/updates.sh'
           }
         }
@@ -29,7 +30,7 @@ pipeline {
 
   post {
     always {
-      deleteDir() /* clean up our workspace */
+      deleteDir()
     }
   }
 }
