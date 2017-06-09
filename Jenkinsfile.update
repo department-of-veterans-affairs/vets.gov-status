@@ -7,21 +7,13 @@ pipeline {
   stages {
     stage('Get Credentials') {
       steps {
-          sh 'ls -al scripts'
           sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'          
       }
     }
     stage('Update Data') {
-      agent {
-        dockerfile { 
-          dir 'scripts'
-          args '-v ${PWD}/_data:/data --rm'
-          }
-      }
-      steps {
-          sh 'echo $DATA_DIR'
-          sh 'export DATA_DIR=${PWD}/_data'
-          sh 'scripts/run_update.sh'
+      script {
+        dockerImage = docker.build('scorecard-updater', 'scripts')
+        dockerImage.run('-v ${PWD}/_data:/data --rm')
       }
     }
   }
