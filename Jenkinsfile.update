@@ -19,7 +19,9 @@ pipeline {
       }
     }
     stage('Check New Data') {
-      sh 'git diff'
+      steps {
+        sh 'git diff'
+      }
     }
   }
 
