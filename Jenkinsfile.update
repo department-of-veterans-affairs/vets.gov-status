@@ -19,7 +19,7 @@ pipeline {
           }
       }
       steps {
-          echo $GA_SERVICE_BASE64
+          sh 'echo $GA_SERVICE_BASE64'
           sh '/application/updates.sh'
       }
     }
