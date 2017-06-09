@@ -14,7 +14,9 @@ pipeline {
       steps{
         script {
           dockerImage = docker.build('scorecard-updater', 'scripts')
-          dockerImage.run('-v ${PWD}/_data:/data --rm')
+          dockerImage.inside('-v ${PWD}/_data:/data --rm') {
+            sh '/application/updates.sh'
+          }
         }
       }
     }
