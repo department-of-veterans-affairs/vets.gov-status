@@ -154,7 +154,7 @@ def make_cloud_data():
 
 def main():
 
-    with open('config.json') as json_data_file:
+    with open(os.path.join(os.environ['CONFIG_DIR'], 'prometheus_config.json')) as json_data_file:
         config = json.load(json_data_file)
 
     for report_definition in config['reports']:

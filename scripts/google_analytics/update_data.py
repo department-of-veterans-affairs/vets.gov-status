@@ -260,7 +260,7 @@ def output_clicks(df, board):
 def main():
     analytics = initialize_analyticsreporting()
 
-    with open('config.json') as json_data_file:
+    with open(os.path.join(os.environ['CONFIG_DIR'], 'ga_config.json')) as json_data_file:
         config = json.load(json_data_file)
         boards = config['charts']
         clicks = config['clicks']

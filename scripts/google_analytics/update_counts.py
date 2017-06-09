@@ -106,7 +106,7 @@ def run_report(analytics, count, details):
 def main():
     analytics = initialize_analyticsreporting()
 
-    with open('config.json') as json_data_file:
+    with open(os.path.join(os.environ['CONFIG_DIR'], 'ga_config.json')) as json_data_file:
         config = json.load(json_data_file)
         counts = config['counts']
 
