@@ -12,9 +12,9 @@ pipeline {
     }
     stage('Setup Socks Proxy') {
       steps {
-        sh 'eval "$(ssh-agent -s)"'
-        sh 'ssh-add /var/lib/jenkins/.ssh/vetsdotgov_id_rsa'
-        sh 'ssh socks -D 0.0.0.0:2001 -N &'
+        sshagent(['vetsdotgov_id_rsa']) {
+          sh 'ssh socks -D 0.0.0.0:2001 -N &'
+        }
       }
     }
     stage('Update Data') {
