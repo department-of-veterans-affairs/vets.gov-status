@@ -11,9 +11,11 @@ pipeline {
       }
     }
     stage('Update Data') {
-      script {
-        dockerImage = docker.build('scorecard-updater', 'scripts')
-        dockerImage.run('-v ${PWD}/_data:/data --rm')
+      steps{
+        script {
+          dockerImage = docker.build('scorecard-updater', 'scripts')
+          dockerImage.run('-v ${PWD}/_data:/data --rm')
+        }
       }
     }
   }
