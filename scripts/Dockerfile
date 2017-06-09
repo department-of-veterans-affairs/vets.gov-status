@@ -3,7 +3,7 @@ FROM python:3
 WORKDIR /application
 
 ENV DATA_DIR="/data" \
-    CONFIR_DIR="/application" \
+    CONFIG_DIR="/application" \
     GA_SERVICEACCOUNT="/application/serviceaccount.p12"
 
 COPY requirements.txt ./
