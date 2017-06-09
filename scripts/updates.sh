@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
-cd google_analytics
-python update_data.py
-python update_counts.py
+python /application/google_analytics/update_data.py
+python /application/google_analytics/update_counts.py
 
-cd ../idme
-python update_accounts.py
+python /application/idme/update_accounts.py
 
-cd ../prometheus
-python update_from_prometheus.py
+python application/prometheus/update_from_prometheus.py
