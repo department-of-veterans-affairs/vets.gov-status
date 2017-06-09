@@ -26,6 +26,7 @@ pipeline {
         sh 'git diff'
       }
     }
+  }
 
   post {
     always {
