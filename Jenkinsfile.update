@@ -8,7 +8,7 @@ pipeline {
     stage('Get Credentials') {
       steps {
           sh 'ls -al scripts'
-          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'
+          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'          
       }
     }
     stage('Update Data') {
@@ -19,10 +19,9 @@ pipeline {
           }
       }
       steps {
-          sh 'echo $PWD'
-          sh 'ls -al'
-          sh 'cd /application'
-          sh 'updates.sh'
+          sh 'echo $DATA_DIR'
+          sh 'export DATA_DIR=${PWD}/_data'
+          sh 'scripts/run_update.sh'
       }
     }
   }
