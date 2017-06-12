@@ -1,25 +1,27 @@
 import org.kohsuke.github.GitHub
 
+@NonCPS
 def merge_pr = {
-  github = GitHub.connect()
+  def github = GitHub.connect()
 
-  now = new Date().format('yyyy-MM-dd')
-  update_branch = "refs/heads/update-${now}"
-  target_branch = 'refs/heads/master'
+  def now = new Date().format('yyyy-MM-dd')
+  def update_branch = "refs/heads/update-${now}"
+  def target_branch = 'refs/heads/master'
 
-  pr_title = "Automatic Data Update on ${now}"
-  pr_body = 'Automatic Data Update run from Jenkins'
+  def pr_title = "Automatic Data Update on ${now}"
+  def pr_body = 'Automatic Data Update run from Jenkins'
 
-  repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
+  def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
 
+  def pr
   try {
-    def pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
+    pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
   } catch (IOException e) {
     println "Creating a Pull Request failed: `${e}`"
   }
 
   // Intentionally fail this so it never gets merged
-  is_mergeable = false
+  def is_mergeable = false
 
   // Do basic checks of mergeability
   if (!pr.getMergeable() || pr.getMergeableState() != 'clean') {
@@ -29,7 +31,7 @@ def merge_pr = {
   if (is_mergeable) {
     pr.merge('Merged automatically by Jenkins.')
   } else {
-    pr.comment('Skipping merge due to comment or change request!\ncc @robertfairhead')
+    pr.comment('Skipping merge!')
   }
 }
 
