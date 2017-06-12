@@ -19,7 +19,7 @@ def create_pr = {
   PR = pr.getNumber()
 }
 
-def merge_pr {
+def merge_pr = {
   def github = GitHub.connect()
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
   def pr = repo.getPullRequest(PR[1])
