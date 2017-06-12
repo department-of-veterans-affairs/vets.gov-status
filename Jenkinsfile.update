@@ -1,6 +1,6 @@
 import org.kohsuke.github.GitHub
 
-def PR
+def PR = 0
 
 def create_pr = {
   def github = GitHub.connect()
