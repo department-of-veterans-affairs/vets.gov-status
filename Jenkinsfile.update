@@ -13,8 +13,9 @@ def merge_pr = {
 
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
 
+  def pr
   try {
-    def pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
+    pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
   } catch (IOException e) {
     println "Creating a Pull Request failed: `${e}`"
   }
@@ -30,7 +31,7 @@ def merge_pr = {
   if (is_mergeable) {
     pr.merge('Merged automatically by Jenkins.')
   } else {
-    pr.comment('Skipping merge due to comment or change request!\ncc @robertfairhead')
+    pr.comment('Skipping merge!\ncc @robertfairhead')
   }
 }
 
