@@ -21,7 +21,7 @@ def merge_pr = {
   }
 
   // Intentionally fail this so it never gets merged
-  def is_mergeable = false
+  def is_mergeable = true
 
   // Do basic checks of mergeability
   if (!pr.getMergeable() || pr.getMergeableState() != 'clean') {
