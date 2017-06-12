@@ -1,7 +1,8 @@
 import org.kohsuke.github.GitHub
 
-@NonCPS
-def merge_pr = {
+def pr
+
+def create_pr = {
   def github = GitHub.connect()
 
   def now = new Date().format('yyyy-MM-dd')
@@ -13,13 +14,14 @@ def merge_pr = {
 
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
 
-  def pr
   try {
     pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
   } catch (IOException e) {
     println "Creating a Pull Request failed: `${e}`"
   }
+}
 
+def merge_pr {
   // Intentionally fail this so it never gets merged
   def is_mergeable = true
 
@@ -77,11 +79,28 @@ pipeline {
       }
     }
 
+    stage('Create PR'){
+      steps {
+        script { create_pr() }
+      }
+    }
+
+    stage ('Wait for PR Status to Update') {
+      steps {
+        timeout(time: 1, unit: 'HOURS') {
+          waitUntil {
+            sleep time: 1, unit: 'MINUTES'
+            script {
+              return (pr.getMergeable() != null)
+            }
+          }
+        }
+      }
+    }
+
     stage('Create and Merge PR') {
       steps {
-        script{
-          merge_pr()
-        }
+        script { merge_pr() }
       }
     }
   }
