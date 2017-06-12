@@ -22,7 +22,7 @@ def create_pr = {
 def merge_pr = {
   def github = GitHub.connect()
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
-  def pr = repo.getPullRequest(PR[1])
+  def pr = repo.getPullRequest(PR)
 
 
   // Intentionally fail this so it never gets merged
@@ -94,6 +94,9 @@ pipeline {
           waitUntil {
             sleep time: 1, unit: 'MINUTES'
             script {
+              def github = GitHub.connect()
+              def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
+              def pr = repo.getPullRequest(PR)
               return (pr.getMergeable() != null)
             }
           }
