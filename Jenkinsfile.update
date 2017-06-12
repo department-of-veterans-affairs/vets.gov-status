@@ -10,6 +10,8 @@ pipeline {
 
     stage('Setup Update Branch') {
       steps {
+        sh 'git config user.name "Robert Fairhead"'
+        sh 'git config user.email bob@adhocteam.us'
         sh 'git checkout -b update-$(date -I)'
       }
     }
