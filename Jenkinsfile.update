@@ -31,7 +31,7 @@ def merge_pr = {
   if (is_mergeable) {
     pr.merge('Merged automatically by Jenkins.')
   } else {
-    pr.comment('Skipping merge!\ncc @robertfairhead')
+    pr.comment('Skipping merge!')
   }
 }
 
