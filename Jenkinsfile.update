@@ -1,6 +1,6 @@
 import org.kohsuke.github.GitHub
 
-def pr
+def PR
 
 def create_pr = {
   def github = GitHub.connect()
@@ -14,14 +14,17 @@ def create_pr = {
 
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
 
-  try {
-    pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
-  } catch (IOException e) {
-    println "Creating a Pull Request failed: `${e}`"
-  }
+  def pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
+
+  PR = pr.getNumber()
 }
 
 def merge_pr {
+  def github = GitHub.connect()
+  def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
+  def pr = repo.getPullRequest(PR[1])
+
+
   // Intentionally fail this so it never gets merged
   def is_mergeable = true
 
