@@ -1,5 +1,6 @@
 import org.kohsuke.github.GitHub
 
+@NonCPS
 def merge_pr = {
   github = GitHub.connect()
 
