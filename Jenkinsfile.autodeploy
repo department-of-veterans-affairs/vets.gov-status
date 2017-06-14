@@ -6,11 +6,11 @@ def create_pr = {
   def github = GitHub.connect()
 
   def now = new Date().format('yyyy-MM-dd')
-  def update_branch = "refs/heads/update-${now}"
-  def target_branch = 'refs/heads/master'
+  def update_branch = "refs/heads/master"
+  def target_branch = 'refs/heads/production'
 
-  def pr_title = "Automatic Data Update on ${now}"
-  def pr_body = 'Automatic Data Update run from Jenkins'
+  def pr_title = "Automated Production Deploy for ${now}"
+  def pr_body = 'Run from Jenkins'
 
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
 
@@ -33,12 +33,6 @@ def merge_pr = {
 
   if (is_mergeable) {
     pr.merge('Merged automatically by Jenkins.')
-
-    //Delete extraneous branch
-    def now = new Date().format('yyyy-MM-dd')
-    def update_branch = "heads/update-${now}"
-    def ref = repo.getRef(update_branch)
-    ref.delete()
   } else {
     pr.comment('Skipping merge!')
   }
@@ -46,45 +40,8 @@ def merge_pr = {
 
 pipeline {
   agent any
-  environment {
-    GA_SERVICE_BASE64 = credentials('ga_serviceaccount_b64')
-  }
 
   stages {
-
-    stage('Setup Update Branch') {
-      steps {
-        sh 'git config user.name "Robert Fairhead"'
-        sh 'git config user.email bob@adhocteam.us'
-        sh 'git checkout -b update-$(date -I)'
-      }
-    }
-
-    stage('Get Credentials') {
-      steps {
-          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'          
-      }
-    }
-
-    stage('Update Data') {
-      steps{
-        script {
-          dockerImage = docker.build('scorecard-updater', 'scripts')
-          args = "-v ${pwd()}/_data:/data"
-          dockerImage.inside(args) {
-            sh '/application/updates.sh'
-          }
-        }
-      }
-    }
-
-    stage('Push Update Branch to Github') {
-      steps {
-        sh 'git add .'
-        sh "git commit -m 'Updated Data'"
-        sh 'git push -u origin HEAD'
-      }
-    }
 
     stage('Create PR'){
       steps {
