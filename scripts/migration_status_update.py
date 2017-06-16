@@ -29,12 +29,7 @@ def createDashboardCSV(repo, markdown_files):
         for row in product_rows:
             migration_status.write(row[8:] + "\n")
 
-def get_status(str):
-    #remove everything before first | and after last |
-    return str.split("|")[1].title().strip()
-
 def docToRow(document):
-    print(document)
     lines = document.splitlines()
     lines = list(filter(lambda x: not re.match(r'^\s*$', x), lines))
     product_name = lines[0].split(":")[1].strip()
@@ -66,6 +61,10 @@ def docToRow(document):
 
     return ",".join((year, month, product_name, product_lead, business_owner, product_definition,
                      discovery, prototype, preflight, go_live, launch_date))
+
+def get_status(string):
+    """remove everything before first | and after last |"""
+    return string.split("|")[1].title().strip()
 
 def main():
     gh_client = github3.GitHub(os.environ["GH_USER"],
