@@ -48,6 +48,7 @@ pipeline {
   agent any
   environment {
     GA_SERVICE_BASE64 = credentials('ga_serviceaccount_b64')
+    GH = credentials('va-bot')
   }
 
   stages {
@@ -62,7 +63,7 @@ pipeline {
 
     stage('Get Credentials') {
       steps {
-          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'          
+          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'
       }
     }
 
@@ -70,7 +71,7 @@ pipeline {
       steps{
         script {
           dockerImage = docker.build('scorecard-updater', 'scripts')
-          args = "-v ${pwd()}/_data:/data"
+          args = "-v ${pwd()}/_data:/data -e GH_USER=${GH_USR} -e GH_TOKEN=${GH_PSW}"
           dockerImage.inside(args) {
             sh '/application/updates.sh'
           }
