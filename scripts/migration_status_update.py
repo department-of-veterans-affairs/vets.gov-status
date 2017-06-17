@@ -18,7 +18,7 @@ IGNORE_LIST = ["readme.md",
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
     with open(output_file, 'w') as migration_status:
-        migration_status.write('Product,Vets.gov Lead,VA Business Owner,Product Definition,Discovery,Prototype,Pre Flight,Go Live,Launch Date\n')
+        migration_status.write('name,lead,business_owner,definition,discovery,prototype,preflight,go_live,launch_date\n')
         product_rows = []
         for md in markdown_files:
             if md.lower() not in IGNORE_LIST:
