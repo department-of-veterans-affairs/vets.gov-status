@@ -47,7 +47,7 @@ def merge_pr = {
 pipeline {
   agent any
   environment {
-    GA_SERVICE_BASE64 = credentials('ga_serviceaccount_b64')
+    GA_SERVICE_BASE64 = credentials('ga-serviceaccount-b64')
     GH = credentials('va-bot')
   }
 
