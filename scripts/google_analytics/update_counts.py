@@ -43,8 +43,10 @@ def get_count_report(analytics, view_id, event_name):
     """Use the Analytics Service Object to query Analytics Reporting API.
     """
 
-    # Start on 30 June 2016 which is launch date of HCA
-    startDate = datetime.date(2016,6,30).isoformat()
+    # Start on 1 September 2017 which is the cutover date to the unified view
+    # Adjustment in the config is the sums from 30 June 2016 (launch of HCA) until
+    # 31 August 2017 when the cutover happened.
+    startDate = datetime.date(2017,9,1).isoformat()
     # Yesterday
     endDate = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
 
@@ -56,11 +58,11 @@ def get_count_report(analytics, view_id, event_name):
                     'dateRanges': [{'startDate': startDate,
                                     'endDate': endDate}],
                     'metrics': [{'expression': 'ga:totalEvents'}],
-                    'dimensions': [{'name': 'ga:eventAction'}],
+                    'dimensions': [{'name': 'ga:eventLabel'}],
                     "dimensionFilterClauses": [{
                         "filters": [
                             {
-                              "dimensionName": "ga:eventAction",
+                              "dimensionName": "ga:eventLabel",
                               "operator": "EXACT",
                               "expressions": event_name
                             }
@@ -101,7 +103,7 @@ def make_df(report):
 def run_report(analytics, count, details):
     response = get_count_report(analytics, details['view'], details['event_name'])
     df = make_df(response['reports'][0])
-    return df.at[0,'ga:totalEvents']
+    return df.at[0,'ga:totalEvents'] + details['adjustment']
 
 def main():
     analytics = initialize_analyticsreporting()

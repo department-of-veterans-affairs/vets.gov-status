@@ -56,40 +56,54 @@
   },
   "counts": {
     "form1990": {
-      "view": "132469923",
-      "event_name": "edu-submission-successful"
+      "view": "111433053",
+      "event_name": "edu-submission-successful",
+      "adjustment": 223137
     },
     "form1990n": {
-      "view": "132469923",
-      "event_name": "edu-1990n--submission-successful"
+      "view": "111433053",
+      "event_name": "edu-1990n--submission-successful",
+      "adjustment": 488
     },
     "form1990e": {
-      "view": "132469923",
-      "event_name": "edu-1990e--submission-successful"
+      "view": "111433053",
+      "event_name": "edu-1990e--submission-successful",
+      "adjustment": 28660
     },
     "form5490": {
-      "view": "132469923",
-      "event_name": "edu-5490--submission-successful"
+      "view": "111433053",
+      "event_name": "edu-5490--submission-successful",
+      "adjustment": 21868
     },
     "form1995": {
-      "view": "132469923",
-      "event_name": "edu-1995--submission-successful"
+      "view": "111433053",
+      "event_name": "edu-1995--submission-successful",
+      "adjustment": 93782
     },
     "form5495": {
-      "view": "132469923",
-      "event_name": "edu-5495--submission-successful"
+      "view": "111433053",
+      "event_name": "edu-5495--submission-successful",
+      "adjustment": 7781
     },
     "hca": {
-      "view": "123860701",
-      "event_name": "Submission Successful"
+      "view": "111433053",
+      "event_name": "hca--submission-successful",
+      "adjustment": 248818
     },
     "rxrefills": {
-      "view": "132496709",
-      "event_name": "rx-confirm-refill"
+      "view": "111433053",
+      "event_name": "rx-confirm-refill",
+      "adjustment": 15531
     },
     "smsent": {
-      "view": "132909478",
-      "event_name": "sm-send-message"
+      "view": "111433053",
+      "event_name": "sm-send-message",
+      "adjustment": 8442
+    },
+    "healthrecords": {
+      "view": "111433053",
+      "event_name": "health-record-download",
+      "adjustment": 4324
     }
   }
 }
