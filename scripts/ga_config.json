@@ -18,7 +18,7 @@
       },
       "hca": {
         "view": "111433053",
-        "page_filter": "/health-care/apply/application/.*"
+        "page_filter": "/health-?care/apply/application.*"
       },
       "gibct": {
         "view": "111433053",
@@ -38,15 +38,15 @@
       },
       "rx": {
         "view": "111433053",
-        "page_filter": "/health-care/prescriptions.*"
+        "page_filter": "/health-?care/prescriptions.*"
       },
       "messaging": {
         "view": "111433053",
-        "page_filter": "/health-care/messaging.*"
+        "page_filter": "/health-?care/messaging.*"
       },
       "healthrecords": {
         "view": "111433053",
-        "page_filter": "/health-care/health-records.*"
+        "page_filter": "/health-?care/health-records.*"
       }
   },
   "clicks": {
