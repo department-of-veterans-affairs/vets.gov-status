@@ -1,15 +1,15 @@
 {
   "charts": {
       "1990": {
-        "view": "132469923",
+        "view": "111433053",
         "page_filter": "/education/apply-for-education-benefits/application/(1990|1990n).*"
       },
       "1995": {
-        "view": "132469923",
+        "view": "111433053",
         "page_filter": "/education/apply-for-education-benefits/application/(1995|5495).*"
       },
       "edu_dep": {
-        "view": "132469923",
+        "view": "111433053",
         "page_filter": "/education/apply-for-education-benefits/application/(1990e|5490).*"
       },
       "core": {
@@ -17,32 +17,32 @@
         "page_filter": ""
       },
       "hca": {
-        "view": "123860701",
-        "page_filter": ""
+        "view": "111433053",
+        "page_filter": "/health-care/apply/application/.*"
       },
       "gibct": {
-        "view": "111454100",
-        "page_filter": ""
+        "view": "111433053",
+        "page_filter": "/gi-bill-comparison-tool/.*"
       },
       "vec":{
-        "view" : "84936422",
-        "page_filter": ""
+        "view" : "111433053",
+        "page_filter": "/employment/.*"
       },
       "facility": {
-        "view": "130690170",
-        "page_filter": ""
+        "view": "111433053",
+        "page_filter": "/facilities.*"
       },
       "claims": {
-        "view": "132929836",
-        "page_filter": ""
+        "view": "111433053",
+        "page_filter": "/track-claims.*"
       },
       "rx": {
-        "view": "132496709",
-        "page_filter": ""
+        "view": "111433053",
+        "page_filter": "/health-care/prescriptions.*"
       },
       "messaging": {
-        "view": "132909478",
-        "page_filter": ""
+        "view": "111433053",
+        "page_filter": "/health-care/messaging.*"
       },
       "healthrecords": {
         "view": "111433053",
