@@ -146,6 +146,21 @@ def get_click_reports(analytics, view_id):
                               "operator": "PARTIAL",
                               "expressions": "tel:18002738255"
                             },
+                            {
+                              "dimensionName": "ga:eventAction",
+                              "operator": "PARTIAL",
+                              "expressions": "veteranscrisisline"
+                            },
+                            {
+                              "dimensionName": "ga:eventAction",
+                              "operator": "PARTIAL",
+                              "expressions": "sms:838255"
+                            },
+                            {
+                              "dimensionName": "ga:eventAction",
+                              "operator": "PARTIAL",
+                              "expressions": "tel:18002738255"
+                            },
                             ]}],
                     "includeEmptyRows": "true",
                 }
