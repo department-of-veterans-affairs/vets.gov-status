@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'rails-testing'
-  }
+  agent any
 
   stages {
     stage('Build') {
