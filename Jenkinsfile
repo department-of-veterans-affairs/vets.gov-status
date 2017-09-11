@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'vets-api-linting'
+    label 'swarm'
   }
 
   stages {
@@ -10,7 +10,7 @@ pipeline {
           dockerImage = docker.image('jekyll/jekyll')
           args = "-v ${pwd()}:/srv/jekyll"
           dockerImage.inside(args) {
-            sh 'bash --login -c jekyll build'
+            jekyll build
           }
         }
       }
