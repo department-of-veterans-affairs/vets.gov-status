@@ -7,10 +7,10 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          dockerImage = docker.image('jekyll/jekyll')
+          dockerImage = docker.build('scorecard-jekyll')
           args = "-v ${pwd()}:/srv/jekyll"
           dockerImage.inside(args) {
-            jekyll build
+            sh 'jekyll build'
           }
         }
       }
