@@ -8,7 +8,7 @@ pipeline {
       steps {
         script {
           dockerImage = docker.image('jekyll/jekyll')
-          args = "-v ${pwd()}:/srv/jekyll"
+          args = "-v ${pwd()}:/srv/jekyll -u jekyll"
           dockerImage.inside(args) {
             sh 'jekyll build'
           }
