@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'api-linting'
+    label 'vets-api-linting'
   }
 
   stages {
