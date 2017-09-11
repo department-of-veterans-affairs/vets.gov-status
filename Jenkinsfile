@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'api-linting'
+  }
 
   stages {
     stage('Build') {
