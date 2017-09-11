@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'swarm'
+    label 'vetsgov-general-purpose'
   }
 
   stages {
