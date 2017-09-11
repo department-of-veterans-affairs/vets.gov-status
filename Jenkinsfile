@@ -4,8 +4,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'bash --login -c "bundle"'
-        sh 'bash --login -c "bundle exec jekyll build"'
+        script {
+          dockerImage = docker.image('jekyll/jekyll')
+          args = "-v ${pwd()}:/srv/jekyll"
+          dockerImage.inside(args) {
+            sh 'bundle'
+            sh 'bundle exec jekyll build'
+          }
+        }
       }
     }
 
