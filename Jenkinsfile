@@ -10,8 +10,7 @@ pipeline {
           dockerImage = docker.image('jekyll/jekyll')
           args = "-v ${pwd()}:/srv/jekyll"
           dockerImage.inside(args) {
-            sh 'bundle'
-            sh 'bundle exec jekyll build'
+            sh 'jekyll build'
           }
         }
       }
