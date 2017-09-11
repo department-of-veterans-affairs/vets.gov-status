@@ -4,6 +4,6 @@ FROM jekyll/jekyll
 RUN addgroup -Sg 504 jenkins \
   && adduser -S -u 504 -G jenkins -h /home/jenkins jenkins
 
-RUN chown jenkins:jenkins /srv/jekyll
-RUN chown jenkins:jenkins /home/jenkins
+RUN chown -R jenkins:jenkins /srv/jekyll
+RUN chown -R jenkins:jenkins /home/jenkins
 USER jenkins
