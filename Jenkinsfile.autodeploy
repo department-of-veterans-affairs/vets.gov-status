@@ -39,7 +39,9 @@ def merge_pr = {
 }
 
 pipeline {
-  agent any
+  agent {
+    label 'vetsgov-general-purpose'
+  }
 
   stages {
 

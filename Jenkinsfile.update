@@ -45,7 +45,9 @@ def merge_pr = {
 }
 
 pipeline {
-  agent any
+  agent {
+    label 'vetsgov-general-purpose'
+  }
   environment {
     GA_SERVICE_BASE64 = credentials('ga-serviceaccount-b64')
     GH = credentials('va-bot')
