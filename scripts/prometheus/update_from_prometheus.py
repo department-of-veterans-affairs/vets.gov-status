@@ -6,10 +6,10 @@ import pandas as pd
 import requests
 import ruamel.yaml as yaml
 
-PROXY_CONFIG    = {
-  'http': 'socks5h://172.17.0.1:2001',
-  'https': 'socks5h://172.17.0.1:2001'
-}
+# PROXY_CONFIG    = {
+#   'http': 'socks5h://172.17.0.1:2001',
+#   'https': 'socks5h://172.17.0.1:2001'
+# }
 
 def find_last_sunday():
   """Finds the prior Sunday to ensure a full week of data
@@ -108,8 +108,7 @@ def query_prometheus(query):
 
   print(query['endpoint']+query['endpoint_path'])
   return requests.get(query['endpoint']+query['endpoint_path'],
-                      params=qparams,
-                      proxies=PROXY_CONFIG)
+                      params=qparams)
 
 def write_report(report_definition):
     """ Write a CSV with 2 weeks of TS data for the given prometheus query
