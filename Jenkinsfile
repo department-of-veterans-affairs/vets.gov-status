@@ -7,11 +7,10 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          dockerImage = docker.build('scorecard-jekyll')
+          dockerImage = docker.image('jekyll/jekyll')
           args = "-v ${pwd()}:/srv/jekyll"
           dockerImage.inside(args) {
-            sh 'bundle install'
-            sh 'jekyll build'
+            sh '/usr/gem/bin/jekyll build'
           }
         }
       }
