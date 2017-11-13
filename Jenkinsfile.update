@@ -122,5 +122,11 @@ pipeline {
     always {
       deleteDir()
     }
+    success {
+      slackSend message: "Scorecard data update succeeded", color: "good", channel: "analytics-deploys"
+    }
+    failure {
+      slackSend message: "<!here> Scorecard data update *FAILED*!", color: "danger", channel: "analytics-deploys"
+    }
   }
 }
