@@ -2,7 +2,7 @@
  "reports": [
     {
       "query": {
-        "endpoint": "http://prometheus-utility.vetsgov-internal:9090/prometheus/api/v1",
+        "endpoint": "http://172.31.3.250:9090/prometheus/api/v1",
         "endpoint_path": "/query_range",
         "params": {
           "query": "round(sum(changes(default_jenkins_builds_duration_milliseconds_summary_sum{exported_job=\"deploys/vets-api-prod\"}[24h]))) + round(sum(delta(default_jenkins_builds_duration_milliseconds_summary_count{exported_job=\"testing/vets-website/production\"}[24h])))",
@@ -14,7 +14,7 @@
     },
     {
       "query": {
-        "endpoint": "http://prometheus-utility.vetsgov-internal:9090/prometheus/api/v1",
+        "endpoint": "http://172.31.3.250:9090/prometheus/api/v1",
         "endpoint_path": "/query",
         "params": {
           "query": "round(sum(changes(default_jenkins_builds_duration_milliseconds_summary_sum{exported_job=\"deploys/vets-api-prod\"}[2w]))) * 2"
@@ -24,7 +24,7 @@
     },
     {
       "query": {
-        "endpoint": "http://prometheus-prod.vetsgov-internal:9090/prometheus/api/v1",
+        "endpoint": "http://172.30.35.250:9090/prometheus/api/v1",
         "endpoint_path": "/query_range",
         "params": {
           "query": "sum(rate(nginx_http_request_total{status=~\"5..\"}[24h])) / sum(rate(nginx_http_request_total[24h]))",
@@ -36,7 +36,7 @@
     },
     {
       "query": {
-        "endpoint": "http://prometheus-prod.vetsgov-internal:9090/prometheus/api/v1",
+        "endpoint": "http://172.30.35.250:9090/prometheus/api/v1",
         "endpoint_path": "/query_range",
         "params": {
           "query": "avg(avg_over_time(probe_success{job=\"site\"}[24h]))",
