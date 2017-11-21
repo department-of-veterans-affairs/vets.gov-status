@@ -10,7 +10,7 @@
           "step": "24h"
         }
       },
-      "path": "deployments_daily.csv"
+      "name": "deployments_daily"
     },
     {
       "query": {
@@ -20,7 +20,7 @@
           "query": "round(sum(changes(default_jenkins_builds_duration_milliseconds_summary_sum{exported_job=\"deploys/vets-api-prod\"}[2w]))) * 2"
         }
       },
-      "path": "deployments_monthly.csv"
+      "name": "deployments_monthly"
     },
     {
       "query": {
@@ -32,7 +32,7 @@
           "step": "24h"
         }
       },
-      "path": "error_rate.csv"
+      "name": "error_rate"
     },
     {
       "query": {
@@ -44,7 +44,7 @@
           "step": "24h"
         }
       },
-      "path": "reachability.csv"
+      "name": "reachability"
     }
   ]
 }

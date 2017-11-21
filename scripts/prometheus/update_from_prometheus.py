@@ -110,8 +110,8 @@ def query_prometheus(query):
   return requests.get(query['endpoint']+query['endpoint_path'],
                       params=qparams)
 
-def write_report(report_definition):
-    """ Write a CSV with 2 weeks of TS data for the given prometheus query
+def run_report(report_definition):
+    """ Create a dataframe with 2 weeks of TS data for the given prometheus query
 
     Parameters:
     `report_definition` -- a dictionary defining a query, source, and destination path
@@ -132,19 +132,24 @@ def write_report(report_definition):
     """
 
     response = query_prometheus(report_definition['query'])
-    df = df_from_response(response)
-    df.to_csv(report_definition['path'], date_format='%m/%d/%y')
+    return df_from_response(response)
 
-def make_cloud_data():
+def make_cloud_data(reports):
     output = {}
 
-    df = pd.read_csv("error_rate.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+    df = reports["error_rate.csv"]
+    df = df['day','value']
+    df.set_index('day')
     output['error_rate'] = '{:.4%}'.format(df[-7:].mean().value.item())
 
-    df = pd.read_csv("reachability.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+    df = reports["reachability"]
+    df = df['day','value']
+    df.set_index('day')
     output['reachability'] = '{:.4%}'.format(df[-7:].mean().value.item())
 
-    df = pd.read_csv("deployments_monthly.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+    df = reports["deployments_monthly"]
+    df = df['day','value']
+    df.set_index('day')
     output['deployments'] = df.iloc[0,0].item()
 
     output_file = os.path.join(os.environ['DATA_DIR'],'cloud.yml')
@@ -156,10 +161,10 @@ def main():
     with open(os.path.join(os.environ['CONFIG_DIR'], 'prometheus_config.json')) as json_data_file:
         config = json.load(json_data_file)
 
-    for report_definition in config['reports']:
-        write_report(report_definition)
+    reports = { report_definition["name"]: run_report(report_definition)
+                for report_definition in config['reports'] }
 
-    make_cloud_data()
+    make_cloud_data(reports)
 
 if __name__ == '__main__':
     main()
