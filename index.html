@@ -4,11 +4,13 @@ mission_statement: Vets.gov enables Veterans to <b>discover</b>, <b>apply</b> fo
 access: Improving Veteran access to benefits and services
 tiles:
 
-  - name: Cloud infrastructure costs
-    layout: pie
-    id: savings
+  - name: AWS hosting costs are 15% of VA internal hosting costs, saving money and improving performance
+    layout: compare_100bars
+    id: hosting
     datapoint: 15
-    context: percentage of traditional VA options' costs
+    after_text: Actual AWS costs
+    before: 100
+    before_text: Estimated VA Hosting
 
   - name: Vets.gov accounts
     layout: basic_count
