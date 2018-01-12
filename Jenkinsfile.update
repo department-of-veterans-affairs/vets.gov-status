@@ -49,7 +49,7 @@ pipeline {
     label 'vetsgov-general-purpose'
   }
   environment {
-    GA_SERVICE_BASE64 = credentials('ga-serviceaccount-b64')
+    GA_SERVICE_BASE64 = credentials('vetsdotgovanalytics-json-b64')
     GH = credentials('va-bot')
   }
 
@@ -65,7 +65,7 @@ pipeline {
 
     stage('Get Credentials') {
       steps {
-          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.p12'
+          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.json'
       }
     }
 

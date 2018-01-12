@@ -26,14 +26,11 @@ def initialize_analyticsreporting():
     analytics an authorized analyticsreporting service object.
     """
 
-    credentials = ServiceAccountCredentials.from_p12_keyfile(
-        SERVICE_ACCOUNT_EMAIL, KEY_FILE_LOCATION, scopes=SCOPES)
-
-    http = credentials.authorize(httplib2.Http())
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(
+      KEY_FILE_LOCATION, SCOPES)
 
     # Build the service object.
-    analytics = build('analytics', 'v4', http=http,
-                      discoveryServiceUrl=DISCOVERY_URI)
+    analytics = build('analyticsreporting', 'v4', credentials=credentials)
 
     return analytics
 
