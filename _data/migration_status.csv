@@ -1,7 +1,7 @@
 name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,provisioning_tasks,migration_cutover,operations_tasks,cutover_complete,decom
 Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/DVP.md",Shamen Singh Drew Myklegard,Complete,Complete,Yes,Complete,Complete,Green,Green,Yes,
-Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC_Informatica.md",Jonathan Lindow,,,Yes,Green,,,,,
-Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FCS_Hadoop.md",Jonathan Lindow,,,Yes,,,,Red,Yes,
+Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC_Informatica.md",Jonathan Lindow,,,Yes,,,,,,
+Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FCS_Hadoop.md",Jonathan Lindow,,,Yes,,,,,Yes,
 Memorial Benefits Management System (MBMS) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/MBMS.md",Christina Palumbo,,,Yes,,,,,,
 Portfolio Project Management Tool (PPMT) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/PPMT.md",Tim Ethier,,,Yes,,,,,,
 Test,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test_New_Project.md",Name,Complete,Complete,Yes,Green,Yellow,Yellow,Red,Yes,Red
