@@ -1,8 +1,11 @@
 name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,provisioning_tasks,migration_cutover,operations_tasks,cutover_complete,decom
+A Test Project,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test_Project.md",Name,Green,Green,Yes,Green,Yellow,,,,
 Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/DVP.md",Shamen Singh Drew Myklegard,Complete,Complete,Yes,Complete,Complete,Green,Green,Yes,
-Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC_Informatica.md",Jonathan Lindow,,,Yes,,,,,,
-Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FCS_Hadoop.md",Jonathan Lindow,,,Yes,,,,,Yes,
+Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC_Informatica.md",Wallace French Jonathan Lindow,Green,Red,Yes,Red,,Red,,,
 Memorial Benefits Management System (MBMS) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/MBMS.md",Bill Barnes Howard Bromwell,Complete,Complete,Yes,Green,Green,Yellow,,,
 Portfolio Project Management Tool (PPMT) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/PPMT.md",Tim Ethier,Green,Green,Yes,Green,Yellow,,,,
-Test,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test_New_Project.md",Name,Green,Green,Yes,Green,Yellow,Yellow,Red,Yes,Red
+Test,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test_New_Project.md",Name,Red,Red,Yes,Red,Red,Red,Red,,Red
 Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/VBMS.md",Gary Dameron,,,Yes,,,,,,
+ZMobile App Annie (Terremark),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/zmobileapp_annie.md",Kathy Frisbee,,,,,,,,,
+ZMobile App GDX (Terremark),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/zmobileapp_gdx.md",Kathy Frisbee,,,,,,,,,
+ZMobile App MHV Checkup (Terremark),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/zmobileapp_mhvcheckup.md",Kathy Frisbee,,,,,,,,,

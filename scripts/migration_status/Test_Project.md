@@ -1,4 +1,4 @@
-# Name: Test
+# Name: A Test Project
 
 Business and Application Owers: Name
 
@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Complete     | confirm w/ Tim
 Routing tab in VIPR workbook completed            | N/A     | Team began work before Ken/Intake team deployed workbook
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Red  | Usage data needed; confirm what is VA / user demand for this system
+COMPLETED ALL (PRE Intake) Tasks                  | Green | Usage data needed; confirm what is VA / user demand for this system
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |      | CAS to do
 Approved architecture by ITOPs              |      | Chris Cardella's team to do; CAS to coordinate with Chris
 Intake checklist 100% completed               | N/A     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 |Red   | 
+COMPLETED ALL OIT Intake Tasks                 |Green   | 
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -57,7 +57,7 @@ Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
 CD1 decision made                 |       | Date:
 Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red    | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Green    | 
 
 
 ### Provisioning
@@ -73,7 +73,7 @@ Billing and reporting set up                          | Complete     |
 Team has access to all required tools and environments                 |  Complete   | 
 Working session to complete operations handoff with ITOPs                 |       | Chris Carella's team
 Provisioning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Provisioning Tasks                       |  Red     | 
+COMPLETED ALL Provisioning Tasks                       |  Yellow     | 
 
 
 
@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
 CD2 decision                                 |       | Date:
 Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   |Red    |  
+COMPLETED ALL Build Out and Cutover Tasks                   |    |  
 
 
 ### Cloud Operations
@@ -108,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
 100% post-cutover checklist completed              |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Red      | 
+COMPLETED ALL Operations Tasks              |       | 
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
@@ -118,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | 
-COMPLETED ALL Decommission Tasks              | red     | Not applicable (new system in AWS)
+COMPLETED ALL Decommission Tasks              |      | Not applicable (new system in AWS)
 

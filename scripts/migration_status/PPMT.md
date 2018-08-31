@@ -11,8 +11,8 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     | Complete   | OALC office ; Tim - Application owner
-Initial cloud suitability 6 questions completed   |      | 
+Identify VA application owner                     | Complete   | OALC office Tim Application owner
+Initial cloud suitability 6 questions completed   |           | 
 ITOPs to review if "obsolete" system based on usage     |     | 
 ECSO Migration wave planning started              | Yellow    |  Original plan July 2018; updated to Sept 2018 (Wave 2) but probably will be moved again; familiar with 10 step process
 Baseline costs (pre-cloud) documented             |      | 

@@ -13,10 +13,10 @@ Task                                              | Status   | Comments (only if
 ------------                                      | -------- | ------------- 
 Identify VA application owner                     |Complete    | Bill Barnes business owner; Howard Bromwell is PM; Bill Wigton app owner
 Initial cloud suitability 6 questions completed   | N/A     | Not yet deployed 
-ITOPs to review if "obsolete" system based on usage     | Complete | ~1,200 NCA users internal facing system
+ITOPs to review if "obsolete" system based on usage     | Complete | 1,200 NCA users internal facing system
 ECSO Migration wave planning started              | Complete    | Unsure of wave; NCA building currently in VAEC; assume Wave 1 to confirm w/ Sue K.
 Baseline costs (pre-cloud) documented             |Complete  | completed detailed AoA for CSP; cost is not the primary driver; BOS is non-compliant w/ security and 508
-Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal NCA users ~1,200
+Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal NCA users 1,200
 ROM and funding information provided (e.g., UFR, research vs. OIT
 100% complete pre-intake checklist                |N/A     | ECSO CAS team developing 
 COMPLETED ALL (PRE Intake) Tasks                  | Complete  |  New dev; replacement of BOS; 12 modules; bulding in Salesforce
@@ -27,7 +27,7 @@ Task                                                          | Status   | Comme
 VIPR ID created                                          | Complete    | Multiple VIP entries;V17-01145-000; V17-01146-000; V17-01147-000 
 VIPR workbook (tab for cloud) 100% completed              | N/A    | Not deployed
 EPMO IA analysis completed                   |      | unsure of this task; need clarification from Ruchika
-ECSO wave migration designated              |      | check with Sue K.; assume Wave 1?
+ECSO wave migration designated              |      | check with Sue K.; assume Wave 1
 EPMO PM assigned              | Complete    | Debbi Lawson
 Confirmed adequate funding and resources in place for migration based on ROM              |  Complete   | 
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)     |  Complete    | New dev in MAG
@@ -53,7 +53,7 @@ CSP accounts and sub accounts created                 | Complete    |
 Release agent identified or waiver                 |  Complete     |
 Sustainment organization identified                 | Complete      |
 CD1 decision made                 | Complete      | Date: 2016
-Planning checklist 100% completed                 |  N/A     | ESCO CAS team developing
+Planning checklist 100% completed                 |       | ESCO CAS team developing
 COMPLETED ALL Migration Planning and Onboarding Tasks                 |  Green    | In progess
 
 
@@ -67,9 +67,9 @@ Dev/Test/Staging/Prod environment set up completed      |Complete       |
 Provided inherited controls for CSP                     | Green    | Expecting to inherit infrasture controls from MAG or Salesforce?
 Operational security tools onboarding completed         |      | unsure
 Billing and reporting set up                          |      | unsure
-Team has access to all required tools and environments        | In progress | Using demo versions of "Open Shift" software; need to procure; (container platform to scale database)
+Team has access to all required tools and environments        | In progress | Using demo versions of Open Shift software; need to procure; (container platform to scale database)
 Working session to complete operations handoff with ITOPs                 |       |
-Provisioning checklist 100% completed                 | N/A     | ECSO CAS to develop
+Provisioning checklist 100% completed                 |     | ECSO CAS to develop
 COMPLETED ALL Provisioning Tasks                       | Green     | 
 
 
@@ -88,7 +88,7 @@ Operations handoff completed (per ATO approval)         |       | Dedicated 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | 
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                                 |       | Date: will happen after ATO prior to go live in Oct.
-Build out and cutover checklist 100% complete                | N/A      | ECSO CAS team to develop
+Build out and cutover checklist 100% complete                |       | ECSO CAS team to develop
 COMPLETED ALL Build Out and Cutover Tasks                   | Yellow     |  ECSSB is blocker
 
 
