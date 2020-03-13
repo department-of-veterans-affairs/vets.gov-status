@@ -120,6 +120,7 @@ pipeline {
       slackSend message: "Performance dashboard data update succeeded", color: "good", channel: "scorecard-ci-temp"
     }
     failure {
+      echo "Failure"
       // slackSend message: "<!here> Performance dashboard data update *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
 //      slackSend message: "Performance dashboard data update *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
 
