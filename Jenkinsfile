@@ -1,3 +1,49 @@
+import org.kohsuke.github.GitHub
+
+def PR = 0
+
+def create_pr = {
+  def github = GitHub.connect()
+
+  def now = new Date().format('yyyy-MM-dd')
+  def update_branch = "refs/heads/update-${now}"
+  def target_branch = 'refs/heads/master'
+
+  def pr_title = "Automatic Data Update on ${now}"
+  def pr_body = 'Automatic Data Update run from Jenkins'
+
+  def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
+
+  def pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
+
+  PR = pr.getNumber()
+}
+
+def merge_pr = {
+  def github = GitHub.connect()
+  def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
+  def pr = repo.getPullRequest(PR)
+
+  def is_mergeable = true
+
+  // Do basic checks of mergeability
+  if (!pr.getMergeable() || pr.getMergeableState() != 'clean') {
+    is_mergeable = false
+  }
+
+  if (is_mergeable) {
+    pr.merge('Merged automatically by Jenkins.')
+
+    //Delete extraneous branch
+    def now = new Date().format('yyyy-MM-dd')
+    def update_branch = "heads/update-${now}"
+    def ref = repo.getRef(update_branch)
+    ref.delete()
+  } else {
+    pr.comment('Skipping merge!')
+  }
+}
+
 pipeline {
   agent {
     label 'vetsgov-general-purpose'
@@ -5,26 +51,20 @@ pipeline {
   environment {
     // Needed for credstash
     AWS_DEFAULT_REGION = 'us-gov-west-1'
+
+    GH = credentials('va-bot')
   }
+
   stages {
-    stage('Unit tests') {
+
+    stage('Setup Update Branch') {
       steps {
-        script {
-          sh './run-ci-tests.sh'  // this copies results into ./results directory
-        }
-      }
-      post {
-        always {
-          junit testResults: 'results/unit/pytest-unit.xml'
-        }
-        success {
-          archiveArtifacts artifacts: "results/coverage/**"
-          publishHTML(target: [reportDir: 'results/coverage', reportFiles: 'index.html', reportName: 'Coverage', keepAll: true])
-        }
+        sh 'git config user.name "va-bot"'
+        sh 'git config user.email "james.kassemi+vabot@adhocteam.us"'
+        sh 'git checkout -b update-$(date -I)'
       }
     }
 
-    // Temporary - this stage should be removed and only run in Jenkinsfile.update
     stage('Update Data') {
       steps{
         script {
@@ -35,61 +75,52 @@ pipeline {
       }
     }
 
-    stage('Build website') {
+    stage('Push Update Branch to Github') {
       steps {
-        script {
-          // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
-          nodeImg = docker.image('node:12.16.1')
-          nodeImg.inside() {
-            sh 'yarn install --frozen-lockfile --production=true'
-          }
+        sh 'git add .'
+        sh "git commit -m 'Updated Data'"
+        sh 'git push https://${GH_USR}:${GH_PSW}@github.com/department-of-veterans-affairs/vets.gov-status.git HEAD'
+      }
+    }
 
-          jekyllImg = docker.image('jekyll/jekyll:4.0')
-          args = "--volume=${pwd()}:/srv/jekyll"
-          jekyllImg.inside(args) {
-            sh '/usr/gem/bin/jekyll build --trace'
+    stage('Create PR'){
+      steps {
+        script { create_pr() }
+      }
+    }
+
+    stage ('Wait for PR Status to Update') {
+      steps {
+        timeout(time: 1, unit: 'HOURS') {
+          waitUntil {
+            sleep time: 1, unit: 'MINUTES'
+            script {
+              def github = GitHub.connect()
+              def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
+              def pr = repo.getPullRequest(PR)
+              return (pr.getMergeable() != null)
+            }
           }
         }
       }
     }
 
-    stage('Upload') {
-      when {
-        expression {
-          (env.BRANCH_NAME == 'demo' ||
-          env.BRANCH_NAME == 'master' ||
-          env.BRANCH_NAME == 'production') &&
-          !env.CHANGE_TARGET
-        }
-      }
+    stage('Merge PR and Delete Branch') {
       steps {
-        script {
-          // slackSend message: "Scorecard Jenkins upload started", color: "good", channel: "scorecard-ci-temp"
-          def envs = [
-            'demo': ['dev'],
-            'master': ['staging'],
-            'production': ['staging'],  // todo: point this back to production once we are ready to golive
-          ]
-
-          for (e in envs.get(env.BRANCH_NAME, [])) {
-            sh "bash --login -c 'aws s3 sync --acl public-read --delete --region us-gov-west-1 _site s3://dsva-vetsgov-scorecard-${e}/'"
-            slackSend message: "Dashboard deployed to ${e} environment", color: "good", channel: "scorecard-ci-temp"
-          }
-        }
+        script { merge_pr() }
       }
     }
   }
+
   post {
     always {
-      deleteDir() /* clean up our workspace */
+      deleteDir()
     }
     success {
-      echo "Build success"
-      // slackSend message: "Scorecard Jenkins build succeeded", color: "good", channel: "scorecard-ci-temp"
+      slackSend message: "Performance dashboard data update succeeded", color: "good", channel: "scorecard-ci-temp"
     }
     failure {
-      echo "Build failure"
-      // slackSend message: "Scorecard Jenkins build *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
+      slackSend message: "<!here> Performance dashboard data update *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
     }
   }
 }
