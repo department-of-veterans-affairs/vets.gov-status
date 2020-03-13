@@ -13,6 +13,6 @@ container_name=scorecard-fetch-container-${current_time}
 # such as dockerImage.inside() { }. Invoking the container directly here seems to work however.
 echo "Fetching data via docker image"
 docker run --name ${container_name} --env AWS_DEFAULT_REGION scorecard-fetch-img
-docker cp ${container_name}:/application/data ../src/_data
+docker cp ${container_name}:/application/data/. ../src/_data
 docker rm ${container_name}
 echo "Done fetching data"

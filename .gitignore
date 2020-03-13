@@ -11,6 +11,10 @@ _vendor
 Gemfile
 Gemfile.lock
 
+# Output directory from data import
+scripts/data/*
+!scripts/data/.keep
+
 # google creds
 serviceaccount.json
 
