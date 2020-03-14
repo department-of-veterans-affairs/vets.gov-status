@@ -7,7 +7,7 @@ def create_pr = {
 
   def now = new Date().format('yyyy-MM-dd')
   def update_branch = "refs/heads/update-${now}"
-  def target_branch = 'refs/heads/master'
+  def target_branch = 'refs/heads/merge-test'
 
   def pr_title = "Automatic Data Update on ${now}"
   def pr_body = 'Automatic Data Update run from Jenkins'
