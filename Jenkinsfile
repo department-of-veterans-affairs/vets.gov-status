@@ -28,6 +28,8 @@ def merge_pr = {
 
   // Do basic checks of mergeability
   if (!pr.getMergeable() || pr.getMergeableState() != 'clean') {
+    echo "pr.getMergeable = ${pr.getMergeable()}"
+    echo "pr.getMergeableState = ${pr.getMergeableState()}"
     is_mergeable = false
   }
 
