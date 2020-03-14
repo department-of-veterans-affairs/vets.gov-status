@@ -17,5 +17,5 @@ def find_last_day_of_previous_month(date):
 
 def find_last_full_twelve_months():
     end_date = find_last_day_of_previous_month(datetime.date.today())
-    start_date = end_date - datetime.timedelta(days=364)
+    start_date = end_date - datetime.timedelta(days=300)
     return start_date.isoformat(), end_date.isoformat()
