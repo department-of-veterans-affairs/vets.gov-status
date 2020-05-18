@@ -72,12 +72,17 @@ endif
 endif
 
 scripts/requirements.txt: scripts/requirements.in
-	pip-compile --upgrade --generate-hashes scripts/requirements.in --output-file $@
+	pip-compile --generate-hashes scripts/requirements.in --output-file $@
 
 scripts/dev-requirements.txt: scripts/dev-requirements.in
-	pip-compile --upgrade --generate-hashes scripts/dev-requirements.in --output-file $@
+	pip-compile --generate-hashes scripts/dev-requirements.in --output-file $@
 
-SITE_PACKAGES := $(shell pip show pip | grep '^Location' | cut -f2 -d':')
+.PHONY: pip-upgrade
+pip-upgrade:  ## Upgrade all python dependencies
+	pip-compile --upgrade --generate-hashes scripts/requirements.in --output-file scripts/requirements.txt
+	pip-compile --upgrade --generate-hashes scripts/dev-requirements.in --output-file scripts/dev-requirements.txt
+
+SITE_PACKAGES := $(shell pip show pip | grep '^Location' | cut -f2 -d ':')
 $(SITE_PACKAGES): scripts/requirements.txt scripts/dev-requirements.txt check-env
 ifeq ($(CI_ARG), true)
 	@echo "Do nothing; assume python dependencies were installed by Dockerfile.test already"
