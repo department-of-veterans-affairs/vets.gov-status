@@ -57,7 +57,7 @@ chardet==3.0.4 \
 credstash==1.17.1 \
     --hash=sha256:2924936b35a96f6d2fd3cbb3a243541f317957cc6d45327fcb6c85cdd887326f \
     --hash=sha256:6c04e8734ef556ab459018da142dd0b244093ef176b3be5583e582e9a797a120 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 cryptography==2.9.2 \
     --hash=sha256:091d31c42f444c6f519485ed528d8b451d1a0c7bf30e8ca583a0cac44b8a0df6 \
     --hash=sha256:18452582a3c85b96014b45686af264563e3e5d99d226589f057ace56196ec78b \
@@ -87,7 +87,7 @@ docutils==0.15.2 \
 github3.py==1.3.0 \
     --hash=sha256:15a115c18f7bfcf934dfef7ab103844eb9f620c586bad65967708926da47cbda \
     --hash=sha256:50833b5da35546b8cced0e8d7ff4c50a9afc2c8e46cc4d07dc4b66d26467c708 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 google-api-core==1.17.0 \
     --hash=sha256:c0e430658ed6be902d7ba7095fb0a9cac810270d71bf7ac4484e76c300407aae \
     --hash=sha256:e4082a0b479dc2dee2f8d7b80ea8b5d0184885b773caab15ab1836277a01d689 \
@@ -95,7 +95,7 @@ google-api-core==1.17.0 \
 google-api-python-client==1.8.3 \
     --hash=sha256:b764be88cf2a1f8b4c4d17c9187a279fea93f4d767e7d7c24f71bf25385a8b10 \
     --hash=sha256:be4e8dcf399d7d1dcaae004b7f18694907f740bf6e6cebda91da8ebd968c5481 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 google-auth-httplib2==0.0.3 \
     --hash=sha256:098fade613c25b4527b2c08fa42d11f3c2037dda8995d86de0745228e965d445 \
     --hash=sha256:f1c437842155680cf9918df9bc51c1182fda41feef88c34004bd1978c8157e08 \
@@ -107,9 +107,9 @@ google-auth==1.14.3 \
 googleapis-common-protos==1.51.0 \
     --hash=sha256:013c91704279119150e44ef770086fdbba158c1f978a6402167d47d5409e226e \
     # via google-api-core
-httplib2==0.17.3 \
-    --hash=sha256:39dd15a333f67bfb70798faa9de8a6e99c819da6ad82b77f9a259a5c7b1225a2 \
-    --hash=sha256:6d9722decd2deacd486ef10c5dd5e2f120ca3ba8736842b90509afcdc16488b1 \
+httplib2==0.18.0 \
+    --hash=sha256:4f6988e6399a2546b525a037d56da34aed4d149bbdc0e78523018d5606c26e74 \
+    --hash=sha256:b0e1f3ed76c97380fe2485bc47f25235453b40ef33ca5921bb2897e257a49c4c \
     # via google-api-python-client, google-auth-httplib2
 idna==2.9 \
     --hash=sha256:7588d1c14ae4c77d74036e8c22ff447b26d0fde8f007354fd48a7814db15b7cb \
@@ -163,7 +163,7 @@ pandas==1.0.3 \
     --hash=sha256:a210c91a02ec5ff05617a298ad6f137b9f6f5771bf31f2d6b6367d7f71486639 \
     --hash=sha256:ca84a44cf727f211752e91eab2d1c6c1ab0f0540d5636a8382a3af428542826e \
     --hash=sha256:d234bcf669e8b4d6cbcd99e3ce7a8918414520aeb113e2a81aeb02d0a533d7f7 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 protobuf==3.11.3 \
     --hash=sha256:0bae429443cc4748be2aadfdaf9633297cfaeb24a9a02d0ab15849175ce90fab \
     --hash=sha256:24e3b6ad259544d717902777b33966a1a069208c885576254c112663e6a5bb0f \
@@ -199,12 +199,12 @@ pycparser==2.20 \
 pyopenssl==19.1.0 \
     --hash=sha256:621880965a720b8ece2f1b2f54ea2071966ab00e2970ad2ce11d596102063504 \
     --hash=sha256:9a24494b2602aaf402be5c9e30a0b82d4a5c67528fe8fb475e3f3bc00dd69507 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 pysocks==1.7.1 \
     --hash=sha256:08e69f092cc6dbe92a0fdd16eeb9b9ffbc13cadfe5ca4c7bd92ffb078b293299 \
     --hash=sha256:2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5 \
     --hash=sha256:3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 python-dateutil==2.8.1 \
     --hash=sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c \
     --hash=sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a \
@@ -245,7 +245,7 @@ ruamel.yaml.clib==0.2.0 \
 ruamel.yaml==0.16.10 \
     --hash=sha256:0962fd7999e064c4865f96fb1e23079075f4a2a14849bcdc5cdba53a24f9759b \
     --hash=sha256:099c644a778bf72ffa00524f78dd0b6476bca94a1da344130f4bf3381ce5b954 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 s3transfer==0.3.3 \
     --hash=sha256:2482b4259524933a022d59da830f51bd746db62f047d6eb213f2f8855dcb8a13 \
     --hash=sha256:921a37e2aefc64145e7b73d50c71bb4f26f46e4c9f414dc648c6245ff92cf7db \
@@ -257,7 +257,7 @@ six==1.14.0 \
 tenacity==6.2.0 \
     --hash=sha256:29ae90e7faf488a8628432154bb34ace1cca58244c6ea399fd33f066ac71339a \
     --hash=sha256:5a5d3dcd46381abe8b4f82b5736b8726fd3160c6c7161f53f8af7f1eb9b82173 \
-    # via -r scripts/requirements.in
+    # via -r requirements.in
 uritemplate==3.0.1 \
     --hash=sha256:07620c3f3f8eed1f12600845892b0e036a2420acf513c53f7de0abd911a5894f \
     --hash=sha256:5af8ad10cec94f215e3f48112de2022e1d5a37ed427fbd88652fa908f2ab7cae \
