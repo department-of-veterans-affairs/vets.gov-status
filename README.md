@@ -125,7 +125,7 @@ Build jekyll site:
 
 `$ make build`
 
-Start jekyll site and serve it on http://localhost:4000/scorecard/:
+Start jekyll site and serve it on http://localhost:4000/performance-dashboard/:
 
 `$ make run`
 
@@ -175,9 +175,9 @@ The site is automatically deployed by `Jenkinsfile` when certain branches change
 
 | branch | environment |
 |---|---|
-| development | https://dev.va.gov/scorecard |
-| master | https://staging.va.gov/scorecard |
-| production | https://www.va.gov/scorecard |
+| development | https://dev.va.gov/performance-dashboard |
+| master | https://staging.va.gov/performance-dashboard |
+| production | https://www.va.gov/performance-dashboard |
 
 There are two pathways to getting into production:
 1. Merge development branch to master, confirm staging works, then merge master to production. The merging is currently
@@ -187,19 +187,17 @@ branch. If this is successful, it triggers the `Jenkinsfile.automerge` script, w
 into production. New commits to `production` will trigger `Jenkinsfile` which will run CI and deploy the site. This is 
 automated (defined [here](https://github.com/department-of-veterans-affairs/devops/blob/master/ansible/deployment/config/jenkins-vetsgov/seed_job.groovy)).
 
-
-
 ## Developer Onboarding
 
 More useful developer onboarding documentation can be [found here](dev/onboarding.md).
 
 ## Supported Browsers
 
-The current list of supported browsers for scorecard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11. This list aligns with the [vets-website list](https://github.com/department-of-veterans-affairs/vets-website/blob/master/.babelrc#L16).
+The current list of supported browsers for performance dashboard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11. This list aligns with the [vets-website list](https://github.com/department-of-veterans-affairs/vets-website/blob/master/.babelrc#L16).
 
 ## Previous Dashboards
 
-This repo previously held two now defunct dashboards / 
+This repo previously held two now defunct dashboards:
 
 The first iteration (vets.gov status) is archived as  [release 0.1](https://github.com/department-of-veterans-affairs/vets.gov-status/releases/tag/0.1).
 

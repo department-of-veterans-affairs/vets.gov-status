@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/department-of-veterans-affairs/vets.gov-status/issues"
   },
-  "homepage": "https://www.va.gov/scorecard",
+  "homepage": "https://www.va.gov/performance-dashboard",
   "license": "PUBLIC DOMAIN",
   "private": true,
   "scripts": {
