@@ -175,9 +175,9 @@ The site is automatically deployed by `Jenkinsfile` when certain branches change
 
 | branch | environment |
 |---|---|
-| development | https://dev.va.gov/scorecard |
-| master | https://staging.va.gov/scorecard |
-| production | https://www.va.gov/scorecard |
+| development | https://dev.va.gov/performance-dashboard |
+| master | https://staging.va.gov/performance-dashboard |
+| production | https://www.va.gov/performance-dashboard |
 
 There are two pathways to getting into production:
 1. Merge development branch to master, confirm staging works, then merge master to production. The merging is currently
@@ -186,8 +186,6 @@ There are two pathways to getting into production:
 branch. If this is successful, it triggers the `Jenkinsfile.automerge` script, which will merge the latest from master 
 into production. New commits to `production` will trigger `Jenkinsfile` which will run CI and deploy the site. This is 
 automated (defined [here](https://github.com/department-of-veterans-affairs/devops/blob/master/ansible/deployment/config/jenkins-vetsgov/seed_job.groovy)).
-
-
 
 ## Developer Onboarding
 
@@ -199,7 +197,7 @@ The current list of supported browsers for scorecard redesign include Chrome 61,
 
 ## Previous Dashboards
 
-This repo previously held two now defunct dashboards / 
+This repo previously held two now defunct dashboards:
 
 The first iteration (vets.gov status) is archived as  [release 0.1](https://github.com/department-of-veterans-affairs/vets.gov-status/releases/tag/0.1).
 
