@@ -6,4 +6,4 @@ sass:
 
 exclude: ["webpack"]
 
-baseurl: "/scorecard"
+baseurl: "/performance-dashboard"

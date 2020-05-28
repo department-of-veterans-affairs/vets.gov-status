@@ -125,7 +125,7 @@ Build jekyll site:
 
 `$ make build`
 
-Start jekyll site and serve it on http://localhost:4000/scorecard/:
+Start jekyll site and serve it on http://localhost:4000/performance-dashboard/:
 
 `$ make run`
 
@@ -193,7 +193,7 @@ More useful developer onboarding documentation can be [found here](dev/onboardin
 
 ## Supported Browsers
 
-The current list of supported browsers for scorecard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11. This list aligns with the [vets-website list](https://github.com/department-of-veterans-affairs/vets-website/blob/master/.babelrc#L16).
+The current list of supported browsers for performance dashboard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11. This list aligns with the [vets-website list](https://github.com/department-of-veterans-affairs/vets-website/blob/master/.babelrc#L16).
 
 ## Previous Dashboards
 
