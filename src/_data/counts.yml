@@ -15,7 +15,7 @@ services:
   title: Disability
   tools:
   - title: Check VA claim or appeal status
-    transactions: 1639757
+    transactions: 1639760
   - title: File for disability compensation
     transactions: 28245
   users_total: 569511
@@ -76,5 +76,5 @@ services:
     transactions: 0
   users_total: 372063
   users_trend: 34.1
-transactions_total: 28191425
-users_total: 6814428
+transactions_total: 28191434
+users_total: 6814430
