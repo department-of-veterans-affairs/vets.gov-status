@@ -10,6 +10,10 @@ services:
         page_path_filter: '/schedule-view-va-appointments'
         event_category_filter: 'Transactions'
         event_action_filter: 'Forms'
+      - title: 'Complete COVID-19 online screening'
+        page_path_filter: '/covid19screen'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'covid-screening-tool-result'        
   - title: 'Disability'
     page_path_filter: 'www.va.gov/disability'
     tools:
