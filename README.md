@@ -83,7 +83,7 @@ For example, this tool code from the service.yaml file:
 ```
 
 Will produce the same results as this Google Analytics dashboard widget:
-//todo
+![Example Google Analytics widget for above query](exampleGoogleAnalyticsWidget.png)
 
 ## External Integrations
 
