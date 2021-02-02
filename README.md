@@ -58,6 +58,7 @@ services:
 
 ```
 
+### Adding another service and/or tool
 **To add another service**, add an additional item to the `services` list. You can duplicate an existing one and edit its fields.
 
 If you want the tile on the frontend to have a "Total Users" metric for that service, add a `page_path_filter` field
@@ -68,7 +69,21 @@ This is a required field.
 to provide the fields `page_path_filter` and `event_category_filter`, and optional to provide `event_action_filter`.
 
 The values for `page_path_filter`, `event_category_filter`, and `event_action_filter` are used to build queries
-for Google Analytics.
+for Google Analytics, and correspond to the GA dimension filters "Page", "Event category", and "Event action". Technically, 
+they use a [Google Analytics Regex Match](https://support.google.com/analytics/answer/1034324?hl=en) to match pages, 
+event categories, and event actions.
+
+For example, this tool code from the service.yaml file:
+```
+    tools:
+      - title: 'FooBarBaz'
+        page_path_filter: 'foo'
+        event_category_filter: 'bar'
+        event_action_filter: 'baz'
+```
+
+Will produce the same results as this Google Analytics dashboard widget:
+//todo
 
 ## External Integrations
 
