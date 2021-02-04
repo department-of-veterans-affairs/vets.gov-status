@@ -5,13 +5,13 @@ services:
     title: Health Care
     tools:
       - title: Complete COVID-19 online screening
-        transactions: 1558309
+        transactions: 1532511
       - title: COVID-19 Vaccine interest form submissions
         transactions: 305932
       - title: Schedule and view VA appointments online
-        transactions: 66985
+        transactions: 66762
       - title: Apply for health care benefits
-        transactions: 18047
+        transactions: 17807
     users_total: 2156511
     users_trend: 281.8
   - csat: 69.1
@@ -19,9 +19,9 @@ services:
     title: Disability
     tools:
       - title: Check VA claim or appeal status
-        transactions: 1901397
+        transactions: 1886314
       - title: File for disability compensation
-        transactions: 39398
+        transactions: 39595
     users_total: 694945
     users_trend: 57.7
   - csat: 76.0
@@ -29,25 +29,25 @@ services:
     title: Education
     tools:
       - title: "GI Bill\xAE Comparison Tool"
-        transactions: 155035
+        transactions: 154217
       - title: Check Post 9/11 GI Bill benefits
-        transactions: 122361
+        transactions: 123952
       - title: Apply for education benefits
-        transactions: 22501
+        transactions: 22396
       - title: Manage education benefits
-        transactions: 16236
+        transactions: 16288
       - title: Apply for education benefits as an eligible dependent
-        transactions: 7299
+        transactions: 7020
       - title: Apply to use transferred education benefits
-        transactions: 4684
+        transactions: 4771
       - title: Manage education benefits as an eligible dependent
-        transactions: 4023
+        transactions: 3920
       - title: Apply for VET TEC
-        transactions: 1121
+        transactions: 1094
       - title: Apply for education benefits under the NCS program
-        transactions: 201
+        transactions: 213
       - title: "GI Bill\xAE School Feedback Tool"
-        transactions: 57
+        transactions: 61
     users_total: 544046
     users_trend: 20.0
   - csat: 81.0
@@ -55,9 +55,9 @@ services:
     title: Burials & Memorials
     tools:
       - title: Apply for pre-need eligibility determination
-        transactions: 2069
+        transactions: 2036
       - title: Apply for burial benefits
-        transactions: 1466
+        transactions: 1398
     users_total: 93945
     users_trend: 38.4
   - csat: 75.8
@@ -65,7 +65,7 @@ services:
     title: Pension & Fiduciary
     tools:
       - title: Apply for Veterans Pension benefits
-        transactions: 833
+        transactions: 790
     users_total: 138369
     users_trend: 38.8
   - csat: 61.9
@@ -73,9 +73,9 @@ services:
     title: Profile & Records
     tools:
       - title: Download VA benefits letters
-        transactions: 216934
+        transactions: 216179
       - title: Update contact information & preferences
-        transactions: 150667
+        transactions: 149295
       - title: Update direct deposit information
         transactions: 0
     users_total: 511255
