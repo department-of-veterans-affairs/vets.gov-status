@@ -1,94 +1,94 @@
 services:
-  - title: "Health Care"
-    page_path_filter: "www.va.gov/health-care"
+  - title: 'Health Care'
+    page_path_filter: 'www.va.gov/health-care'
     tools:
-      - title: "Apply for health care benefits"
-        page_path_filter: "/health-care/apply"
-        event_category_filter: "Transactions"
-        event_action_filter: "Forms"
-      - title: "Schedule and view VA appointments online"
-        page_path_filter: "/schedule-view-va-appointments"
-        event_category_filter: "Transactions"
-        event_action_filter: "Forms"
-      - title: "Complete COVID-19 online screening"
-        page_path_filter: "/covid19screen"
-        event_category_filter: "Interactions"
-        event_action_filter: "Result Displayed"
-      - title: "COVID-19 Vaccine interest form submissions"
-        page_path_filter: "/health-care/covid-19-vaccine/stay-informed/form/"
-        event_category_filter: "Transactions"
-        event_action_filter: "Forms"
-  - title: "Disability"
-    page_path_filter: "www.va.gov/disability"
+      - title: 'Apply for health care benefits'
+        page_path_filter: '/health-care/apply'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'Forms'
+      - title: 'Schedule and view VA appointments online'
+        page_path_filter: '/schedule-view-va-appointments'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'Forms'
+      - title: 'Complete COVID-19 online screening'
+        page_path_filter: '/covid19screen'
+        event_category_filter: 'Interactions'
+        event_action_filter: 'Result Displayed'
+      - title: 'COVID-19 Vaccine interest form submissions'
+        page_path_filter: '/health-care/covid-19-vaccine/stay-informed/form/'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'Forms'      
+  - title: 'Disability'
+    page_path_filter: 'www.va.gov/disability'
     tools:
-      - title: "Check VA claim or appeal status"
-        page_path_filter: "www.va.gov/track-claims/"
-        event_category_filter: "Transactions"
-      - title: "File for disability compensation"
-        page_path_filter: "/file-disability-claim-form-21-526ez/"
-        event_category_filter: "Transactions"
-  #      - title: 'View VA disability ratings'
-  #        page_path_filter: '/view-disability-rating/'
-  #        event_category_filter: 'Transactions'
-  - title: "Education"
-    page_path_filter: "www.va.gov/gi-bill|www.va.gov/education"
+      - title: 'Check VA claim or appeal status'
+        page_path_filter: 'www.va.gov/track-claims/'
+        event_category_filter: 'Transactions'
+      - title: 'File for disability compensation'
+        page_path_filter: '/file-disability-claim-form-21-526ez/'
+        event_category_filter: 'Transactions'
+#      - title: 'View VA disability ratings'
+#        page_path_filter: '/view-disability-rating/'
+#        event_category_filter: 'Transactions'
+  - title: 'Education'
+    page_path_filter: 'www.va.gov/gi-bill|www.va.gov/education'
     tools:
-      - title: "GI Bill® Comparison Tool"
-        page_path_filter: "/gi-bill-comparison-tool"
-        event_category_filter: "Transactions"
-      - title: "Apply for education benefits"
-        page_path_filter: "/application/1990/"
-        event_category_filter: "Transactions"
-      - title: "Apply to use transferred education benefits"
-        page_path_filter: "/application/1990e/"
-        event_category_filter: "Transactions"
-      - title: "Manage education benefits"
-        page_path_filter: "/application/1995/"
-        event_category_filter: "Transactions"
-      - title: "Apply for VET TEC"
-        page_path_filter: "/apply-for-vettec-form-22-0994"
-        event_category_filter: "Transactions"
-      - title: "Apply for education benefits as an eligible dependent"
-        page_path_filter: "/application/5490/"
-        event_category_filter: "Transactions"
-      - title: "Manage education benefits as an eligible dependent"
-        page_path_filter: "/application/5495/"
-        event_category_filter: "Transactions"
-      - title: "Apply for education benefits under the NCS program"
-        page_path_filter: "/application/1990n/"
-        event_category_filter: "Transactions"
-      - title: "GI Bill® School Feedback Tool"
-        page_path_filter: "/education/submit-school-feedback"
-        event_category_filter: "Transactions"
-      - title: "Check Post 9/11 GI Bill benefits"
-        page_path_filter: "/education/gi-bill/"
-        event_category_filter: "Transactions"
-  - title: "Burials & Memorials"
-    page_path_filter: "www.va.gov/burials"
+      - title: 'GI Bill® Comparison Tool'
+        page_path_filter: '/gi-bill-comparison-tool'
+        event_category_filter: 'Transactions'
+      - title: 'Apply for education benefits'
+        page_path_filter: '/application/1990/'
+        event_category_filter: 'Transactions'
+      - title: 'Apply to use transferred education benefits'
+        page_path_filter: '/application/1990e/'
+        event_category_filter: 'Transactions'
+      - title: 'Manage education benefits'
+        page_path_filter: '/application/1995/'
+        event_category_filter: 'Transactions'
+      - title: 'Apply for VET TEC'
+        page_path_filter: '/apply-for-vettec-form-22-0994'
+        event_category_filter: 'Transactions'
+      - title: 'Apply for education benefits as an eligible dependent'
+        page_path_filter: '/application/5490/'
+        event_category_filter: 'Transactions'
+      - title: 'Manage education benefits as an eligible dependent'
+        page_path_filter: '/application/5495/'
+        event_category_filter: 'Transactions'
+      - title: 'Apply for education benefits under the NCS program'
+        page_path_filter: '/application/1990n/'
+        event_category_filter: 'Transactions'
+      - title: 'GI Bill® School Feedback Tool'
+        page_path_filter: '/education/submit-school-feedback'
+        event_category_filter: 'Transactions'
+      - title: 'Check Post 9/11 GI Bill benefits'
+        page_path_filter: '/education/gi-bill/'
+        event_category_filter: 'Transactions'
+  - title: 'Burials & Memorials'
+    page_path_filter: 'www.va.gov/burials'
     tools:
-      - title: "Apply for pre-need eligibility determination"
-        page_path_filter: "/pre-need/form-10007"
-        event_category_filter: "Transactions"
-      - title: "Apply for burial benefits"
-        page_path_filter: "/application/530/"
-        event_category_filter: "Transactions"
-  - title: "Pension & Fiduciary"
-    page_path_filter: "www.va.gov/pension"
+      - title: 'Apply for pre-need eligibility determination'
+        page_path_filter: '/pre-need/form-10007'
+        event_category_filter: 'Transactions'
+      - title: 'Apply for burial benefits'
+        page_path_filter: '/application/530/'
+        event_category_filter: 'Transactions'
+  - title: 'Pension & Fiduciary'
+    page_path_filter: 'www.va.gov/pension'
     tools:
-      - title: "Apply for Veterans Pension benefits"
-        page_path_filter: "/application/527ez/"
-        event_category_filter: "Transactions"
-  - title: "Profile & Records"
-    page_path_filter: "www.va.gov/profile|www.va.gov/records"
+      - title: 'Apply for Veterans Pension benefits'
+        page_path_filter: '/application/527ez/'
+        event_category_filter: 'Transactions'
+  - title: 'Profile & Records'
+    page_path_filter: 'www.va.gov/profile|www.va.gov/records'
     tools:
-      - title: "Update contact information & preferences"
-        page_path_filter: "www.va.gov/profile/"
-        event_category_filter: "Transactions"
-        event_action_filter: "address|sms|email|telephone"
-      - title: "Update direct deposit information"
-        page_path_filter: "www.va.gov/profile/"
-        event_category_filter: "Transactions"
-        event_action_filter: "direct-deposit-information"
-      - title: "Download VA benefits letters"
-        page_path_filter: "/download-va-letters"
-        event_category_filter: "Transactions"
+      - title: 'Update contact information & preferences'
+        page_path_filter: 'www.va.gov/profile/'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'address|sms|email|telephone'
+      - title: 'Update direct deposit information'
+        page_path_filter: 'www.va.gov/profile/'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'direct-deposit-information'
+      - title: 'Download VA benefits letters'
+        page_path_filter: '/download-va-letters'
+        event_category_filter: 'Transactions'
