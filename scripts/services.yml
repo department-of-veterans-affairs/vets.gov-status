@@ -13,7 +13,11 @@ services:
       - title: 'Complete COVID-19 online screening'
         page_path_filter: '/covid19screen'
         event_category_filter: 'Interactions'
-        event_action_filter: 'Result Displayed'      
+        event_action_filter: 'Result Displayed'
+      - title: 'COVID-19 Vaccine interest form submissions'
+        page_path_filter: '/health-care/covid-19-vaccine/stay-informed/form/'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'Forms'      
   - title: 'Disability'
     page_path_filter: 'www.va.gov/disability'
     tools:
