@@ -14,7 +14,7 @@ services:
         page_path_filter: '/covid19screen'
         event_category_filter: 'Interactions'
         event_action_filter: 'Result Displayed'
-      - title: 'COVID-19 Vaccine interest form submissions'
+      - title: 'COVID-19 Vaccine interest form sign ups'
         page_path_filter: '/health-care/covid-19-vaccine/stay-informed/form/'
         event_category_filter: 'Transactions'
         event_action_filter: 'Forms'      
