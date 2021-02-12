@@ -40,7 +40,7 @@ pipeline {
     stage('Build website') {
       steps {
         script {
-          nodeImg = docker.image('node:12.16.1')
+          nodeImg = docker.image('node:12.20.1')
           nodeImg.inside() {
             sh 'make yarn-install'
           }
@@ -57,7 +57,7 @@ pipeline {
     stage('UI tests') {
       steps {
         script {
-          docker.image('circleci/node:12.16.1-buster-browsers').inside() {
+          docker.image('circleci/node:12.20.1-buster-browsers').inside() {
             sh 'make ci-ui-test'
           }
         }
