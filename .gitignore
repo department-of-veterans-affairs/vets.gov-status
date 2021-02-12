@@ -26,6 +26,8 @@ scripts/local_credentials/*
 .idea/
 
 # yarn / node / etc
+# since we use yarn, we don't want to add package-lock.json
+package-lock.json
 node_modules
 yarn-error.log
 src/assets/vendor/
