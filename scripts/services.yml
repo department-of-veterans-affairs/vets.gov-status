@@ -88,7 +88,7 @@ services:
       - title: 'Update direct deposit information'
         page_path_filter: 'www.va.gov/profile/'
         event_category_filter: 'Transactions'
-        event_action_filter: 'direct-deposit-information'
+        event_action_filter: 'Profile - Form Submit - CNP Direct Deposit Information'
       - title: 'Download VA benefits letters'
         page_path_filter: '/download-va-letters'
         event_category_filter: 'Transactions'
