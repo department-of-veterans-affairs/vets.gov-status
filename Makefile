@@ -95,7 +95,7 @@ pip-install: $(SITE_PACKAGES)
 
 ## Data fetch targets
 .PHONY: fetch-data-local
-fetch-data-local: pip-install
+fetch-data-local: pip-install  ## Run the fetch data scripts to update the data files locally
 	cd scripts; ./fetch-data-local.sh
 
 ## Test targets
