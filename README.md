@@ -146,6 +146,11 @@ Start jekyll site and serve it on http://localhost:4000/performance-dashboard/:
 
 ### Testing
 
+In order to run the python scripts directly:
+1. Make sure you have the correct version of python: `pyenv install 3.6.8` (use version in `.python-version`)
+2. Run `make python-install` to install a virtual environment and install the dependencies.
+3. Activate the virtual environment with `source ENV/bin/activate`
+
 The unit tests are written with pytest, and running them will generate a coverage report.
 
 Run all unit tests and ui tests with `make test`.
@@ -154,23 +159,17 @@ Run only unit tests with `make unit-test`.
 
 Run only UI tests with `make ui-test`.
 
-### Run Python Scripts
+Run only Integration tests with `make integration-test`
 
-Make sure you have the correct version of python: `pyenv install 3.6.8` (use version in `.python-version`)
+### Run Fetch Data Scripts
 
-Run `make python-install` to install a virtual environment and install the dependencies.
-
-Activate the virtual environment with `source ENV/bin/activate`
-
-Go into the scripts directory and run the scripts with `./fetch-data-local.sh`
+Go into the scripts directory and run `./fetch-data-docker-wrapper.sh`
 
 ### Credentials
 
 The scripts get secrets out of [credstash](https://github.com/fugue/credstash) when running in CI.
 
-When running locally, you can ask a colleague for the `ga-serviceaccount.json` file and place it in `scripts/local_credentials`.
-
-The Foresee credentials can be set locally by exporting the FORESEE_CREDENTIALS variable with valid Foresee credentials.
+When running locally, you can ask a colleague for the `.secrets` file and place it in `scripts/local_credentials`, which set credentials for Foresee and GA as env vars.
 
 ### Adding new packages to python scripts
 
