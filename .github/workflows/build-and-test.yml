@@ -13,7 +13,6 @@ jobs:
       run: make ci-unit-test
     - name: run integration tests
       env:
-        CI: true
         GA_SERVICEACCOUNT: ${{ secrets.GA_SERVICEACCOUNT }}
         FORESEE_CREDENTIALS: ${{ secrets.FORESEE_CREDENTIALS }}
       run: make integration-test

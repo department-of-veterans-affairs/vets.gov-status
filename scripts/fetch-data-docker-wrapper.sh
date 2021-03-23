@@ -10,22 +10,15 @@ current_time=$(date "+%Y.%m.%d-%H.%M.%S")
 container_name=dashboard-fetch-container-${current_time}
 
 echo "Fetching data via docker image"
-if [ -n "${CI:-}" ]; then
-  docker run --name ${container_name} --tmpfs /var/tmp \
-    --env GA_SERVICEACCOUNT \
-    --env FORESEE_CREDENTIALS \
-    --env CI \
-    --env INTEGRATION_TEST \
-    dashboard-fetch-img
-else
-  # We want to override GA_SERVICE account credentials location if not running in CI
-  export GA_SERVICEACCOUNT_FILE="local_credentials/ga-serviceaccount.json"
-  docker run --name ${container_name} --tmpfs /var/tmp \
-    --env GA_SERVICEACCOUNT_FILE \
-    --env FORESEE_CREDENTIALS \
-    --env INTEGRATION_TEST \
-    dashboard-fetch-img
+if [ -z "${CI:-}" ]; then
+  source local_credentials/.secrets
 fi
+
+docker run --name ${container_name} \
+  --env GA_SERVICEACCOUNT \
+  --env FORESEE_CREDENTIALS \
+  --env INTEGRATION_TEST \
+  dashboard-fetch-img
 
 docker cp ${container_name}:/application/data/. ../src/_data
 docker rm ${container_name}
