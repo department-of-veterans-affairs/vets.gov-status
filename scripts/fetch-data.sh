@@ -3,12 +3,6 @@ set -o errexit
 set -o nounset
 # set -x
 
-# todo: Make credstash credential keys environment variables as well
-if [ -n "${CI:-}" ]; then
-  credstash --region ${AWS_DEFAULT_REGION} get vagovanalytics.prod.service_account_credentials > ${GA_SERVICEACCOUNT}
-  export FORESEE_CREDENTIALS=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.api.credentials`
-fi
-
 if [ -z "${INTEGRATION_TEST:-}" ]; then
   echo Running Google Analytics scripts...
   python -m fetch_data

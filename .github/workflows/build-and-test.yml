@@ -1,0 +1,38 @@
+name: "CodeQL"
+
+on: push
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: run unit tests
+      run: make ci-unit-test
+    - name: run integration tests
+      env:
+        CI: true
+        GA_SERVICEACCOUNT: ${{ secrets.GA_SERVICEACCOUNT }}
+        FORESEE_CREDENTIALS: ${{ secrets.FORESEE_CREDENTIALS }}
+      run: make integration-test
+#
+#  build:
+#    name: Build
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: Checkout repository
+#    - uses: actions/checkout@v2
+#    - uses: actions/setup-node@master
+#      with:
+#        node-version: '12'
+#
+#    - name: build
+#      run: make yarn-install
+#      shell: bash
+#    - uses: paambaati/codeclimate-action@v2.2.4
+#      env:
+#        CC_TEST_REPORTER_ID: 945dfb58a832d233a3caeb84e3e6d3be212e8c7abcb48117fce63b9adcb43647
+#      with:
+#        coverageCommand: yarn coverage

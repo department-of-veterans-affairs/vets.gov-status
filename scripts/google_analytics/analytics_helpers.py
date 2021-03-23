@@ -1,6 +1,7 @@
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 import os
+import json
 import pandas as pd
 
 from utils.datetime_utils import reformat_date
@@ -14,7 +15,11 @@ def initialize_analyticsreporting():
     """
     SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 
-    credentials = Credentials.from_service_account_file(os.environ['GA_SERVICEACCOUNT'], scopes=SCOPES)
+    if os.getenv('GA_SERVICEACCOUNT'):
+        service_account_info = json.loads(os.getenv('GA_SERVICEACCOUNT'))
+        credentials = Credentials.from_service_account_info(service_account_info, scopes=SCOPES)
+    else:
+        credentials = Credentials.from_service_account_file(os.environ['GA_SERVICEACCOUNT_FILE'], scopes=SCOPES)
 
     # Build the service object.
     analytics_service = build('analyticsreporting', 'v4', credentials=credentials, cache_discovery=False)
