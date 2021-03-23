@@ -1,9 +1,13 @@
 import org.kohsuke.github.GitHub
+import org.kohsuke.github.GitHubBuilder
 
 def PR = 0
 
 def create_pr = {
-  def github = GitHub.connect()
+  def github
+  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'va-bot', usernameVariable: 'USERNAME', passwordVariable: 'TOKEN']]) {
+     github = new GitHubBuilder().withPassword(env.USERNAME, env.TOKEN).build();
+  }
 
   def now = new Date().format('yyyy-MM-dd')
   def update_branch = "refs/heads/update-${now}"
@@ -20,7 +24,10 @@ def create_pr = {
 }
 
 def merge_pr = {
-  def github = GitHub.connect()
+  def github
+  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'va-bot', usernameVariable: 'USERNAME', passwordVariable: 'TOKEN']]) {
+     github = new GitHubBuilder().withPassword(env.USERNAME, env.TOKEN).build();
+  }
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
   def pr = repo.getPullRequest(PR)
 
@@ -103,7 +110,10 @@ pipeline {
           waitUntil {
             sleep time: 2, unit: 'MINUTES'
             script {
-              def github = GitHub.connect()
+              def github
+              withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'va-bot', usernameVariable: 'USERNAME', passwordVariable: 'TOKEN']]) {
+                 github = new GitHubBuilder().withPassword(env.USERNAME, env.TOKEN).build();
+              }
               def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
               def pr = repo.getPullRequest(PR)
               // The mergeable_state field isn't formally documented as far as we can tell, but we're basing the below on this description:
