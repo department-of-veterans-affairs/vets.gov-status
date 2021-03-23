@@ -24,6 +24,7 @@ scripts/local_credentials/*
 
 # IDE
 .idea/
+performancedashboard.iml
 
 # yarn / node / etc
 # since we use yarn, we don't want to add package-lock.json
