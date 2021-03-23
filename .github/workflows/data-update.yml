@@ -1,0 +1,10 @@
+name: data-update
+on:
+  push:
+jobs:
+  data-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'update-$(date -I)'
