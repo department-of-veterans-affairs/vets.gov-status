@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-cd github/workspace
+ls
 
 make yarn-install
 make ci-ui-test
