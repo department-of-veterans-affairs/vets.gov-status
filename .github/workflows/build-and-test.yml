@@ -44,13 +44,15 @@ jobs:
     name: UI Test
     needs: build
     runs-on: ubuntu-latest
-    container: circleci/node:12.20.1-buster-browsers
+#    container: circleci/node:12.20.1-buster-browsers
     steps:
-    - name: create _site directory to store build artifacts
-      run: mkdir _site
+    - name: set up node
+      uses: actions/setup-node@master
+      with:
+        node-version: '12.20.1'
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: download jekyll site
       uses: actions/download-artifact@v2
-    - name: install dependencies
-      run: make yarn-install
-    - name: UI test
+    - name: run ui tests
       run: make ci-ui-test
