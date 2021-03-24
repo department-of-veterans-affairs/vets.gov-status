@@ -46,10 +46,10 @@ jobs:
     runs-on: ubuntu-latest
     container: circleci/node:12.20.1-buster-browsers
     steps:
+    - name: print pwd
+      run: ls
     - name: download jekyll site
       uses: actions/download-artifact@v2
-      with:
-        name: jekyll-site
     - name: install dependencies
       run: make yarn-install
     - name: UI test
