@@ -1,10 +1,10 @@
-name: "CodeQL"
+name: "Test and Build"
 
 on: push
 
 jobs:
   test:
-    name: Test
+    name: Unit and Integration Tests
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -16,22 +16,44 @@ jobs:
         GA_SERVICEACCOUNT: ${{ secrets.GA_SERVICEACCOUNT }}
         FORESEE_CREDENTIALS: ${{ secrets.FORESEE_CREDENTIALS }}
       run: make integration-test
-#
-#  build:
-#    name: Build
-#    runs-on: ubuntu-latest
-#    steps:
-#    - name: Checkout repository
-#    - uses: actions/checkout@v2
-#    - uses: actions/setup-node@master
-#      with:
-#        node-version: '12'
-#
-#    - name: build
-#      run: make yarn-install
-#      shell: bash
-#    - uses: paambaati/codeclimate-action@v2.2.4
-#      env:
-#        CC_TEST_REPORTER_ID: 945dfb58a832d233a3caeb84e3e6d3be212e8c7abcb48117fce63b9adcb43647
-#      with:
-#        coverageCommand: yarn coverage
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container: jekyll/jekyll:4.0
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: set up node
+      uses: actions/setup-node@master
+      with:
+        node-version: '12.20.1'
+      run: npm install --global --force yarn@1.22.0
+    - name: install dependencies
+      run: make yarn-install
+    - name: build
+      run: /usr/gem/bin/jekyll build --trace
+    - name: print stuff
+      run: ls _site
+    - name: upload jekyll site
+      uses: actions/upload-artifact@v2
+      with:
+        name: jekyll-site
+        path: _site
+
+  ui-test:
+    name: UI Test
+    needs: build
+    runs-on: ubuntu-latest
+    container: circleci/node:12.20.1-buster-browsers
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: download jekyll site
+      uses: actions/download-artifact@v2
+      with:
+        name: jekyll-site
+    - name: install dependencies
+      run: make yarn-install
+    - name: UI test
+      run: make ci-ui-test
