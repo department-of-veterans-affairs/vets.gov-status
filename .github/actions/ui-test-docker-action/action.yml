@@ -1,0 +1,5 @@
+name: 'docker-ui-test'
+description: 'run UI tests against jekyll site'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
