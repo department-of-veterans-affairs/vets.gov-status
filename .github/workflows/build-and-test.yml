@@ -46,8 +46,8 @@ jobs:
     runs-on: ubuntu-latest
     container: circleci/node:12.20.1-buster-browsers
     steps:
-    - name: print pwd
-      run: ls
+    - name: create _site directory to store build artifacts
+      run: mkdir _site
     - name: download jekyll site
       uses: actions/download-artifact@v2
     - name: install dependencies
