@@ -37,7 +37,7 @@ jobs:
     - name: upload jekyll site
       uses: actions/upload-artifact@v2
       with:
-        name: jekyll-site
+        name: _site
         path: _site
 
   ui-test:
