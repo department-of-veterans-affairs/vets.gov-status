@@ -28,13 +28,12 @@ jobs:
       uses: actions/setup-node@master
       with:
         node-version: '12.20.1'
+    - name: install correct yarn version
       run: npm install --global --force yarn@1.22.0
     - name: install dependencies
       run: make yarn-install
     - name: build
       run: /usr/gem/bin/jekyll build --trace
-    - name: print stuff
-      run: ls _site
     - name: upload jekyll site
       uses: actions/upload-artifact@v2
       with:
