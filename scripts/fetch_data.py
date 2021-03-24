@@ -95,7 +95,7 @@ def main():
         service_data = fetch_ga_data_for_service(analytics_service, service)
         counts["services"].append(service_data)
 
-    # add_csat_data_to_counts(counts, services)
+    add_csat_data_to_counts(counts, services)
 
     output_file = os.path.join(os.environ['DATA_DIR'], 'counts.yml')
     with open(output_file, 'w') as output:
