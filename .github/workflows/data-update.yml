@@ -31,5 +31,5 @@ jobs:
       - name: trigger build workflow
         uses: ./.github/actions/trigger-workflow-action
         with:
-          workflow: build-and-test
+          workflow: test-build-deploy
           token: ${{ secrets.PERSONAL_TOKEN }}
