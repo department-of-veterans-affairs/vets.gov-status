@@ -37,7 +37,7 @@ jobs:
         path: src/_data
 
   build:
-    name: Build
+    name: Jekyll Site Build
     needs: fetch-data
     runs-on: ubuntu-latest
     container: jekyll/jekyll:4.0
@@ -78,7 +78,7 @@ jobs:
       uses: ./.github/actions/ui-test-docker-action
 
   deploy:
-    name: deploy Jekyll site to S3
+    name: Jekyll Site Deployment
     needs: ui-test
     runs-on: ubuntu-latest
     steps:
