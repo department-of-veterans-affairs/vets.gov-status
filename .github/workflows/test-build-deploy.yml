@@ -23,7 +23,7 @@ jobs:
         env_variable_name: "FORESEE_CREDENTIALS"
     - name: run integration tests
       run: |
-        GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/performance-dashboard/ga-serviceaccount' | jq '.Parameter.Value' -r)
+        export GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/performance-dashboard/ga-serviceaccount' | jq '.Parameter.Value' -r)
         make integration-test
 
   fetch-data:
