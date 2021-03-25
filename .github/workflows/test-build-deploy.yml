@@ -92,4 +92,4 @@ jobs:
         aws-region: us-west-2
     - name: upload site to S3
       run: |
-        aws s3 sync --acl public-read --delete _site s3://va-performance-dashboard-data --exclude "data/*"
+        aws s3 sync _site s3://va-performance-dashboard-data --exclude "data/*"
