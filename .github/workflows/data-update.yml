@@ -27,7 +27,7 @@ jobs:
           aws-region: us-west-2
       - name: Copy data to s3
         run: |
-          aws s3 sync src/_data s3://va-performance-dashboard-data
+          aws s3 sync src/_data s3://va-performance-dashboard-data/data
       - name: trigger build workflow
         uses: ./.github/actions/trigger-workflow-action
         with:

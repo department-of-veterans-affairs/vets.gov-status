@@ -29,7 +29,7 @@ jobs:
         aws-region: us-west-2
     - name: fetch data from s3
       run: |
-        aws s3 cp s3://va-performance-dashboard-data/ src/_data --recursive
+        aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
     - name: upload data
       uses: actions/upload-artifact@v2
       with:
@@ -76,3 +76,20 @@ jobs:
       uses: actions/download-artifact@v2
     - name: run ui tests
       uses: ./.github/actions/ui-test-docker-action
+
+  deploy:
+    name: deploy Jekyll site to S3
+    needs: ui-test
+    runs-on: ubuntu-latest
+    steps:
+    - name: download jekyll site
+      uses: actions/download-artifact@v2
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+    - name: upload site to S3
+      run: |
+        aws s3 sync --acl public-read --delete _site s3://va-performance-dashboard-data" --exclude "data/*"
