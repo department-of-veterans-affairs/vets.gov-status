@@ -3,7 +3,7 @@ name: "Data update"
 on: push
 
 jobs:
-  fetch-data:
+  refresh-data:
     name: Fetch data
     runs-on: ubuntu-latest
     steps:
@@ -26,3 +26,8 @@ jobs:
       - name: Copy data to s3
         run: |
           aws s3 sync src/_data s3://va-performance-dashboard-data
+      - name: trigger build workflow
+        uses: ./.github/actions/ui-test-docker-action
+        with:
+          workflow: build-and-test
+          token: ${{ secrets.PERSONAL_TOKEN }}

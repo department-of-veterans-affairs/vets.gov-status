@@ -1,0 +1,14 @@
+name: 'Workflow Dispatch'
+description: 'Trigger and chain GitHub Actions workflows with workflow_dispatch events'
+
+inputs:
+  workflow:
+    description: 'Name workflow to run'
+    required: true
+  token:
+    description: 'GitHub token with repo write access, can NOT use secrets.GITHUB_TOKEN, see readme'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
