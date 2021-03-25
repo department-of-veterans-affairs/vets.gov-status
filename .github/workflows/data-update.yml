@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          branch: master
+          ref: master
       - name: fetch data
         env:
           GA_SERVICEACCOUNT: ${{ secrets.GA_SERVICEACCOUNT }}
