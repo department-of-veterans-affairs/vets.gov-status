@@ -11,25 +11,35 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          ref: github-actions
-      - name: fetch data
-        env:
-          GA_SERVICEACCOUNT: ${{ secrets.GA_SERVICEACCOUNT }}
-          FORESEE_CREDENTIALS: ${{ secrets.FORESEE_CREDENTIALS }}
-        working-directory: ./scripts
-        run: ./fetch-data-docker-wrapper.sh
+#        with:
+#          ref: github-actions
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
+      - uses: marvinpinto/action-inject-ssm-secrets@latest
+        with:
+          ssm_parameter: "/performance-dashboard/foresee-credentials"
+          env_variable_name: "FORESEE_CREDENTIALS"
+      - name: fetch data
+        env:
+          GA_SERVICEACCOUNT: ${{ env.GA_SERVICEACCOUNT }}
+          FORESEE_CREDENTIALS: ${{ env.FORESEE_CREDENTIALS }}
+        working-directory: ./scripts
+        run: |
+          GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/performance-dashboard/ga-serviceaccount' | jq '.Parameter.Value' -r)
+          ./fetch-data-docker-wrapper.sh
       - name: Copy data to s3
         run: |
           aws s3 sync src/_data s3://va-performance-dashboard-data/data
+      - uses: marvinpinto/action-inject-ssm-secrets@latest
+        with:
+          ssm_parameter: "/performance-dashboard/github-access-token"
+          env_variable_name: "PERSONAL_TOKEN"
       - name: trigger build workflow
         uses: ./.github/actions/trigger-workflow-action
         with:
           workflow: test-build-deploy
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ env.PERSONAL_TOKEN }}
