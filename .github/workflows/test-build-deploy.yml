@@ -79,7 +79,7 @@ jobs:
 
   deploy:
     name: Jekyll Site Deployment
-    needs: ui-test
+    needs: [ ui-test, test]
     runs-on: ubuntu-latest
     steps:
     - name: download jekyll site
