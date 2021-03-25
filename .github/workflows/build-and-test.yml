@@ -17,21 +17,10 @@ jobs:
         FORESEE_CREDENTIALS: ${{ secrets.FORESEE_CREDENTIALS }}
       run: make integration-test
 
-  build:
-    name: Build
+  fetch-data:
+    name: Fetch Data from S3
     runs-on: ubuntu-latest
-    container: jekyll/jekyll:4.0
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: set up node
-      uses: actions/setup-node@master
-      with:
-        node-version: '12.20.1'
-    - name: install correct yarn version
-      run: npm install --global --force yarn@1.22.0
-    - name: install dependencies
-      run: make yarn-install
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -41,6 +30,30 @@ jobs:
     - name: fetch data from s3
       run: |
         aws s3 cp src/_data s3://va-performance-dashboard-data/ --recursive
+    - name: upload data
+      uses: actions/upload-artifact@v2
+      with:
+        name: src/_data
+        path: src/_data
+
+  build:
+    name: Build
+    needs: fetch-data
+    runs-on: ubuntu-latest
+    container: jekyll/jekyll:4.0
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: download data
+      uses: actions/download-artifact@v2
+    - name: set up node
+      uses: actions/setup-node@master
+      with:
+        node-version: '12.20.1'
+    - name: install correct yarn version
+      run: npm install --global --force yarn@1.22.0
+    - name: install dependencies
+      run: make yarn-install
     - name: build
       run: /usr/gem/bin/jekyll build --trace
     - name: upload jekyll site
