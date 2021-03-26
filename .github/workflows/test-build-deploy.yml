@@ -43,9 +43,9 @@ jobs:
     - name: fetch data from s3 dev bucket
       if: ${{ github.ref == 'refs/heads/development' }}
       run: aws s3 cp s3://dsva-vetsgov-scorecard-dev/data src/_data --recursive
-    - name: fetch data from s3 staging bucket
+    - name: fetch data from s3 prod bucket
       if: ${{ github.ref == 'refs/heads/master' }}
-      run: aws s3 cp s3://dsva-vetsgov-scorecard-staging/data src/_data --recursive
+      run: aws s3 cp s3://dsva-vetsgov-scorecard-prod/data src/_data --recursive
     - name: upload data
       uses: actions/upload-artifact@v2
       with:
@@ -141,4 +141,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-gov-west-1
       - name: upload site to S3
-        run: aws s3 sync --acl public-read _site s3://dsva-vetsgov-scorecard-staging
+        run: aws s3 sync --acl public-read _site s3://dsva-vetsgov-scorecard-prod --exclude "data/*"
