@@ -1,9 +1,9 @@
 name: "test-build-deploy"
 
 on:
-#  push:
-#    paths-ignore:
-#      - 'scripts/**'
+  push:
+    paths-ignore:
+      - 'scripts/**'
   workflow_dispatch:
 
 jobs:
@@ -44,7 +44,7 @@ jobs:
       if: ${{ github.ref == 'refs/heads/development' }}
       run: aws s3 cp s3://dsva-vetsgov-scorecard-dev/data src/_data --recursive
     - name: fetch data from s3 staging bucket
-      if: ${{ github.ref == 'refs/heads/github-actions' }}
+      if: ${{ github.ref == 'refs/heads/master' }}
       run: aws s3 cp s3://dsva-vetsgov-scorecard-staging/data src/_data --recursive
     - name: upload data
       uses: actions/upload-artifact@v2
@@ -129,7 +129,7 @@ jobs:
   prod-deploy:
     name: Jekyll Site Deployment
     needs: [ ui-test, test ]
-    if: ${{ github.ref == 'refs/heads/github-actions' }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     steps:
       - name: download jekyll site

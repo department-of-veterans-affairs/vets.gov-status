@@ -2,13 +2,13 @@ name: "Data Refresh"
 
 on:
   push:
-#    paths:
-#    - 'scripts/**'
+    paths:
+    - 'scripts/**'
     branches:
       - developement
-      - github-actions
+      - master
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '5 3 * * *'
 
 jobs:
   refresh-data:
@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          ref: github-actions
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -41,7 +39,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/development' }}
         run: aws s3 sync src/_data s3://dsva-vetsgov-scorecard-dev/data
       - name: Copy data to prod s3 bucket if we're on master
-        if: ${{ github.ref == 'refs/heads/github-actions' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         run: aws s3 sync src/_data s3://dsva-vetsgov-scorecard-staging/data
       - uses: marvinpinto/action-inject-ssm-secrets@29c7bcaeb95b662ddf9dacb4f2127ecd2286f63b
         with:
