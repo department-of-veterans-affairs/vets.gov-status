@@ -41,11 +41,11 @@ jobs:
         aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-2
     - name: fetch data from s3
-      if: ${{ github.ref == 'github-actions' }}
+      if: ${{ github.ref == 'refs/heads/github-actions' }}
       run: aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
 #      run: aws s3 cp s3://va-performance-dashboard-data-prod/data src/_data --recursive
     - name: fetch data from s3
-      if: ${{ github.ref == 'development' }}
+      if: ${{ github.ref == 'refs/heads/development' }}
       run: aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
 #      run: aws s3 cp s3://va-performance-dashboard-data-dev/data src/_data --recursive
     - name: upload data
@@ -98,7 +98,7 @@ jobs:
   dev-deploy:
     name: Jekyll Site Deployment
     needs: [ ui-test, test]
-    if: ${{ github.ref == 'development' }}
+    if: ${{ github.ref == 'refs/heads/development' }}
     runs-on: ubuntu-latest
     steps:
     - name: download jekyll site
@@ -135,7 +135,7 @@ jobs:
   prod-deploy:
     name: Jekyll Site Deployment
     needs: [ ui-test, test ]
-    if: ${{ github.ref == 'github-actions' }}
+    if: ${{ github.ref == 'refs/heads/github-actions' }}
     runs-on: ubuntu-latest
     steps:
       - name: download jekyll site

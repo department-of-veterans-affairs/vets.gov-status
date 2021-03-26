@@ -38,11 +38,11 @@ jobs:
           GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/performance-dashboard/ga-serviceaccount' | jq '.Parameter.Value' -r)
           ./fetch-data-docker-wrapper.sh
       - name: Copy data to prod s3 bucket if we're on master
-        if: ${{ github.ref == 'github-actions' }}
+        if: ${{ github.ref == 'refs/heads/github-actions' }}
         run: aws s3 sync src/_data s3://va-performance-dashboard-data/data
 #        run: aws s3 sync src/_data s3://va-performance-dashboard-data-prod/data
       - name: Copy data to dev s3 bucket if we're in development mode
-        if: ${{ github.ref == 'development' }}
+        if: ${{ github.ref == 'refs/heads/development' }}
         run: aws s3 sync src/_data s3://va-performance-dashboard-data/data
 #        run: aws s3 sync src/_data s3://va-performance-dashboard-data-dev/data
       - uses: marvinpinto/action-inject-ssm-secrets@29c7bca
