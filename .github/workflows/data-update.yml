@@ -1,4 +1,4 @@
-name: "Data update"
+name: "Nightly Data Refresh"
 
 on:
   push:
