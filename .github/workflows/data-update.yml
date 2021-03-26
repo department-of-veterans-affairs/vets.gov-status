@@ -1,4 +1,4 @@
-name: "Nightly Data Refresh"
+name: "Data Refresh"
 
 on:
   push:
@@ -52,5 +52,5 @@ jobs:
       - name: trigger build workflow
         uses: benc-uk/workflow-dispatch@4c044c1613fabbe5250deadc65452d54c4ad4fc7
         with:
-          workflow: test-build-deploy.yml
+          workflow: test-build-deploy
           token: ${{ env.PERSONAL_TOKEN }}
