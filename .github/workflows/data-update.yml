@@ -24,7 +24,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-region: us-gov-west-1
       - uses: marvinpinto/action-inject-ssm-secrets@29c7bcaeb95b662ddf9dacb4f2127ecd2286f63b
         with:
           ssm_parameter: "/dsva-vagov/performance_dashboard/foresee_credentials"
