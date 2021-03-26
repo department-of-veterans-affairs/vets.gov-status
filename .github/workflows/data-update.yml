@@ -3,7 +3,7 @@ name: "Data update"
 on:
   push:
     paths:
-      - scripts
+    - 'scripts/**'
     branches:
       - developement
       - github-actions

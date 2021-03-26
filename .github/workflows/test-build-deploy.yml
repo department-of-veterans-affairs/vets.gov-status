@@ -3,7 +3,8 @@ name: "Test, Build, and Deploy"
 on:
   push:
     paths-ignore:
-      - scripts
+      - 'scripts/**'
+
   workflow_dispatch:
 
 jobs:
