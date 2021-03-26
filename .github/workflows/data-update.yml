@@ -5,7 +5,7 @@ on:
     paths:
     - 'scripts/**'
     branches:
-      - developement
+      - development
       - master
   schedule:
     - cron: '5 3 * * *'
