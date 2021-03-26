@@ -2,8 +2,8 @@ name: "Data Refresh"
 
 on:
   push:
-    paths:
-    - 'scripts/**'
+#    paths:
+#    - 'scripts/**'
     branches:
       - developement
       - github-actions

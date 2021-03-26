@@ -1,10 +1,9 @@
 name: "test-build-deploy"
 
 on:
-  push:
-    paths-ignore:
-      - 'scripts/**'
-
+#  push:
+#    paths-ignore:
+#      - 'scripts/**'
   workflow_dispatch:
 
 jobs:
