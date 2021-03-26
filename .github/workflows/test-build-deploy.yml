@@ -86,7 +86,7 @@ jobs:
     - name: run ui tests
       uses: ./.github/actions/ui-test-docker-action
 
-  deploy:
+  dev-deploy:
     name: Jekyll Site Deployment
     needs: [ ui-test, test]
     runs-on: ubuntu-latest
@@ -102,3 +102,39 @@ jobs:
     - name: upload site to S3
       run: |
         aws s3 sync _site s3://va-performance-dashboard-data --exclude "data/*"
+
+  staging-deploy:
+    name: Jekyll Site Deployment
+    needs: [ dev-deploy ]
+    if: ${{ github.events.inputs.triggeredBy == 'dateUpdateWorkflow' }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: download jekyll site
+      uses: actions/download-artifact@v2
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+    - name: upload site to S3
+      run: |
+        aws s3 sync s3://va-performance-dashboard-data s3://va-performance-dashboard-data --exclude "data/*"
+
+  prod-deploy:
+    name: Jekyll Site Deployment
+    needs: [ staging-deploy ]
+    if: ${{ github.events.inputs.triggeredBy == 'dateUpdateWorkflow' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: download jekyll site
+        uses: actions/download-artifact@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: upload site to S3
+        run: |
+          aws s3 sync s3://va-performance-dashboard-data s3://va-performance-dashboard-data --exclude "data/*"
