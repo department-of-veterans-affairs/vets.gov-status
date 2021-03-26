@@ -9,7 +9,6 @@ on:
       - github-actions
   schedule:
     - cron: '0 2 * * *'
-    ref: github-actions
 
 jobs:
   refresh-data:
