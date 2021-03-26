@@ -129,7 +129,7 @@ jobs:
         aws-region: us-west-2
     - name: upload site to S3
       run: |
-        aws s3 sync _site s3://va-performance-dashboard-data-staging
+        aws s3 sync _site s3://va-performance-dashboard-data
 #        aws s3 sync _site s3://va-performance-dashboard-data-staging
 
   prod-deploy:
