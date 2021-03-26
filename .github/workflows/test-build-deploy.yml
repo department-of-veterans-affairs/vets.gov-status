@@ -18,16 +18,16 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-gov-west-1
     - uses: marvinpinto/action-inject-ssm-secrets@29c7bcaeb95b662ddf9dacb4f2127ecd2286f63b
       with:
-        ssm_parameter: "/performance-dashboard/foresee-credentials"
+        ssm_parameter: "/dsva-vagov/performance_dashboard/foresee_credentials"
         env_variable_name: "FORESEE_CREDENTIALS"
     - name: run integration tests
       run: |
-        export GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/performance-dashboard/ga-serviceaccount' | jq '.Parameter.Value' -r)
+        export GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/dsva-vagov/performance_dashboard/ga_serviceaccount' | jq '.Parameter.Value' -r)
         make integration-test
 
   fetch-data:
@@ -37,17 +37,15 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
-    - name: fetch data from s3
-      if: ${{ github.ref == 'refs/heads/github-actions' }}
-      run: aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
-#      run: aws s3 cp s3://va-performance-dashboard-data-prod/data src/_data --recursive
-    - name: fetch data from s3
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-gov-west-1
+    - name: fetch data from s3 dev bucket
       if: ${{ github.ref == 'refs/heads/development' }}
-      run: aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
-#      run: aws s3 cp s3://va-performance-dashboard-data-dev/data src/_data --recursive
+      run: aws s3 cp s3://dsva-vetsgov-scorecard-dev/data src/_data --recursive
+    - name: fetch data from s3 staging bucket
+      if: ${{ github.ref == 'refs/heads/github-actions' }}
+      run: aws s3 cp s3://dsva-vetsgov-scorecard-staging/data src/_data --recursive
     - name: upload data
       uses: actions/upload-artifact@v2
       with:
@@ -106,13 +104,11 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-gov-west-1
     - name: upload site to S3
-      run: |
-        aws s3 sync _site s3://va-performance-dashboard-data --exclude "data/*"
-#        aws s3 sync _site s3://va-performance-dashboard-data-dev --exclude "data/*"
+      run: aws s3 sync --acl public-read _site s3://dsva-vetsgov-scorecard-dev --exclude "data/*"
 
   staging-deploy:
     name: Jekyll Site Deployment
@@ -124,13 +120,11 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-gov-west-1
     - name: upload site to S3
-      run: |
-        aws s3 sync _site s3://va-performance-dashboard-data
-#        aws s3 sync _site s3://va-performance-dashboard-data-staging
+      run: aws s3 sync --acl public-read _site s3://dsva-vetsgov-scorecard-staging
 
   prod-deploy:
     name: Jekyll Site Deployment
@@ -143,10 +137,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-gov-west-1
       - name: upload site to S3
-        run: |
-          aws s3 sync _site s3://va-performance-dashboard-data --exclude "data/*"
-#          aws s3 sync _site s3://va-performance-dashboard-data-prod --exclude "data/*"
+        run: aws s3 sync --acl public-read _site s3://dsva-vetsgov-scorecard-staging

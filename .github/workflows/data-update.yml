@@ -22,12 +22,12 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.TW_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
       - uses: marvinpinto/action-inject-ssm-secrets@29c7bcaeb95b662ddf9dacb4f2127ecd2286f63b
         with:
-          ssm_parameter: "/performance-dashboard/foresee-credentials"
+          ssm_parameter: "/dsva-vagov/performance_dashboard/foresee_credentials"
           env_variable_name: "FORESEE_CREDENTIALS"
       - name: fetch data
         env:
@@ -35,19 +35,17 @@ jobs:
           FORESEE_CREDENTIALS: ${{ env.FORESEE_CREDENTIALS }}
         working-directory: ./scripts
         run: |
-          GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/performance-dashboard/ga-serviceaccount' | jq '.Parameter.Value' -r)
+          GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/dsva-vagov/performance_dashboard/ga_serviceaccount' | jq '.Parameter.Value' -r)
           ./fetch-data-docker-wrapper.sh
+      - name: Copy data to dev s3 bucket
+        if: ${{ github.ref == 'refs/heads/development' }}
+        run: aws s3 sync src/_data s3://dsva-vetsgov-scorecard-dev/data
       - name: Copy data to prod s3 bucket if we're on master
         if: ${{ github.ref == 'refs/heads/github-actions' }}
-        run: aws s3 sync src/_data s3://va-performance-dashboard-data/data
-#        run: aws s3 sync src/_data s3://va-performance-dashboard-data-prod/data
-      - name: Copy data to dev s3 bucket if we're in development mode
-        if: ${{ github.ref == 'refs/heads/development' }}
-        run: aws s3 sync src/_data s3://va-performance-dashboard-data/data
-#        run: aws s3 sync src/_data s3://va-performance-dashboard-data-dev/data
+        run: aws s3 sync src/_data s3://dsva-vetsgov-scorecard-staging/data
       - uses: marvinpinto/action-inject-ssm-secrets@29c7bcaeb95b662ddf9dacb4f2127ecd2286f63b
         with:
-          ssm_parameter: "/performance-dashboard/github-access-token"
+          ssm_parameter: "/dsva-vagov/performance_dashboard/github_access_token"
           env_variable_name: "PERSONAL_TOKEN"
       - name: trigger build workflow
         uses: benc-uk/workflow-dispatch@4c044c1613fabbe5250deadc65452d54c4ad4fc7
