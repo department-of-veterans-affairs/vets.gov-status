@@ -1,6 +1,10 @@
 name: "Test, Build, and Deploy"
 
-on: [push, workflow_dispatch]
+on:
+  push:
+    paths-ignore:
+      - scripts
+  workflow_dispatch:
 
 jobs:
   test:
@@ -37,8 +41,13 @@ jobs:
         aws-secret-access-key: ${{ secrets.TW_AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-2
     - name: fetch data from s3
-      run: |
-        aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
+      if: ${{ github.ref == 'github-actions' }}
+      run: aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
+#      run: aws s3 cp s3://va-performance-dashboard-data-prod/data src/_data --recursive
+    - name: fetch data from s3
+      if: ${{ github.ref == 'development' }}
+      run: aws s3 cp s3://va-performance-dashboard-data/data src/_data --recursive
+#      run: aws s3 cp s3://va-performance-dashboard-data-dev/data src/_data --recursive
     - name: upload data
       uses: actions/upload-artifact@v2
       with:
@@ -89,6 +98,7 @@ jobs:
   dev-deploy:
     name: Jekyll Site Deployment
     needs: [ ui-test, test]
+    if: ${{ github.ref == 'development' }}
     runs-on: ubuntu-latest
     steps:
     - name: download jekyll site
@@ -102,11 +112,11 @@ jobs:
     - name: upload site to S3
       run: |
         aws s3 sync _site s3://va-performance-dashboard-data --exclude "data/*"
+#        aws s3 sync _site s3://va-performance-dashboard-data-dev --exclude "data/*"
 
   staging-deploy:
     name: Jekyll Site Deployment
-    needs: [ dev-deploy ]
-    if: ${{ github.events.inputs.triggeredBy == 'dateUpdateWorkflow' }}
+    needs: [ ui-test, test ]
     runs-on: ubuntu-latest
     steps:
     - name: download jekyll site
@@ -119,12 +129,13 @@ jobs:
         aws-region: us-west-2
     - name: upload site to S3
       run: |
-        aws s3 sync s3://va-performance-dashboard-data s3://va-performance-dashboard-data --exclude "data/*"
+        aws s3 sync _site s3://va-performance-dashboard-data-staging
+#        aws s3 sync _site s3://va-performance-dashboard-data-staging
 
   prod-deploy:
     name: Jekyll Site Deployment
-    needs: [ staging-deploy ]
-    if: ${{ github.events.inputs.triggeredBy == 'dateUpdateWorkflow' }}
+    needs: [ ui-test, test ]
+    if: ${{ github.ref == 'github-actions' }}
     runs-on: ubuntu-latest
     steps:
       - name: download jekyll site
@@ -137,4 +148,5 @@ jobs:
           aws-region: us-west-2
       - name: upload site to S3
         run: |
-          aws s3 sync s3://va-performance-dashboard-data s3://va-performance-dashboard-data --exclude "data/*"
+          aws s3 sync _site s3://va-performance-dashboard-data --exclude "data/*"
+#          aws s3 sync _site s3://va-performance-dashboard-data-prod --exclude "data/*"

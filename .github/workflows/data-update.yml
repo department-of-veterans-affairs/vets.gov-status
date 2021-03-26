@@ -1,8 +1,15 @@
 name: "Data update"
 
-on: push
-#  schedule:
-#    - cron: '0 2 * * *'
+on:
+  push:
+    paths:
+      - scripts
+    branches:
+      - developement
+      - github-actions
+  schedule:
+    - cron: '0 2 * * *'
+    ref: github-actions
 
 jobs:
   refresh-data:
@@ -31,9 +38,14 @@ jobs:
         run: |
           GA_SERVICEACCOUNT=$(aws ssm get-parameter  --with-decrypt --name '/performance-dashboard/ga-serviceaccount' | jq '.Parameter.Value' -r)
           ./fetch-data-docker-wrapper.sh
-      - name: Copy data to s3
-        run: |
-          aws s3 sync src/_data s3://va-performance-dashboard-data/data
+      - name: Copy data to prod s3 bucket if we're on master
+        if: ${{ github.ref == 'github-actions' }}
+        run: aws s3 sync src/_data s3://va-performance-dashboard-data/data
+#        run: aws s3 sync src/_data s3://va-performance-dashboard-data-prod/data
+      - name: Copy data to dev s3 bucket if we're in development mode
+        if: ${{ github.ref == 'development' }}
+        run: aws s3 sync src/_data s3://va-performance-dashboard-data/data
+#        run: aws s3 sync src/_data s3://va-performance-dashboard-data-dev/data
       - uses: marvinpinto/action-inject-ssm-secrets@29c7bca
         with:
           ssm_parameter: "/performance-dashboard/github-access-token"
@@ -43,4 +55,3 @@ jobs:
         with:
           workflow: test-build-deploy
           token: ${{ env.PERSONAL_TOKEN }}
-          inputs: '{ "triggeredBy": "dataUpdateWorkflow" }'
