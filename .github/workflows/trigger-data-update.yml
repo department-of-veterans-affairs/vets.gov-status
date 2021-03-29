@@ -25,6 +25,6 @@ jobs:
       - name: trigger build workflow
         uses: benc-uk/workflow-dispatch@4c044c1613fabbe5250deadc65452d54c4ad4fc7
         with:
-          workflow: Data-Refresh
+          workflow: Data Refresh
           token: ${{ env.PERSONAL_TOKEN }}
           ref: refs/heads/master
