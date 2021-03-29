@@ -1,9 +1,6 @@
 name: "Daily Data Refresh Trigger"
 
 on:
-  push:
-    tags:
-    - 'data-refresh**'
   schedule:
     - cron: '5 3 * * *'
 
@@ -27,4 +24,4 @@ jobs:
         with:
           workflow: data-refresh
           token: ${{ env.PERSONAL_TOKEN }}
-          ref: refs/heads/development
+          ref: refs/heads/master
