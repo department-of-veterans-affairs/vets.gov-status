@@ -94,7 +94,7 @@ jobs:
       uses: ./.github/actions/ui-test-docker-action
 
   dev-deploy:
-    name: Jekyll Site Deployment
+    name: Dev Jekyll Site Deployment
     needs: [ ui-test, test]
     if: ${{ github.ref == 'refs/heads/development' }}
     runs-on: ubuntu-latest
@@ -111,7 +111,7 @@ jobs:
       run: aws s3 sync --acl public-read _site s3://dsva-vetsgov-scorecard-dev --exclude "data/*"
 
   staging-deploy:
-    name: Jekyll Site Deployment
+    name: Staging Jekyll Site Deployment
     needs: [ ui-test, test ]
     runs-on: ubuntu-latest
     steps:
@@ -127,7 +127,7 @@ jobs:
       run: aws s3 sync --acl public-read _site s3://dsva-vetsgov-scorecard-staging
 
   prod-deploy:
-    name: Jekyll Site Deployment
+    name: Prod Jekyll Site Deployment
     needs: [ ui-test, test ]
     if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
