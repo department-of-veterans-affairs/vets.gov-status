@@ -7,8 +7,7 @@ on:
     branches:
       - development
       - master
-  schedule:
-    - cron: '5 3 * * *'
+  workflow_dispatch:
 
 jobs:
   refresh-data:

@@ -1,0 +1,17 @@
+name: "Daily Data Refresh Trigger"
+
+on:
+  schedule:
+    - cron: '5 3 * * *'
+
+jobs:
+  trigger-data-refresh:
+    name: Trigger Data Refresh
+    runs-on: ubuntu-latest
+    steps:
+      - name: trigger build workflow
+        uses: benc-uk/workflow-dispatch@4c044c1613fabbe5250deadc65452d54c4ad4fc7
+        with:
+          workflow: test-build-deploy
+          token: ${{ env.PERSONAL_TOKEN }}
+          ref: refs/heads/master
