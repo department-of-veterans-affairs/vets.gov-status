@@ -167,9 +167,9 @@ Go into the scripts directory and run `./fetch-data-docker-wrapper.sh`
 
 ### Credentials
 
-The scripts get secrets out of [credstash](https://github.com/fugue/credstash) when running in CI.
+The scripts get secrets out of AWS Parameter Store, using AWS credentials to the VA AWS instance living in the repo Secrets section. These cannot be read, and therefore are not usable locally.
 
-When running locally, you can ask a colleague for the `.secrets` file and place it in `scripts/local_credentials`, which set credentials for Foresee and GA as env vars.
+When running locally, you can ask a colleague for the `.secrets` file and place it in `scripts/local_credentials`, which set credentials for Foresee and GA as env vars. These can be used to run the fetch data scripts locally.
 
 ### Adding new packages to python scripts
 
@@ -178,14 +178,14 @@ Then, you can run `make pip-install` to update the `requirements.txt` or `dev-re
 
 ## Continuous integration and deployment
 ### CI
-`Jenkinsfile` manages several automated checks that are run on every commit pushed to github.
+`test-build-deploy` Github-Actions workflow manages several automated checks that are run on every commit pushed to github.
 - Unit tests (these currently test the python scripts)
 - Flake8 static analysis (of python scripts)
 - UI tests (simple smoke tests to confirm the Jekyll build succeeded)
 - Integration tests (For now, consists of running the data update scripts to confirm they don't throw errors)
 
 ### Deployment
-The site is automatically deployed by `Jenkinsfile` when certain branches change, provided the tests pass:
+The site is automatically deployed by`github-actions` workflows (`test-build-deploy`)
 
 | branch | environment |
 |---|---|
@@ -194,12 +194,12 @@ The site is automatically deployed by `Jenkinsfile` when certain branches change
 | production | https://www.va.gov/performance-dashboard |
 
 There are two pathways to getting into production:
-1. Merge development branch to master, confirm staging works, then merge master to production. The merging is currently
- a manual process and is used for code updates. (the deploy is automated by `Jenkinsfile`)
-2. The `Jenkinsfile.update` script runs nightly, which downloads new data and commits it to `master` 
-branch. If this is successful, it triggers the `Jenkinsfile.automerge` script, which will merge the latest from master 
-into production. New commits to `production` will trigger `Jenkinsfile` which will run CI and deploy the site. This is 
-automated (defined [here](https://github.com/department-of-veterans-affairs/devops/blob/master/ansible/deployment/config/jenkins-vetsgov/seed_job.groovy)).
+1. Merge development branch to master via Pull Request. One reviewer is required as well as some status checks (mostly unit and UI tests)
+2. The data refresh pipeline runs in a nightly job that refreshes data and deploys to prod (kicked off at 3:05am UTC). Data living in an S3 bucket will get updated, then pulled down for the rebuild and redeploy.
+
+There are two pathways to update data:
+1. Making changes to the scripts/ directory will trigger the data-refresh pipeline, as those scripts are where the data fetch logic lives. Only the data hydrating dev and staging environments will get updated. Prod data is left untouched.
+2. The nightly job as previously described automatically updates the prod data. Note that unless your merges to master include scripts/ changes, the push will not trigger a data refresh.
 
 ## Developer Onboarding
 
