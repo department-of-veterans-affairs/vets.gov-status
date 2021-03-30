@@ -113,6 +113,7 @@ jobs:
   staging-deploy:
     name: Staging Jekyll Site Deployment
     needs: [ ui-test, test ]
+    if: ${{ github.ref == 'refs/heads/development' }}
     runs-on: ubuntu-latest
     steps:
     - name: download jekyll site
