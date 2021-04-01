@@ -2,7 +2,8 @@ name: "Daily Data Refresh Trigger"
 
 on:
   schedule:
-    - cron: '5 3 * * *'
+    # 9:05am UTC, which is 01:05 or 02:05am Pacific, so we trigger the job just after the Google analytics quota resets
+    - cron: '5 9 * * *'
 
 jobs:
   trigger-data-refresh:
